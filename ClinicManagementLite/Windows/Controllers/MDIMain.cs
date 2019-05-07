@@ -21,7 +21,9 @@ namespace ClinicManagementLite.Windows.Controllers
 
         private void MDIMain_Load(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            login.Parent = this;
+            login.ShowDialog();
         }
 
         //Menu actions
