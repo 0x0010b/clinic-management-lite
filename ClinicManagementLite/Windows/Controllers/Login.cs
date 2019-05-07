@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClinicManagementLite.Windows.BL;
+using ClinicManagementLite.Windows.General;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,26 @@ namespace ClinicManagementLite.Windows.Controllers
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            CMUserBL.login("78023859", "123456", success: delegate (bool status, int id, PermissionType permission)
+            {
+
+                // Success
+
+            }, error: delegate (string errorMessage)
+            {
+
+                // Error
+
+            });
         }
     }
 }
