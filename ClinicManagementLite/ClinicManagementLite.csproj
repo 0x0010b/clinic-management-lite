@@ -69,6 +69,12 @@
     <Compile Include="Windows\Controllers\MDIMain.Designer.cs">
       <DependentUpon>MDIMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Controllers\UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Controllers\UserInfo.Designer.cs">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\DA\CMUserDA.cs" />
     <Compile Include="Windows\General\CMClosures.cs" />
     <Compile Include="Windows\General\CMConstants.cs" />
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Controllers\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Controllers\UserInfo.resx">
+      <DependentUpon>UserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
