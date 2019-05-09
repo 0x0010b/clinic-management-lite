@@ -25,6 +25,11 @@ namespace ClinicManagementLite.Windows.BL
 
         public void saveSession(int id, PermissionType permission)
         {
+            if (this.session == null)
+            {
+                this.session = new Session();
+            }
+
             this.session.session_id = id;
             this.session.session_permission = permission;
         }

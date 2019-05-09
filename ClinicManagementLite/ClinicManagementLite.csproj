@@ -46,9 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Windows\BL\CMConnection.cs" />
-    <Compile Include="Windows\BL\CMUserBL.cs" />
-    <Compile Include="Windows\BL\CMUserSession.cs" />
+    <Compile Include="Windows\BLC\CMConnection.cs" />
+    <Compile Include="Windows\BLC\CMUserBL.cs" />
+    <Compile Include="Windows\BLC\CMUserSession.cs" />
     <Compile Include="Windows\Controllers\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,14 +69,13 @@
     <Compile Include="Windows\Controllers\MDIMain.Designer.cs">
       <DependentUpon>MDIMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DALC\CMUserDA.cs" />
     <Compile Include="Windows\Controllers\UserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\Controllers\UserInfo.Designer.cs">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\DA\CMUserDA.cs" />
-    <Compile Include="Windows\General\CMClosures.cs" />
     <Compile Include="Windows\General\CMConstants.cs" />
     <Compile Include="Windows\General\CMEnum.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

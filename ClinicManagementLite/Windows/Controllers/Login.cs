@@ -4,9 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,17 +28,18 @@ namespace ClinicManagementLite.Windows.Controllers
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            CMUserBL.login("78023859", "123456", success: delegate (bool status, int id, PermissionType permission)
+            try
             {
-
-                // Success
-
-            }, error: delegate (string errorMessage)
+                CMUserBL.login(txtUsername.Text, txtPassword.Text);
+            }
+            catch (SqlException ex)
             {
-
-                // Error
-
-            });
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
