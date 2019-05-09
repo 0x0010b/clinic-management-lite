@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace ClinicManagementLite.Windows.General
 {
+    struct CMDatabase
+    {
+        private static string server            = "localhost";
+        private static string database          = "clinicManagementLite";
+        public  static string connection        = $"Server={server};Database={database};Integrated Security=true";
+    }
+
     struct CMProcedures
     {
         public static string usp_userLogin      = "usp_userLogin";
@@ -20,8 +27,8 @@ namespace ClinicManagementLite.Windows.General
     {
         public struct Login
         {
-            public static string emptyUsername  = "Para continuar con el proceso, debes ingresar un usuario de 8 digitos";
-            public static string emptyPassword  = "Para continuar con el proceso, debes ingresar una contrasena de 6 digitos";
+            public static string emptyUsername  = "Para continuar con el proceso, debes ingresar un usuario de 8 digitos.";
+            public static string emptyPassword  = "Para continuar con el proceso, debes ingresar una contrasena de 6 digitos.";
         }
     }
 }

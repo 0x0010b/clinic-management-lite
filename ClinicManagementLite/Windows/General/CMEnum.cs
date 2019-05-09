@@ -11,4 +11,19 @@ namespace ClinicManagementLite.Windows.General
         admin = 0,
         employee
     }
+
+    public enum Gender
+    {
+        male = 0,
+        female
+    }
+
+    public enum ViewType
+    {
+        account = 0,
+        employee,
+        client,
+        position,
+        area
+    }
 }
