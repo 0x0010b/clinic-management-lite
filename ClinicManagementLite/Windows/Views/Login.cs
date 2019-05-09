@@ -1,4 +1,5 @@
-﻿using ClinicManagementLite.Windows.BL;
+﻿using ClinicManagementLite.Windows.BE;
+using ClinicManagementLite.Windows.BL;
 using ClinicManagementLite.Windows.General;
 using System;
 using System.Collections.Generic;
@@ -30,11 +31,12 @@ namespace ClinicManagementLite.Windows.Controllers
         {
             try
             {
-                CMUserBL.login(txtUsername.Text, txtPassword.Text);
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
+                CMUserBE objUser = new CMUserBE();
+                objUser.user_username = txtUsername.Text;
+                objUser.user_password = txtPassword.Text;
+
+                CMUserBE response = CMUserBL.login(objUser);
+                MessageBox.Show($"Bienvenido {response.user_permission.permission_description}!");
             }
             catch (Exception ex)
             {
