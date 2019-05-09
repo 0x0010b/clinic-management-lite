@@ -31,9 +31,9 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tbxUsername = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -68,18 +68,13 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(107, 69);
-            this.txtUsername.MaxLength = 8;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(154, 20);
-            this.txtUsername.TabIndex = 2;
-            // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(107, 105);
+            this.txtPassword.MaxLength = 6;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.ShortcutsEnabled = false;
             this.txtPassword.Size = new System.Drawing.Size(154, 20);
             this.txtPassword.TabIndex = 2;
             // 
@@ -93,6 +88,16 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Autenticación";
             // 
+            // tbxUsername
+            // 
+            this.tbxUsername.Location = new System.Drawing.Point(107, 69);
+            this.tbxUsername.MaxLength = 8;
+            this.tbxUsername.Name = "tbxUsername";
+            this.tbxUsername.ShortcutsEnabled = false;
+            this.tbxUsername.Size = new System.Drawing.Size(154, 20);
+            this.tbxUsername.TabIndex = 2;
+            this.tbxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUsername_KeyPress);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,7 +105,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(299, 195);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.tbxUsername);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.label3);
@@ -120,8 +125,8 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbxUsername;
     }
 }

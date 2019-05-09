@@ -29,12 +29,29 @@ namespace ClinicManagementLite.Windows.Controllers
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            try
+            {
+                CMAccountBE objAccount = CMAccountBL.login(tbxUsername.Text, txtPassword.Text);
+                CMUserSessionBL.shared.saveSession(objAccount);
+                Form frm = (Form)this.MdiParent;
+                MenuStrip ms = (MenuStrip)frm.Controls["menuStrip1"];
+            } catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
             
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            const char delete = (Char)8;
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != delete;
+            
         }
     }
 }

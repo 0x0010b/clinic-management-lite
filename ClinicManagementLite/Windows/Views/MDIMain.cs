@@ -25,6 +25,8 @@ namespace ClinicManagementLite.Windows.Controllers
             login.ShowDialog();
         }
 
+        
+
         //Menu actions
 
         private void stripLogout_Click(object sender, EventArgs e)

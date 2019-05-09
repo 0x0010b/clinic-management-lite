@@ -18,7 +18,7 @@ namespace ClinicManagementLite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCreatePerson());
+            Application.Run(new Login());
         }
     }
 }
