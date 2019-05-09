@@ -17,6 +17,9 @@ namespace ClinicManagementLite.Windows.Controllers
 {
     public partial class Login : Form
     {
+
+        public MDIMain parent;
+
         public Login()
         {
             InitializeComponent();
@@ -33,8 +36,8 @@ namespace ClinicManagementLite.Windows.Controllers
             {
                 CMAccountBE objAccount = CMAccountBL.login(tbxUsername.Text, txtPassword.Text);
                 CMUserSessionBL.shared.saveSession(objAccount);
-                Form frm = (Form)this.MdiParent;
-                MenuStrip ms = (MenuStrip)frm.Controls["menuStrip1"];
+                this.parent.setInitialInformation();
+                this.Close();
             } catch (Exception x)
             {
                 MessageBox.Show(x.Message);
@@ -44,7 +47,10 @@ namespace ClinicManagementLite.Windows.Controllers
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (CMUserSessionBL.shared.getSession() == null)
+            {
+                Application.Exit();
+            }
         }
 
         private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)

@@ -22,10 +22,14 @@ namespace ClinicManagementLite.Windows.Controllers
         private void MDIMain_Load(object sender, EventArgs e)
         {
             Login login = new Login();
+            login.parent = this;
             login.ShowDialog();
         }
 
-        
+        public void setInitialInformation()
+        {
+            this.menuStripMain.Items[0].Enabled = false;
+        }
 
         //Menu actions
 
