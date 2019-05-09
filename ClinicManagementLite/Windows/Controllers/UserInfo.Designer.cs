@@ -1,6 +1,6 @@
 ﻿namespace ClinicManagementLite.Windows.Controllers
 {
-    partial class UserInfo
+    partial class frmDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -38,19 +38,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.gbxMainInfo = new System.Windows.Forms.GroupBox();
-            this.lblActive = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblDni = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.lblActive = new System.Windows.Forms.Label();
+            this.lblDni = new System.Windows.Forms.Label();
             this.gbxEmployeeInfo = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblPosition = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblArea = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserImage)).BeginInit();
             this.gbxMainInfo.SuspendLayout();
             this.gbxEmployeeInfo.SuspendLayout();
@@ -171,26 +172,15 @@
             this.gbxMainInfo.TabStop = false;
             this.gbxMainInfo.Text = "Información principal";
             // 
-            // lblActive
+            // label7
             // 
-            this.lblActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActive.ForeColor = System.Drawing.Color.Blue;
-            this.lblActive.Location = new System.Drawing.Point(497, 23);
-            this.lblActive.Name = "lblActive";
-            this.lblActive.Size = new System.Drawing.Size(62, 18);
-            this.lblActive.TabIndex = 2;
-            this.lblActive.Text = "SI / NO";
-            this.lblActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(443, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 18);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Activo";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(261, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 18);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Dirección";
             // 
             // lblAddress
             // 
@@ -203,15 +193,15 @@
             this.lblAddress.TabIndex = 2;
             this.lblAddress.Text = "-";
             // 
-            // label7
+            // label9
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(261, 84);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 18);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Dirección";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(16, 149);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 18);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Telefono";
             // 
             // lblPhone
             // 
@@ -223,25 +213,15 @@
             this.lblPhone.TabIndex = 2;
             this.lblPhone.Text = "-";
             // 
-            // label9
+            // label6
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 149);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 18);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Telefono";
-            // 
-            // lblDni
-            // 
-            this.lblDni.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDni.Location = new System.Drawing.Point(261, 53);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(175, 18);
-            this.lblDni.TabIndex = 2;
-            this.lblDni.Text = "-";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(443, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 18);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Activo";
             // 
             // label8
             // 
@@ -252,6 +232,27 @@
             this.label8.Size = new System.Drawing.Size(33, 18);
             this.label8.TabIndex = 1;
             this.label8.Text = "DNI";
+            // 
+            // lblActive
+            // 
+            this.lblActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActive.ForeColor = System.Drawing.Color.Blue;
+            this.lblActive.Location = new System.Drawing.Point(497, 23);
+            this.lblActive.Name = "lblActive";
+            this.lblActive.Size = new System.Drawing.Size(62, 18);
+            this.lblActive.TabIndex = 2;
+            this.lblActive.Text = "SI / NO";
+            this.lblActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDni
+            // 
+            this.lblDni.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDni.Location = new System.Drawing.Point(261, 53);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(175, 18);
+            this.lblDni.TabIndex = 2;
+            this.lblDni.Text = "-";
             // 
             // gbxEmployeeInfo
             // 
@@ -265,26 +266,7 @@
             this.gbxEmployeeInfo.TabIndex = 4;
             this.gbxEmployeeInfo.TabStop = false;
             this.gbxEmployeeInfo.Text = "Información de empleado";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 18);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Cargo";
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(33, 61);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(209, 18);
-            this.lblPosition.TabIndex = 4;
-            this.lblPosition.Text = "-";
+            this.gbxEmployeeInfo.Visible = false;
             // 
             // label10
             // 
@@ -306,18 +288,49 @@
             this.lblArea.TabIndex = 6;
             this.lblArea.Text = "-";
             // 
-            // UserInfo
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(19, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 18);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Cargo";
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.Location = new System.Drawing.Point(33, 61);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(209, 18);
+            this.lblPosition.TabIndex = 4;
+            this.lblPosition.Text = "-";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(334, 361);
+            this.button1.Margin = new System.Windows.Forms.Padding(10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // frmDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(895, 490);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gbxEmployeeInfo);
             this.Controls.Add(this.gbxMainInfo);
             this.Controls.Add(this.pbxUserImage);
-            this.Name = "UserInfo";
-            this.Text = "UserInfo";
+            this.Name = "frmDetail";
+            this.Text = "PersonInfo";
             this.Load += new System.EventHandler(this.UserInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserImage)).EndInit();
             this.gbxMainInfo.ResumeLayout(false);
@@ -353,5 +366,6 @@
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.Button button1;
     }
 }
