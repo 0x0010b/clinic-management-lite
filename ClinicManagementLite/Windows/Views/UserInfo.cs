@@ -10,15 +10,17 @@ using System.Windows.Forms;
 
 namespace ClinicManagementLite.Windows.Controllers
 {
-    public partial class UserInfo : Form
+    public partial class frmDetail : Form
     {
-        public UserInfo()
+        public frmDetail()
         {
             InitializeComponent();
         }
 
         private void UserInfo_Load(object sender, EventArgs e)
         {
+            lblName.Text = "";
+            lblLastname.Text = "";
 
         }
     }
