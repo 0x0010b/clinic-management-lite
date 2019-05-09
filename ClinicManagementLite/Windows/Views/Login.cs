@@ -43,5 +43,10 @@ namespace ClinicManagementLite.Windows.Controllers
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace ClinicManagementLite.Windows.Controllers
 {
-    public partial class frmDetail : Form
+    public partial class frmPersonDetail : Form
     {
 
         Boolean isEmployee = true;
         Boolean isClient = true;
         
-        public frmDetail()
+        public frmPersonDetail()
         {
             InitializeComponent();
         }

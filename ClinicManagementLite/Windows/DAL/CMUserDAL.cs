@@ -29,7 +29,7 @@ namespace ClinicManagementLite.Windows.DA
                     return CMUserBE.parse(dr);
                 }
                 else
-                    throw new Exception("No se encontro usuario conchetumare :(");
+                    throw new Exception("No se encontró usuario.");
             }
             catch (Exception ex)
             {

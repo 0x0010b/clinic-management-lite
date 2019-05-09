@@ -1,4 +1,5 @@
 ﻿using ClinicManagementLite.Windows.Controllers;
+using ClinicManagementLite.Windows.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace ClinicManagementLite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDetail());
+            Application.Run(new frmCreatePerson());
         }
     }
 }

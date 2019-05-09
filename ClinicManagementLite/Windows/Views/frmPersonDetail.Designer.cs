@@ -1,6 +1,6 @@
 ﻿namespace ClinicManagementLite.Windows.Controllers
 {
-    partial class frmDetail
+    partial class frmPersonDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -356,7 +356,7 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // frmDetail
+            // frmPersonDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -370,7 +370,7 @@
             this.Controls.Add(this.gbxEmployeeInfo);
             this.Controls.Add(this.gbxMainInfo);
             this.Controls.Add(this.pbxUserImage);
-            this.Name = "frmDetail";
+            this.Name = "frmPersonDetail";
             this.Text = "PersonInfo";
             this.Load += new System.EventHandler(this.frmDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserImage)).EndInit();
