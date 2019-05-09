@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace ClinicManagementLite.Windows.BL
 {
-    class CMUserBL
+    class CMAccountBL
     {
-        public static CMUserBE login(CMUserBE objUser)
+        public static CMAccountBE login(string username, string password)
         {
             try
             {
-                return CMUserDAL.login(objUser);
+                return CMUserDAL.login(username, password);
             }
             catch(Exception ex)
             {

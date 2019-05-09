@@ -29,19 +29,7 @@ namespace ClinicManagementLite.Windows.Controllers
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
-            {
-                CMUserBE objUser = new CMUserBE();
-                objUser.user_username = txtUsername.Text;
-                objUser.user_password = txtPassword.Text;
-
-                CMUserBE response = CMUserBL.login(objUser);
-                MessageBox.Show($"Bienvenido {response.user_permission.permission_description}!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
     }
 }

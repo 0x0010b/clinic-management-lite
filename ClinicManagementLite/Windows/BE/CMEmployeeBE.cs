@@ -8,7 +8,6 @@ namespace ClinicManagementLite.Windows.BE
 {
     class CMEmployeeBE : CMPersonBE
     {
-        public int employee_id                  = 0;
         public CMPositionBE employee_position   = new CMPositionBE();
         public CMAreaBE employee_area           = new CMAreaBE();
     }

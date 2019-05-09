@@ -9,6 +9,6 @@ namespace ClinicManagementLite.Windows.BE
 {
     class CMUserSessionBE
     {
-        public CMUserBE session_user;
+        public CMAccountBE session_account;
     }
 }

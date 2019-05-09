@@ -52,9 +52,9 @@
     <Compile Include="Windows\BE\CMPersonBE.cs" />
     <Compile Include="Windows\BE\CMPositionBE.cs" />
     <Compile Include="Windows\BE\CMTurnBE.cs" />
-    <Compile Include="Windows\BE\CMUserBE.cs" />
+    <Compile Include="Windows\BE\CMAccountBE.cs" />
     <Compile Include="Windows\BE\CMUserSessionBE.cs" />
-    <Compile Include="Windows\BL\CMUserBL.cs" />
+    <Compile Include="Windows\BL\CMAccountBL.cs" />
     <Compile Include="Windows\BL\CMUserSessionBL.cs" />
     <Compile Include="Windows\Views\Form1.cs">
       <SubType>Form</SubType>
@@ -76,7 +76,7 @@
     <Compile Include="Windows\Views\MDIMain.Designer.cs">
       <DependentUpon>MDIMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\DAL\CMUserDAL.cs" />
+    <Compile Include="Windows\DAL\CMAccountDAL.cs" />
     <Compile Include="Windows\Views\UserInfo.cs">
       <SubType>Form</SubType>
     </Compile>

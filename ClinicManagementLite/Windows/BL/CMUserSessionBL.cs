@@ -18,14 +18,14 @@ namespace ClinicManagementLite.Windows.BL
             return this.session;
         }
 
-        public void saveSession(CMUserBE user)
+        public void saveSession(CMAccountBE account)
         {
             if (this.session == null)
             {
                 this.session = new CMUserSessionBE();
             }
 
-            this.session.session_user = user;
+            this.session.session_account = account;
         }
 
         public void deleteSession()

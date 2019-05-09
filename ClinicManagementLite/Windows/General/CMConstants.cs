@@ -15,20 +15,37 @@ namespace ClinicManagementLite.Windows.General
 
     struct CMProcedures
     {
-        public static string usp_userLogin      = "usp_userLogin";
-        public static string usp_userCreate     = "usp_userCreate";
-        public static string usp_userRead       = "usp_userRead";
-        public static string usp_userReadById   = "usp_userReadById";
-        public static string usp_userUpdate     = "usp_userUpdate";
-        public static string usp_userDelete     = "usp_userDelete";
+        public static string usp_accountCreate      = "usp_accountCreate";
+        public static string usp_accountDelete      = "usp_accountDelete";
+        public static string usp_accountGetAll      = "usp_accountGetAll";
+        public static string usp_accountLogin       = "usp_accountLogin";
+        public static string usp_accountUpdate      = "usp_accountUpdate";
+        public static string usp_areaCreate         = "usp_areaCreate";
+        public static string usp_areaDelete         = "usp_areaDelete";
+        public static string usp_areaGetAll         = "usp_areaGetAll";
+        public static string usp_areaUpdate         = "usp_areaUpdate";
+        public static string usp_employeeCreate     = "usp_employeeCreate";
+        public static string usp_employeeGetAll     = "usp_employeeGetAll";
+        public static string usp_employeeUpdate     = "usp_employeeUpdate";
+        public static string usp_permissionCreate   = "usp_permissionCreate";
+        public static string usp_permissionDelete   = "usp_permissionDelete";
+        public static string usp_permissionGetAll   = "usp_permissionGetAll";
+        public static string usp_permissionUpdate   = "usp_permissionUpdate";
+        public static string usp_personCreate       = "usp_personCreate";
+        public static string usp_personDelete       = "usp_personDelete";
+        public static string usp_personUpdate       = "usp_personUpdate";
+        public static string usp_positionCreate     = "usp_positionCreate";
+        public static string usp_positionDelete     = "usp_positionCreate";
+        public static string usp_positionGetAll     = "usp_positionGetAll";
+        public static string usp_positionUpdate     = "usp_positionUpdate";
+
     }
 
     struct CMMessage
     {
         public struct Login
         {
-            public static string emptyUsername  = "Para continuar con el proceso, debes ingresar un usuario de 8 digitos.";
-            public static string emptyPassword  = "Para continuar con el proceso, debes ingresar una contrasena de 6 digitos.";
+            public static string accountNotFound = "La cuenta no esta registrada en la base de datos";
         }
     }
 }
