@@ -31,5 +31,10 @@ namespace ClinicManagementLite.Windows.Controllers
         {
             
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

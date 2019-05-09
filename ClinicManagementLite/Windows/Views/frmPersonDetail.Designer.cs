@@ -1,6 +1,6 @@
 ﻿namespace ClinicManagementLite.Windows.Controllers
 {
-    partial class frmDetail
+    partial class frmPersonDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,9 @@
             this.lblArea = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblPosition = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMedHistory = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserImage)).BeginInit();
             this.gbxMainInfo.SuspendLayout();
             this.gbxEmployeeInfo.SuspendLayout();
@@ -187,9 +189,9 @@
             this.lblAddress.AutoEllipsis = true;
             this.lblAddress.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(261, 118);
+            this.lblAddress.Location = new System.Drawing.Point(261, 115);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(298, 139);
+            this.lblAddress.Size = new System.Drawing.Size(298, 142);
             this.lblAddress.TabIndex = 2;
             this.lblAddress.Text = "-";
             // 
@@ -256,23 +258,24 @@
             // 
             // gbxEmployeeInfo
             // 
+            this.gbxEmployeeInfo.AutoSize = true;
             this.gbxEmployeeInfo.Controls.Add(this.label10);
             this.gbxEmployeeInfo.Controls.Add(this.lblArea);
             this.gbxEmployeeInfo.Controls.Add(this.label4);
             this.gbxEmployeeInfo.Controls.Add(this.lblPosition);
             this.gbxEmployeeInfo.Location = new System.Drawing.Point(12, 300);
+            this.gbxEmployeeInfo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
             this.gbxEmployeeInfo.Name = "gbxEmployeeInfo";
-            this.gbxEmployeeInfo.Size = new System.Drawing.Size(267, 175);
+            this.gbxEmployeeInfo.Size = new System.Drawing.Size(267, 142);
             this.gbxEmployeeInfo.TabIndex = 4;
             this.gbxEmployeeInfo.TabStop = false;
             this.gbxEmployeeInfo.Text = "Información de empleado";
-            this.gbxEmployeeInfo.Visible = false;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 97);
+            this.label10.Location = new System.Drawing.Point(19, 72);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 18);
             this.label10.TabIndex = 5;
@@ -282,7 +285,7 @@
             // 
             this.lblArea.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lblArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArea.Location = new System.Drawing.Point(33, 127);
+            this.lblArea.Location = new System.Drawing.Point(33, 100);
             this.lblArea.Name = "lblArea";
             this.lblArea.Size = new System.Drawing.Size(209, 18);
             this.lblArea.TabIndex = 6;
@@ -292,7 +295,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 31);
+            this.label4.Location = new System.Drawing.Point(19, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 18);
             this.label4.TabIndex = 3;
@@ -302,42 +305,81 @@
             // 
             this.lblPosition.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(33, 61);
+            this.lblPosition.Location = new System.Drawing.Point(33, 50);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(209, 18);
             this.lblPosition.TabIndex = 4;
             this.lblPosition.Text = "-";
             // 
-            // button1
+            // btnMedHistory
             // 
-            this.button1.Location = new System.Drawing.Point(334, 361);
-            this.button1.Margin = new System.Windows.Forms.Padding(10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMedHistory.AutoSize = true;
+            this.btnMedHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedHistory.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnMedHistory.Location = new System.Drawing.Point(301, 325);
+            this.btnMedHistory.Margin = new System.Windows.Forms.Padding(3, 3, 3, 40);
+            this.btnMedHistory.Name = "btnMedHistory";
+            this.btnMedHistory.Padding = new System.Windows.Forms.Padding(24, 6, 24, 6);
+            this.btnMedHistory.Size = new System.Drawing.Size(179, 43);
+            this.btnMedHistory.TabIndex = 5;
+            this.btnMedHistory.Text = "Historial medico";
+            this.btnMedHistory.UseVisualStyleBackColor = true;
+            this.btnMedHistory.Click += new System.EventHandler(this.btnMedHistory_Click);
             // 
-            // frmDetail
+            // btnEdit
+            // 
+            this.btnEdit.AutoSize = true;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnEdit.Location = new System.Drawing.Point(565, 325);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 3, 3, 40);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(24, 6, 24, 6);
+            this.btnEdit.Size = new System.Drawing.Size(107, 43);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Red;
+            this.btnDelete.Location = new System.Drawing.Point(757, 325);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 3, 3, 40);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(24, 6, 24, 6);
+            this.btnDelete.Size = new System.Drawing.Size(122, 43);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // frmPersonDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(895, 490);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(895, 451);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnMedHistory);
             this.Controls.Add(this.gbxEmployeeInfo);
             this.Controls.Add(this.gbxMainInfo);
             this.Controls.Add(this.pbxUserImage);
-            this.Name = "frmDetail";
+            this.Name = "frmPersonDetail";
             this.Text = "PersonInfo";
-            this.Load += new System.EventHandler(this.UserInfo_Load);
+            this.Load += new System.EventHandler(this.frmDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserImage)).EndInit();
             this.gbxMainInfo.ResumeLayout(false);
             this.gbxMainInfo.PerformLayout();
             this.gbxEmployeeInfo.ResumeLayout(false);
             this.gbxEmployeeInfo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -366,6 +408,8 @@
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPosition;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMedHistory;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
