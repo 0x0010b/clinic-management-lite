@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class CMAreaBE
+    public class CMAreaBE
     {
         public int area_id              = 0;
         public string area_description  = "";

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class CMAreaBL
+    public class CMAreaBL
     {
         static public void create() { }
 

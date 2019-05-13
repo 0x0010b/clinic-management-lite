@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class CMPersonBE
+    public class CMPersonBE
     {
         public int person_dni               = 0;
         public string person_name           = "";

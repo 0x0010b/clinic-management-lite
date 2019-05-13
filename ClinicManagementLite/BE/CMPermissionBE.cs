@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace BE
 {
-    class CMPermissionBE
+    public class CMPermissionBE
     {
         public int permission_id                = 0;
         public string permission_description    = "";

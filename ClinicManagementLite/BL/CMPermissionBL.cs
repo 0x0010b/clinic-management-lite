@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class CMPermissionBL
+    public class CMPermissionBL
     {
         static public void create() { }
 

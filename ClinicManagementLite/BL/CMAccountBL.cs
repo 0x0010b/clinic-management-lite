@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class CMAccountBL
+    public class CMAccountBL
     {
         static public void login() { }
 

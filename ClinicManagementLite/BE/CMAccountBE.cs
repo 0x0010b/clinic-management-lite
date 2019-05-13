@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace BE
 {
-    class CMAccountBE
+    public class CMAccountBE
     {
         public int account_id                       = 0;
         public string account_username              = "";

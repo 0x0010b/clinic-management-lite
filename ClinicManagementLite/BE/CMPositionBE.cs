@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class CMPositionBE
+    public class CMPositionBE
     {
         public int position_id              = 0;
         public string position_description  = "";

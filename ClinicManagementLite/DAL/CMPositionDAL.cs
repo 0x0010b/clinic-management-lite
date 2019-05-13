@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class CMPositionDAL
+    public class CMPositionDAL
     {
         static public void create() { }
 

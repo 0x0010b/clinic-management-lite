@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace BE
 {
-    class CMClientBE : CMPersonBE
+    public class CMClientBE : CMPersonBE
     {
         public string client_weight         = "";
         public string client_height         = "";

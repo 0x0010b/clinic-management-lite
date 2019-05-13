@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class CMTurnBE
+    public class CMTurnBE
     {
         public int turn_id                  = 0;
         public DayOfWeek turn_day           = DayOfWeek.Sunday;

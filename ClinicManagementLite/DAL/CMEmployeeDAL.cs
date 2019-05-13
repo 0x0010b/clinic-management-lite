@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class CMEmployeeDAL
+    public class CMEmployeeDAL
     {
         static public void create() { }
 

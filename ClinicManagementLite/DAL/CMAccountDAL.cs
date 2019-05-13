@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class CMAccountDAL
+    public class CMAccountDAL
     {
         static public void login() { }
 
-        static public void create() { }
+        static public void create(CMAccountBE account) { }
 
         static public void delete() { }
 

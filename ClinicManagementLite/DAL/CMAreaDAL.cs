@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class CMAreaDAL
+    public class CMAreaDAL
     {
         static public void create() { }
 

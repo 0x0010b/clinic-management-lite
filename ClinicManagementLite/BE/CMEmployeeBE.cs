@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace BE
 {
-    class CMEmployeeBE : CMPersonBE
+    public class CMEmployeeBE : CMPersonBE
     {
         public CMAreaBE area            = new CMAreaBE();
         public CMPositionBE position    = new CMPositionBE();
