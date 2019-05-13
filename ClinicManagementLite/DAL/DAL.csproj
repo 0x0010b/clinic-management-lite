@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CMAccountDAL.cs" />
     <Compile Include="CMAreaDAL.cs" />
+    <Compile Include="CMDatabase.cs" />
     <Compile Include="CMEmployeeDAL.cs" />
     <Compile Include="CMPermissionDAL.cs" />
     <Compile Include="CMPersonDAL.cs" />
