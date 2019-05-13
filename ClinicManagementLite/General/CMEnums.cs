@@ -18,4 +18,20 @@ namespace General
         oldest,
         recent
     }
+
+    public enum Permission
+    {
+        admin = 0,
+        employee
+    }
+
+    public enum View
+    {
+        account = 0,
+        permission,
+        employee,
+        client,
+        position,
+        area
+    }
 }

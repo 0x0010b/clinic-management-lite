@@ -6,13 +6,6 @@ using System.Threading.Tasks;
 
 namespace General
 {
-    public struct CMDatabase
-    {
-        private static string server                = "localhost";
-        private static string database              = "clinicManagementLite";
-        public static string connection             = $"Server={server};Database={database};Integrated Security=true";
-    }
-
     public struct CMProcedure
     {
         public static string usp_accountCreate      = "usp_accountCreate";

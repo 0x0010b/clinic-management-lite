@@ -14,7 +14,7 @@ namespace DAL
     {
         static public CMAccountBE login(CMAccountBE account)
         {
-            SqlConnection con = new SqlConnection(CMDatabase.connection);
+            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
@@ -46,7 +46,7 @@ namespace DAL
 
         static public void create(CMAccountBE account)
         {
-            SqlConnection con = new SqlConnection(CMDatabase.connection);
+            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
@@ -72,7 +72,7 @@ namespace DAL
 
         static public void delete(CMAccountBE account)
         {
-            SqlConnection con = new SqlConnection(CMDatabase.connection);
+            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
@@ -95,7 +95,7 @@ namespace DAL
 
         static public List<CMAccountBE> getAll(Sort sort)
         {
-            SqlConnection con = new SqlConnection(CMDatabase.connection);
+            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
@@ -127,7 +127,7 @@ namespace DAL
 
         static public void update(CMAccountBE account)
         {
-            SqlConnection con = new SqlConnection(CMDatabase.connection);
+            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
