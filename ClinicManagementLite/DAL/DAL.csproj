@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CMAccountDAL.cs" />
+    <Compile Include="CMAreaDAL.cs" />
+    <Compile Include="CMEmployeeDAL.cs" />
+    <Compile Include="CMPermissionDAL.cs" />
+    <Compile Include="CMPersonDAL.cs" />
+    <Compile Include="CMPositionDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
