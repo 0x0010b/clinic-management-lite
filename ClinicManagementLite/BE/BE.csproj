@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CMAccountBE.cs" />
+    <Compile Include="CMEmployeeBE.cs" />
+    <Compile Include="CMPositionBE.cs" />
+    <Compile Include="CMAreaBE.cs" />
+    <Compile Include="CMClientBE.cs" />
+    <Compile Include="CMPermissionBE.cs" />
+    <Compile Include="CMPersonBE.cs" />
+    <Compile Include="CMTurnBE.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -69,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\General\General.csproj">
+      <Project>{23F4D540-ACA8-4793-9072-8F9ED56A32B0}</Project>
+      <Name>General</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
