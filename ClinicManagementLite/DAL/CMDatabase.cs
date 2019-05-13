@@ -10,7 +10,7 @@ namespace DAL
     {
         static public string getConnection()
         {
-            string con = ConfigurationManager.ConnectionStrings["Ventas"].ConnectionString;
+            string con = ConfigurationManager.ConnectionStrings["clinicManagementLite"].ConnectionString;
             return object.ReferenceEquals(con, String.Empty) ? String.Empty : con;
         }
     }
