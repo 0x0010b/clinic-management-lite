@@ -11,4 +11,11 @@ namespace General
         male = 0,
         female
     }
+
+    public enum Sort
+    {
+        name = 0,
+        oldest,
+        recent
+    }
 }

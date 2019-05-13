@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BE;
+using DAL;
+using General;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +11,64 @@ namespace BL
 {
     public class CMAccountBL
     {
-        static public void login() { }
+        static public CMAccountBE login(CMAccountBE account)
+        {
+            try
+            {
+                return CMAccountDAL.login(account);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        static public void create() { }
+        static public void create(CMAccountBE account)
+        {
+            try
+            {
+                CMAccountDAL.create(account);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        static public void delete() { }
+        static public void delete(CMAccountBE account)
+        {
+            try
+            {
+                CMAccountDAL.delete(account);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        static public void getAll() { }
+        static public List<CMAccountBE> getAll(Sort sort = Sort.name)
+        {
+            try
+            {
+                return CMAccountDAL.getAll(sort);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-        static public void update() { }
+        static public void update(CMAccountBE account)
+        {
+            try
+            {
+                CMAccountDAL.update(account);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

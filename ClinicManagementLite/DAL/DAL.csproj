@@ -80,6 +80,10 @@
       <Project>{C1E17244-8DC6-46A4-AE2D-DCD6D09CB922}</Project>
       <Name>BE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\General\General.csproj">
+      <Project>{23f4d540-aca8-4793-9072-8f9ed56a32b0}</Project>
+      <Name>General</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
