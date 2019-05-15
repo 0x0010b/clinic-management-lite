@@ -41,7 +41,7 @@ namespace DAL
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionGetAll);
+                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionGetAll, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@idVal", permission.permission_id); // TODO: - Fix

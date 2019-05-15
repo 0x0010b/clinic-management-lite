@@ -15,7 +15,18 @@ namespace BL
         {
             try
             {
-                return CMAccountDAL.login(account);
+                if (account.account_username.Length < 8)
+                {
+                    throw new Exception(CMMessage.Login.usernameMinString);
+                }
+                else if (account.account_password.Length < 6)
+                {
+                    throw new Exception(CMMessage.Login.passwordMinString);
+                }
+                else
+                {
+                    return CMAccountDAL.login(account);
+                }
             }
             catch (Exception ex)
             {

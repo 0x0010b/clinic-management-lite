@@ -13,9 +13,12 @@ namespace BE
         public string permission_description    = "";
         public DateTime permission_createdAt    = new DateTime();
 
+        public CMPermissionBE() { }
+
         public CMPermissionBE(SqlDataReader reader)
         {
-            // TODO: - Implement parsing
+            this.permission_id          = int.Parse(reader["permission_id"].ToString());
+            this.permission_description = reader["permission_description"].ToString();
         }
     }
 }

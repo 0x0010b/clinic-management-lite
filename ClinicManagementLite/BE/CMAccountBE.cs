@@ -16,9 +16,21 @@ namespace BE
         public CMPermissionBE account_permission    = new CMPermissionBE();
         public DateTime account_createdAt           = new DateTime();
 
+        public CMAccountBE() { }
+
+        public CMAccountBE(String username, String password)
+        {
+            this.account_username = username;
+            this.account_password = password;
+        }
+
         public CMAccountBE(SqlDataReader reader)
         {
-            // TODO: - Implement parsing
+            this.account_id         = int.Parse(reader["account_id"].ToString());
+            this.account_username   = reader["account_username"].ToString();
+            this.account_password   = reader["account_password"].ToString();
+            this.account_employeeID = reader["employee_id"].ToString();
+            this.account_permission = new CMPermissionBE(reader);
         }
     }
 }

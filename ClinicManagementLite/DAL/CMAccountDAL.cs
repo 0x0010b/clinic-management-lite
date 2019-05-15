@@ -18,7 +18,8 @@ namespace DAL
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_accountLogin);
+                SqlCommand cmd = new SqlCommand(CMProcedure.usp_accountLogin, con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@nameVal", account.account_username);
                 cmd.Parameters.AddWithValue("@passVal", account.account_password);
@@ -76,7 +77,7 @@ namespace DAL
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_accountDelete);
+                SqlCommand cmd = new SqlCommand(CMProcedure.usp_accountDelete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@idVal", account.account_id);
