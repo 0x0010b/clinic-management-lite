@@ -15,6 +15,16 @@ namespace BE
 
         public CMPermissionBE() { }
 
+        public CMPermissionBE(String description)
+        {
+            this.permission_description = description;
+        }
+
+        public CMPermissionBE(int id)
+        {
+            this.permission_id = id;
+        }
+
         public CMPermissionBE(SqlDataReader reader)
         {
             this.permission_id          = int.Parse(reader["permission_id"].ToString());

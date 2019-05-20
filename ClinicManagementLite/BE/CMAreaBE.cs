@@ -15,6 +15,11 @@ namespace BE
 
         public CMAreaBE() { }
 
+        public CMAreaBE(String description)
+        {
+            this.area_description = description;
+        }
+
         public CMAreaBE(SqlDataReader reader)
         {
             // TODO: - Implement parsing

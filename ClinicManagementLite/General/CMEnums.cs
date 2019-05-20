@@ -19,19 +19,11 @@ namespace General
         recent
     }
 
-    public enum Permission
-    {
-        admin = 0,
-        employee
-    }
-
-    public enum View
+    public enum FormViewKey
     {
         account = 0,
         permission,
-        employee,
-        client,
-        position,
-        area
+        area,
+        position
     }
 }

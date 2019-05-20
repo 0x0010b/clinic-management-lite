@@ -3,6 +3,7 @@ using DAL;
 using General;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,11 @@ namespace BL
             }
         }
 
-        static public void delete(CMPermissionBE permission)
+        static public void delete(int id)
         {
             try
             {
-                CMPermissionDAL.delete(permission);
+                CMPermissionDAL.delete(id);
             }
             catch (Exception ex)
             {
@@ -35,7 +36,7 @@ namespace BL
             }
         }
 
-        static public List<CMPermissionBE> getAll(Sort sort = Sort.name)
+        static public DataTable getAll(Sort sort = Sort.name)
         {
             try
             {

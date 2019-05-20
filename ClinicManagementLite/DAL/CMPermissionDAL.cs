@@ -35,16 +35,16 @@ namespace DAL
             }
         }
 
-        static public void delete(CMPermissionBE permission)
+        static public void delete(int id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionGetAll, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionDelete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", permission.permission_id); // TODO: - Fix
+                cmd.Parameters.AddWithValue("@idVal", id); // TODO: - Fix
 
                 cmd.ExecuteNonQuery();
             }
@@ -58,7 +58,7 @@ namespace DAL
             }
         }
 
-        static public List<CMPermissionBE> getAll(Sort sort)
+        static public DataTable getAll(Sort sort)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -69,16 +69,12 @@ namespace DAL
 
                 cmd.Parameters.AddWithValue("@sort", (int)sort);
 
-                SqlDataReader dr = cmd.ExecuteReader();
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-                List<CMPermissionBE> arrayPermissions = new List<CMPermissionBE>();
+                da.Fill(ds, "Permission");
 
-                if (dr.Read())
-                {
-                    arrayPermissions.Add(new CMPermissionBE(dr));
-                }
-
-                return arrayPermissions;
+                return ds.Tables["Permission"];
             }
             catch (Exception ex)
             {
