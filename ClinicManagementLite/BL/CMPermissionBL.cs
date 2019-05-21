@@ -4,6 +4,7 @@ using General;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,17 +19,25 @@ namespace BL
             {
                 CMPermissionDAL.create(permission);
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
 
-        static public void delete(int id)
+        static public void delete(CMPermissionBE permission)
         {
             try
             {
-                CMPermissionDAL.delete(id);
+                CMPermissionDAL.delete(permission);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -42,6 +51,10 @@ namespace BL
             {
                 return CMPermissionDAL.getAll(sort);
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -53,6 +66,10 @@ namespace BL
             try
             {
                 CMPermissionDAL.update(permission);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {

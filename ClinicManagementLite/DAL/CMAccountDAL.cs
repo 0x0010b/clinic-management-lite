@@ -35,6 +35,10 @@ namespace DAL
                     throw new Exception(CMMessage.Login.accountNotFound);
                 }
             }
+            catch(SqlException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -56,10 +60,14 @@ namespace DAL
 
                 cmd.Parameters.AddWithValue("@nameVal", account.account_username);
                 cmd.Parameters.AddWithValue("@passVal", account.account_password);
-                cmd.Parameters.AddWithValue("@permVal", account.account_permission.permission_id); // TODO: - fix
+                cmd.Parameters.AddWithValue("@permVal", account.account_permission.permission_id);
                 cmd.Parameters.AddWithValue("@emplVal", account.account_employeeID);
 
                 cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -84,6 +92,10 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -94,7 +106,7 @@ namespace DAL
             }
         }
 
-        static public List<CMAccountBE> getAll(Sort sort)
+        static public DataTable getAll(Sort sort)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -103,18 +115,18 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand(CMProcedure.usp_accountGetAll, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@sort", (int) sort);
+                cmd.Parameters.AddWithValue("@sort", (int)sort);
 
-                SqlDataReader dr = cmd.ExecuteReader();
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-                List<CMAccountBE> arrayAccounts = new List<CMAccountBE>();
+                da.Fill(ds, "Account");
 
-                if (dr.Read())
-                {
-                    arrayAccounts.Add(new CMAccountBE(dr));
-                }
-
-                return arrayAccounts;
+                return ds.Tables["Account"];
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -138,10 +150,14 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@idVal", account.account_id);
                 cmd.Parameters.AddWithValue("@nameVal", account.account_username);
                 cmd.Parameters.AddWithValue("@passVal", account.account_password);
-                cmd.Parameters.AddWithValue("@permVal", account.account_permission.permission_id); // TODO: - fix
+                cmd.Parameters.AddWithValue("@permVal", account.account_permission.permission_id);
                 cmd.Parameters.AddWithValue("@emplVal", account.account_employeeID);
 
                 cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {

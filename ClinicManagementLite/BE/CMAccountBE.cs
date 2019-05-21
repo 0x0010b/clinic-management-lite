@@ -31,6 +31,7 @@ namespace BE
             this.account_password   = reader["account_password"].ToString();
             this.account_employeeID = reader["employee_id"].ToString();
             this.account_permission = new CMPermissionBE(reader);
+            this.account_createdAt  = Convert.ToDateTime(reader["account_created_at"].ToString());
         }
     }
 }

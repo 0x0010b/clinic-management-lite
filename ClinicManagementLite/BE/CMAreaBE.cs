@@ -20,9 +20,16 @@ namespace BE
             this.area_description = description;
         }
 
+        public CMAreaBE(int id)
+        {
+            this.area_id = id;
+        }
+
         public CMAreaBE(SqlDataReader reader)
         {
-            // TODO: - Implement parsing
+            this.area_id             = int.Parse(reader["area_id"].ToString());
+            this.area_description    = reader["area_description"].ToString();
+            this.area_createdAt      = Convert.ToDateTime(reader["area_created_at"].ToString());
         }
     }
 }

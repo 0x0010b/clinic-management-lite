@@ -29,6 +29,7 @@ namespace BE
         {
             this.permission_id          = int.Parse(reader["permission_id"].ToString());
             this.permission_description = reader["permission_description"].ToString();
+            this.permission_createdAt   = Convert.ToDateTime(reader["permisison_created_at"].ToString());
         }
     }
 }

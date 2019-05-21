@@ -3,6 +3,8 @@ using DAL;
 using General;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +30,10 @@ namespace BL
                     return CMAccountDAL.login(account);
                 }
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -39,6 +45,10 @@ namespace BL
             try
             {
                 CMAccountDAL.create(account);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -52,17 +62,25 @@ namespace BL
             {
                 CMAccountDAL.delete(account);
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
 
-        static public List<CMAccountBE> getAll(Sort sort = Sort.name)
+        static public DataTable getAll(Sort sort = Sort.name)
         {
             try
             {
                 return CMAccountDAL.getAll(sort);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -75,6 +93,10 @@ namespace BL
             try
             {
                 CMAccountDAL.update(account);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {

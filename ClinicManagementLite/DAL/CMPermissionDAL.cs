@@ -25,6 +25,10 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -35,7 +39,7 @@ namespace DAL
             }
         }
 
-        static public void delete(int id)
+        static public void delete(CMPermissionBE permission)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -44,9 +48,13 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionDelete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", id); // TODO: - Fix
+                cmd.Parameters.AddWithValue("@idVal", permission.permission_id);
 
                 cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -76,6 +84,10 @@ namespace DAL
 
                 return ds.Tables["Permission"];
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -95,10 +107,14 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionUpdate, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", permission.permission_id); // TODO: - Fix
+                cmd.Parameters.AddWithValue("@idVal", permission.permission_id);
                 cmd.Parameters.AddWithValue("@descVal", permission.permission_description);
 
                 cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
