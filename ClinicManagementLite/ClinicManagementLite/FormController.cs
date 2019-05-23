@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace ClinicManagementLite
 {
-    public interface FormView
+    public interface FormController
     {
         void setupFormList(Form ctx);
         void setupFormMaintenance(Form ctx);

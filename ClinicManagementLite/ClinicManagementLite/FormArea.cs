@@ -12,36 +12,36 @@ using General;
 
 namespace ClinicManagementLite
 {
-    class FormPermission : FormController
+    class FormArea : FormController
     {
         public void actionDelete(Form ctx)
         {
             FormList form = (FormList)ctx;
 
             int id = int.Parse(form.dgvList.CurrentRow.Cells[0].Value.ToString());
-            CMPermissionBL.delete(new CMPermissionBE(id));
+            CMAreaBL.delete(new CMAreaBE(id));
         }
 
         public void actionInsert(Form ctx)
         {
             FormMaintenance01 form = (FormMaintenance01)ctx;
-            CMPermissionBL.create(new CMPermissionBE(form.txtDescription.Text));
+            CMAreaBL.create(new CMAreaBE(form.txtDescription.Text));
         }
 
         public void actionUpdate(Form ctx)
         {
             FormMaintenance01 form = (FormMaintenance01)ctx;
-            CMPermissionBL.update(new CMPermissionBE(form.instanceID, form.txtDescription.Text));
+            CMAreaBL.update(new CMAreaBE(form.instanceID, form.txtDescription.Text));
         }
 
         public void setupFormList(Form ctx)
         {
             FormList form = (FormList)ctx;
 
-            DataTable dtList = CMPermissionBL.getAll();
+            DataTable dtList = CMAreaBL.getAll();
 
-            form.Text = "Mantenimiento - Permiso";
-            form.lblTitle.Text = $"Permisos - ({dtList.Rows.Count})";
+            form.Text = "Mantenimiento - Area";
+            form.lblTitle.Text = $"Areas - ({dtList.Rows.Count})";
 
             form.dgvList.DataSource = dtList;
         }
@@ -50,16 +50,16 @@ namespace ClinicManagementLite
         {
             FormMaintenance01 form = (FormMaintenance01)ctx;
 
-            form.Text = form.isEditing ? "Actualizar Permiso" : "Insertar Permiso";
+            form.Text = form.isEditing ? "Actualizar Area" : "Insertar Area";
             form.btnAction.Text = form.isEditing ? "Actualizar" : "Insertar";
-            form.gbPermission.Enabled = true;
+            form.gbPermission.Enabled = false;
 
             if (form.isEditing)
             {
                 try
                 {
-                    CMPermissionBE permission = CMPermissionBL.get(new CMPermissionBE(form.instanceID));
-                    form.txtDescription.Text = permission.permission_description;
+                    CMAreaBE area = CMAreaBL.get(new CMAreaBE(form.instanceID));
+                    form.txtDescription.Text = area.area_description;
                 }
                 catch(Exception ex)
                 {

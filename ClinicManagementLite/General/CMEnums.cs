@@ -19,7 +19,7 @@ namespace General
         recent
     }
 
-    public enum FormViewKey
+    public enum FormControllerKey
     {
         account = 0,
         permission,

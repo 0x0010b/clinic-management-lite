@@ -7,14 +7,18 @@ using General;
 
 namespace ClinicManagementLite
 {
-    class FormViewFactory
+    public class FormControllerFactory
     {
-        public FormView getInstance(FormViewKey key)
+        public FormController getInstance(FormControllerKey key)
         {
             switch(key)
             {
-                case FormViewKey.permission:
+                case FormControllerKey.permission:
                     return new FormPermission();
+                case FormControllerKey.position:
+                    return new FormPosition();
+                case FormControllerKey.area:
+                    return new FormArea();
 
                 default:
                     return null;

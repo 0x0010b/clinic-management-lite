@@ -35,11 +35,11 @@ namespace BL
         {
             IsolatedStorageFile isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.User | IsolatedStorageScope.Assembly, null, null);
 
-            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(this.settingsFile, FileMode.OpenOrCreate, isoStore))
+            using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(this.settingsFile, FileMode.Create, isoStore))
             {
                 using (StreamWriter writer = new StreamWriter(isoStream))
                 {
-                    writer.WriteLine(username);
+                    writer.Write(username);
                 }
             }
         }

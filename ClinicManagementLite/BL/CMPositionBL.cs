@@ -45,6 +45,22 @@ namespace BL
             }
         }
 
+        static public CMPositionBE get(CMPositionBE position)
+        {
+            try
+            {
+                return CMPositionDAL.get(position);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         static public DataTable getAll(Sort sort = Sort.name)
         {
             try

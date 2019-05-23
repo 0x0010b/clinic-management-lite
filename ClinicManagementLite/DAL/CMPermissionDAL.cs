@@ -66,6 +66,42 @@ namespace DAL
             }
         }
 
+        static public CMPermissionBE get(CMPermissionBE permission)
+        {
+            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionGet, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idVal", permission.permission_id);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    return new CMPermissionBE(dr);
+                }
+                else
+                {
+                    throw new Exception(CMMessage.Maintenance.notFoundInstance);
+                }
+            }
+            catch(SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) { con.Close(); }
+            }
+        }
+
         static public DataTable getAll(Sort sort)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());

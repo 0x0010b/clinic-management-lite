@@ -15,7 +15,13 @@ namespace BE
 
         public CMPermissionBE() { }
 
-        public CMPermissionBE(String description)
+        public CMPermissionBE(int id, string description)
+        {
+            this.permission_id = id;
+            this.permission_description = description;
+        }
+
+        public CMPermissionBE(string description)
         {
             this.permission_description = description;
         }
@@ -29,7 +35,7 @@ namespace BE
         {
             this.permission_id          = int.Parse(reader["permission_id"].ToString());
             this.permission_description = reader["permission_description"].ToString();
-            this.permission_createdAt   = Convert.ToDateTime(reader["permisison_created_at"].ToString());
+            this.permission_createdAt   = Convert.ToDateTime(reader["permission_created_at"].ToString());
         }
     }
 }

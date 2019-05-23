@@ -45,6 +45,22 @@ namespace BL
             }
         }
 
+        static public CMAreaBE get(CMAreaBE area)
+        {
+            try
+            {
+                return CMAreaDAL.get(area);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         static public DataTable getAll(Sort sort = Sort.name)
         {
             try

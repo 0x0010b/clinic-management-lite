@@ -1,8 +1,10 @@
 ﻿using ClinicManagementLite;
+using General;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,44 +15,77 @@ namespace ClinicManagementLite
 {
     public partial class FormList : Form
     {
-        public FormView objFormView;
+        public FormController objFormController;
 
         public FormList()
         {
             InitializeComponent();
         }
 
-        public int getCellId()
-        {
-            return int.Parse(this.dgvList.CurrentRow.Cells[0].Value.ToString());
-        }
-
         private void FormList_Load(object sender, EventArgs e)
         {
-            this.objFormView.setupFormList(this);
+            this.objFormController.setupFormList(this);
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            this.objFormView.actionDelete(this);
+            DialogResult result = MessageBox.Show(CMMessage.Maintenance.deleteInstance, CMMessage.Alert.title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No) { return; }
+
+            try
+            {
+                this.objFormController.actionDelete(this);
+                this.objFormController.setupFormList(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {
-            // TODO: - Fix validation
-            // TODO: - Add SqlException in all methods
-            if (this.objFormView.GetType().ToString() == "ClinicManagementLite.FormPermission")
+            switch(this.objFormController.GetType().ToString())
             {
-                FormMaintenance01 form = new FormMaintenance01();
+                case "ClinicManagementLite.FormPermission":
+                case "ClinicManagementLite.FormArea":
+                case "ClinicManagementLite.FormPosition":
 
-                form.objFormView = this.objFormView;
-                form.isEditing = false;
+                    FormMaintenance01 form = new FormMaintenance01();
 
-                form.Show();
+                    form.objFormController = this.objFormController;
+                    form.isEditing = false;
+                    form.ShowDialog(this);
+
+                    this.objFormController.setupFormList(this);
+                    break;
+
+                default:
+                    break;
             }
-            else
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            switch (this.objFormController.GetType().ToString())
             {
-                Console.WriteLine("MIERDA");
+                case "ClinicManagementLite.FormPermission":
+                case "ClinicManagementLite.FormArea":
+                case "ClinicManagementLite.FormPosition":
+
+                    FormMaintenance01 form = new FormMaintenance01();
+
+                    form.objFormController = this.objFormController;
+                    form.instanceID = int.Parse(dgvList.CurrentRow.Cells[0].Value.ToString());
+                    form.isEditing = true;
+                    form.ShowDialog(this);
+
+                    this.objFormController.setupFormList(this);
+                    break;
+
+                default:
+                    break;
             }
         }
     }

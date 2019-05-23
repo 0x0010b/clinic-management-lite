@@ -45,6 +45,22 @@ namespace BL
             }
         }
 
+        static public CMPermissionBE get(CMPermissionBE permission)
+        {
+            try
+            {
+                return CMPermissionDAL.get(permission);
+            }
+            catch(SqlException ex)
+            {
+                throw ex;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         static public DataTable getAll(Sort sort = Sort.name)
         {
             try

@@ -38,7 +38,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvList = new System.Windows.Forms.DataGridView();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -85,6 +84,7 @@
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Editar";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // btnInsert
             // 
@@ -148,21 +148,11 @@
             this.dgvList.Size = new System.Drawing.Size(543, 369);
             this.dgvList.TabIndex = 8;
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(597, 415);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(176, 23);
-            this.btnLogout.TabIndex = 7;
-            this.btnLogout.Text = "Cerrar Sesion";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            // 
             // FormList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -191,6 +181,5 @@
         public System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.Button btnDelete;
         public System.Windows.Forms.DataGridView dgvList;
-        public System.Windows.Forms.Button btnLogout;
     }
 }

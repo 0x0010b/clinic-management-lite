@@ -16,16 +16,7 @@ namespace ClinicManagementLite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            // Factory creado
-            FormViewFactory factory = new FormViewFactory();
-
-            // Selecciono Permiso
-            FormList formList = new FormList();
-            formList.objFormView = factory.getInstance(General.FormViewKey.permission);
-            // Muestro form
-
-            Application.Run(formList);
+            Application.Run(new FormMain());
         }
     }
 }

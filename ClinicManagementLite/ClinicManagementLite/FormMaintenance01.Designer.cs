@@ -95,7 +95,7 @@
             this.cbxRead.Text = "Lectura";
             this.cbxRead.UseVisualStyleBackColor = true;
             // 
-            // FormOperation01
+            // FormMaintenance01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,10 +105,10 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FormOperation01";
+            this.Name = "FormMaintenance01";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento";
-            this.Load += new System.EventHandler(this.FormOperation01_Load);
+            this.Load += new System.EventHandler(this.FormMaintenance01_Load);
             this.gbPermission.ResumeLayout(false);
             this.gbPermission.PerformLayout();
             this.ResumeLayout(false);

@@ -15,6 +15,7 @@ namespace General
         public static string usp_accountUpdate      = "usp_accountUpdate";
         public static string usp_areaCreate         = "usp_areaCreate";
         public static string usp_areaDelete         = "usp_areaDelete";
+        public static string usp_areaGet            = "usp_areaGet";
         public static string usp_areaGetAll         = "usp_areaGetAll";
         public static string usp_areaUpdate         = "usp_areaUpdate";
         public static string usp_employeeCreate     = "usp_employeeCreate";
@@ -22,13 +23,15 @@ namespace General
         public static string usp_employeeUpdate     = "usp_employeeUpdate";
         public static string usp_permissionCreate   = "usp_permissionCreate";
         public static string usp_permissionDelete   = "usp_permissionDelete";
+        public static string usp_permissionGet      = "usp_permissionGet";
         public static string usp_permissionGetAll   = "usp_permissionGetAll";
         public static string usp_permissionUpdate   = "usp_permissionUpdate";
         public static string usp_personCreate       = "usp_personCreate";
         public static string usp_personDelete       = "usp_personDelete";
         public static string usp_personUpdate       = "usp_personUpdate";
         public static string usp_positionCreate     = "usp_positionCreate";
-        public static string usp_positionDelete     = "usp_positionCreate";
+        public static string usp_positionDelete     = "usp_positionDelete";
+        public static string usp_positionGet        = "usp_positionGet";
         public static string usp_positionGetAll     = "usp_positionGetAll";
         public static string usp_positionUpdate     = "usp_positionUpdate";
     }
@@ -39,6 +42,17 @@ namespace General
         {
             public static string title              = "Clinic Management Lite";
             public static string titleError         = "Clinic Management Lite";
+        }
+
+        public struct Session
+        {
+            public static string logout             = "Seguro que desea cerrar sesion?";
+        }
+
+        public struct Maintenance
+        {
+            public static string deleteInstance     = "Seguro que desea eliminar este registro?";
+            public static string notFoundInstance   = "No se encontro registro en nuestra base de datos.";
         }
 
         public struct Login
