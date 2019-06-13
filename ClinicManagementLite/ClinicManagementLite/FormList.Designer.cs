@@ -98,25 +98,27 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(582, 69);
+            this.groupBox1.Location = new System.Drawing.Point(597, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(206, 101);
+            this.groupBox1.Size = new System.Drawing.Size(212, 101);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda:";
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Controls.Add(this.btnInsert);
-            this.groupBox2.Location = new System.Drawing.Point(582, 190);
+            this.groupBox2.Location = new System.Drawing.Point(596, 185);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(206, 127);
+            this.groupBox2.Size = new System.Drawing.Size(212, 127);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mantenimiento:";
@@ -145,14 +147,14 @@
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.RowHeadersVisible = false;
-            this.dgvList.Size = new System.Drawing.Size(543, 369);
+            this.dgvList.Size = new System.Drawing.Size(567, 372);
             this.dgvList.TabIndex = 8;
             // 
             // FormList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(824, 453);
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

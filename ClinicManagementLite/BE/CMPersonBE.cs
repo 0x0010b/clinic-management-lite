@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace BE
 {
@@ -20,9 +21,80 @@ namespace BE
         public Boolean person_isActive      = false;
         public DateTime person_createdAt    = new DateTime();
 
-        public CMPersonBE()
+        public CMPersonBE() { }
+
+        public CMPersonBE(SqlDataReader reader)
         {
-            // TODO: - Implement parsing
+            this.person_dni         = int.Parse(reader["person_dni"].ToString());
+            this.person_name        = reader["person_name"].ToString();
+            this.person_lastname    = reader["person_lastname"].ToString();
+            this.person_phone       = reader["person_phone"].ToString();
+            this.person_birthday    = Convert.ToDateTime(reader["person_birthday"].ToString());
+            this.person_address     = reader["person_address"].ToString();
+            this.person_gender      = (int.Parse(reader["person_gender"].ToString())  == (int)Gender.male) ? Gender.male : Gender.female;
+            this.person_image       = reader["person_image"].ToString();
+            this.person_isActive    = (bool)reader["person_isActive"];
+            this.person_createdAt   = Convert.ToDateTime(reader["person_createdAt"].ToString());
+        }
+
+        public int Dni
+        {
+            get { return person_dni; }
+            set { person_dni = value; }
+        }
+
+        public string Name
+        {
+            get { return person_name; }
+            set { person_name = value; }
+        }
+
+        public string Lastname
+        {
+            get { return person_lastname; }
+            set { person_lastname = value; }
+        }
+
+        public string Phone
+        {
+            get { return person_phone; }
+            set { person_phone = value; }
+        }
+
+        public DateTime Birthday
+        {
+            get { return person_birthday; }
+            set { person_birthday = value; }
+        }
+
+        public string Address
+        {
+            get { return person_address; }
+            set { person_address = value; }
+        }
+
+        public Gender Gender
+        {
+            get { return person_gender; }
+            set { person_gender = value; }
+        }
+
+         public string Image
+        {
+            get { return person_image; }
+            set { person_image = value; }
+        }
+
+        public Boolean IsActive
+        {
+            get { return person_isActive; }
+            set { person_isActive = value; }
+        }
+
+        public DateTime CreatedAt
+        {
+            get { return person_createdAt; }
+            set { person_createdAt = value; }
         }
     }
 }

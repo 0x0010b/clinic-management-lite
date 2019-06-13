@@ -71,6 +71,7 @@
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormArea.cs" />
+    <Compile Include="FormPerson.cs" />
     <Compile Include="FormPosition.cs" />
     <Compile Include="FormPermission.cs" />
     <Compile Include="FormControllerFactory.cs" />

@@ -24,6 +24,9 @@ namespace General
         account = 0,
         permission,
         area,
-        position
+        position,
+        person,
+        employee,
+        client
     }
 }

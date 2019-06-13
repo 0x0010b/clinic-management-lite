@@ -26,6 +26,8 @@ namespace General
         public static string usp_permissionGet      = "usp_permissionGet";
         public static string usp_permissionGetAll   = "usp_permissionGetAll";
         public static string usp_permissionUpdate   = "usp_permissionUpdate";
+        public static string usp_personGet          = "usp_personGet";
+        public static string usp_personGetAll       = "usp_personGetAll";
         public static string usp_personCreate       = "usp_personCreate";
         public static string usp_personDelete       = "usp_personDelete";
         public static string usp_personUpdate       = "usp_personUpdate";

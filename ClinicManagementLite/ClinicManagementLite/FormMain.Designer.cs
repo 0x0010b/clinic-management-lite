@@ -68,6 +68,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.acercaDeClinicManagementLiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.TodosLosAfiliadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +109,7 @@
             this.toolStripSeparator7,
             this.toolStripMenuItem7});
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
-            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cuentasToolStripMenuItem.Text = "Insertar";
             // 
             // toolStripMenuItem1
@@ -181,7 +183,7 @@
             this.toolStripSeparator10,
             this.toolStripMenuItem14});
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.permisosToolStripMenuItem.Text = "Actualizar";
             // 
             // toolStripMenuItem8
@@ -253,7 +255,9 @@
             this.areaToolStripMenuItem1,
             this.cargosToolStripMenuItem,
             this.toolStripSeparator3,
-            this.turnosToolStripMenuItem});
+            this.turnosToolStripMenuItem,
+            this.toolStripSeparator11,
+            this.TodosLosAfiliadosToolStripMenuItem});
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
             this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.verToolStripMenuItem.Text = "Ver";
@@ -353,6 +357,18 @@
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
             // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(177, 6);
+            // 
+            // TodosLosAfiliadosToolStripMenuItem
+            // 
+            this.TodosLosAfiliadosToolStripMenuItem.Name = "TodosLosAfiliadosToolStripMenuItem";
+            this.TodosLosAfiliadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.TodosLosAfiliadosToolStripMenuItem.Text = "Todos los afiliados";
+            this.TodosLosAfiliadosToolStripMenuItem.Click += new System.EventHandler(this.TodosLosAfiliadosToolStripMenuItem_Click_1);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,5 +432,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripMenuItem TodosLosAfiliadosToolStripMenuItem;
     }
 }
