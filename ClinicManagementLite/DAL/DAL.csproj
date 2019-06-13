@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CMAccountDAL.cs" />
     <Compile Include="CMAreaDAL.cs" />
+    <Compile Include="CMCLientDAL.cs" />
     <Compile Include="CMDatabase.cs" />
     <Compile Include="CMEmployeeDAL.cs" />
     <Compile Include="CMPermissionDAL.cs" />

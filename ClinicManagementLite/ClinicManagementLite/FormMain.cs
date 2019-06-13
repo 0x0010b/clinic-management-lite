@@ -80,5 +80,12 @@ namespace ClinicManagementLite
             person.objFormController = this.formFactory.getInstance(FormControllerKey.person);
             person.Show(this);
         }
+
+        private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormList client = new FormList();
+            client.objFormController = this.formFactory.getInstance(FormControllerKey.client);
+            client.Show();
+        }
     }
 }

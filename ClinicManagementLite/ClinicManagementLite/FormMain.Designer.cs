@@ -57,19 +57,19 @@
             this.permisosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.areaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cargosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.turnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.TodosLosAfiliadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteTecnicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.acercaDeClinicManagementLiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.TodosLosAfiliadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +109,7 @@
             this.toolStripSeparator7,
             this.toolStripMenuItem7});
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
-            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.cuentasToolStripMenuItem.Text = "Insertar";
             // 
             // toolStripMenuItem1
@@ -183,7 +183,7 @@
             this.toolStripSeparator10,
             this.toolStripMenuItem14});
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.permisosToolStripMenuItem.Text = "Actualizar";
             // 
             // toolStripMenuItem8
@@ -250,7 +250,7 @@
             this.permisosToolStripMenuItem1,
             this.toolStripSeparator2,
             this.empleadosToolStripMenuItem,
-            this.clientesToolStripMenuItem,
+            this.ClientesToolStripMenuItem,
             this.toolStripSeparator4,
             this.areaToolStripMenuItem1,
             this.cargosToolStripMenuItem,
@@ -286,11 +286,12 @@
             this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
-            // clientesToolStripMenuItem
+            // ClientesToolStripMenuItem
             // 
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem";
+            this.ClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ClientesToolStripMenuItem.Text = "Clientes";
+            this.ClientesToolStripMenuItem.Click += new System.EventHandler(this.ClientesToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -321,6 +322,18 @@
             this.turnosToolStripMenuItem.Name = "turnosToolStripMenuItem";
             this.turnosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.turnosToolStripMenuItem.Text = "Turnos";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(177, 6);
+            // 
+            // TodosLosAfiliadosToolStripMenuItem
+            // 
+            this.TodosLosAfiliadosToolStripMenuItem.Name = "TodosLosAfiliadosToolStripMenuItem";
+            this.TodosLosAfiliadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.TodosLosAfiliadosToolStripMenuItem.Text = "Todos los afiliados";
+            this.TodosLosAfiliadosToolStripMenuItem.Click += new System.EventHandler(this.TodosLosAfiliadosToolStripMenuItem_Click_1);
             // 
             // ayudaToolStripMenuItem1
             // 
@@ -356,18 +369,6 @@
             this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(177, 6);
-            // 
-            // TodosLosAfiliadosToolStripMenuItem
-            // 
-            this.TodosLosAfiliadosToolStripMenuItem.Name = "TodosLosAfiliadosToolStripMenuItem";
-            this.TodosLosAfiliadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.TodosLosAfiliadosToolStripMenuItem.Text = "Todos los afiliados";
-            this.TodosLosAfiliadosToolStripMenuItem.Click += new System.EventHandler(this.TodosLosAfiliadosToolStripMenuItem_Click_1);
             // 
             // FormMain
             // 
@@ -406,7 +407,7 @@
         private System.Windows.Forms.ToolStripMenuItem permisosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem areaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cargosToolStripMenuItem;

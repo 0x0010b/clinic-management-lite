@@ -21,6 +21,8 @@ namespace ClinicManagementLite
                     return new FormArea();
                 case FormControllerKey.person:
                     return new FormPerson();
+                case FormControllerKey.client:
+                    return new FormClient();
 
                 default:
                     return null;

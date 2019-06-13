@@ -35,11 +35,11 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbxMaintenance = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbxMaintenance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,18 +110,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda:";
             // 
-            // groupBox2
+            // gbxMaintenance
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.btnDelete);
-            this.groupBox2.Controls.Add(this.btnUpdate);
-            this.groupBox2.Controls.Add(this.btnInsert);
-            this.groupBox2.Location = new System.Drawing.Point(596, 185);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(212, 127);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Mantenimiento:";
+            this.gbxMaintenance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxMaintenance.Controls.Add(this.btnDelete);
+            this.gbxMaintenance.Controls.Add(this.btnUpdate);
+            this.gbxMaintenance.Controls.Add(this.btnInsert);
+            this.gbxMaintenance.Location = new System.Drawing.Point(596, 185);
+            this.gbxMaintenance.Name = "gbxMaintenance";
+            this.gbxMaintenance.Size = new System.Drawing.Size(212, 127);
+            this.gbxMaintenance.TabIndex = 7;
+            this.gbxMaintenance.TabStop = false;
+            this.gbxMaintenance.Text = "Mantenimiento:";
             // 
             // btnDelete
             // 
@@ -140,7 +140,7 @@
             this.dgvList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Location = new System.Drawing.Point(12, 69);
             this.dgvList.MultiSelect = false;
@@ -156,7 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 453);
             this.Controls.Add(this.dgvList);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbxMaintenance);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblTitle);
             this.Name = "FormList";
@@ -164,7 +164,7 @@
             this.Load += new System.EventHandler(this.FormList_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.gbxMaintenance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,7 +180,7 @@
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.Button btnInsert;
         public System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.GroupBox gbxMaintenance;
         public System.Windows.Forms.Button btnDelete;
         public System.Windows.Forms.DataGridView dgvList;
     }

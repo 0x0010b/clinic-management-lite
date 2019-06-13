@@ -18,6 +18,11 @@ namespace General
         public static string usp_areaGet            = "usp_areaGet";
         public static string usp_areaGetAll         = "usp_areaGetAll";
         public static string usp_areaUpdate         = "usp_areaUpdate";
+        public static string usp_clientCreate       = "usp_clientCreate";
+        public static string usp_clientDelete       = "usp_clientDelete";
+        public static string usp_clientGet          = "usp_clientGet";
+        public static string usp_clientGetAll       = "usp_clientGetAll";
+        public static string usp_clientUpdate       = "usp_clientUpdate";
         public static string usp_employeeCreate     = "usp_employeeCreate";
         public static string usp_employeeGetAll     = "usp_employeeGetAll";
         public static string usp_employeeUpdate     = "usp_employeeUpdate";
@@ -38,6 +43,15 @@ namespace General
         public static string usp_positionUpdate     = "usp_positionUpdate";
     }
 
+    public struct CMForms
+    {
+        public const string formPerson             = "ClinicManagementLite.FormPerson";
+        public const string formClient             = "ClinicManagementLite.FormClient";
+        public const string formPermission         = "ClinicManagementLite.FormPermission";
+        public const string formArea               = "ClinicManagementLite.FormArea";
+        public const string formPosition           = "ClinicManagementLite.FormPosition";
+    }
+
     public struct CMMessage
     {
         public struct Alert
@@ -55,6 +69,7 @@ namespace General
         {
             public static string deleteInstance     = "Seguro que desea eliminar este registro?";
             public static string notFoundInstance   = "No se encontro registro en nuestra base de datos.";
+            public static string cantPerformAction  = "No es posible realizar esta acción.";
         }
 
         public struct Login

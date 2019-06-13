@@ -37,61 +37,61 @@ namespace BE
             this.person_createdAt   = Convert.ToDateTime(reader["person_createdAt"].ToString());
         }
 
-        public int Dni
+        public int dni
         {
             get { return person_dni; }
             set { person_dni = value; }
         }
 
-        public string Name
+        public string name
         {
             get { return person_name; }
             set { person_name = value; }
         }
 
-        public string Lastname
+        public string lastname
         {
             get { return person_lastname; }
             set { person_lastname = value; }
         }
 
-        public string Phone
+        public string phone
         {
             get { return person_phone; }
             set { person_phone = value; }
         }
 
-        public DateTime Birthday
+        public DateTime birthday
         {
             get { return person_birthday; }
             set { person_birthday = value; }
         }
 
-        public string Address
+        public string address
         {
             get { return person_address; }
             set { person_address = value; }
         }
 
-        public Gender Gender
+        public Gender gender
         {
             get { return person_gender; }
             set { person_gender = value; }
         }
 
-         public string Image
+         public string image
         {
             get { return person_image; }
             set { person_image = value; }
         }
 
-        public Boolean IsActive
+        public Boolean isActive
         {
             get { return person_isActive; }
             set { person_isActive = value; }
         }
 
-        public DateTime CreatedAt
+        public DateTime createdAt
         {
             get { return person_createdAt; }
             set { person_createdAt = value; }

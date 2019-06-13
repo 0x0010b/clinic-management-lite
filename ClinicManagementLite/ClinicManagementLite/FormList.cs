@@ -25,6 +25,22 @@ namespace ClinicManagementLite
         private void FormList_Load(object sender, EventArgs e)
         {
             this.objFormController.setupFormList(this);
+
+            enableMaintenanceActions();
+        }
+
+        private void enableMaintenanceActions()
+        {
+            switch (this.objFormController.GetType().ToString())
+            {
+                case CMForms.formPerson:
+                case CMForms.formClient:
+                    gbxMaintenance.Enabled = false;
+                    break;
+                default:
+                    gbxMaintenance.Enabled = true;
+                    break;
+            }
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -48,9 +64,9 @@ namespace ClinicManagementLite
         {
             switch(this.objFormController.GetType().ToString())
             {
-                case "ClinicManagementLite.FormPermission":
-                case "ClinicManagementLite.FormArea":
-                case "ClinicManagementLite.FormPosition":
+                case CMForms.formPermission:
+                case CMForms.formArea:
+                case CMForms.formPosition:
 
                     FormMaintenance01 form = new FormMaintenance01();
 
@@ -70,9 +86,9 @@ namespace ClinicManagementLite
         {
             switch (this.objFormController.GetType().ToString())
             {
-                case "ClinicManagementLite.FormPermission":
-                case "ClinicManagementLite.FormArea":
-                case "ClinicManagementLite.FormPosition":
+                case CMForms.formPermission:
+                case CMForms.formArea:
+                case CMForms.formPosition:
 
                     FormMaintenance01 form = new FormMaintenance01();
 

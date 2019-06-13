@@ -12,16 +12,16 @@ using General;
 
 namespace ClinicManagementLite
 {
-    class FormPerson : FormController
+    class FormClient : FormController
     {
         public void actionDelete(Form ctx)
         {
             FormList form = (FormList)ctx;
 
             int id = int.Parse(form.dgvList.CurrentRow.Cells[0].Value.ToString());
-            CMPersonBE person = new CMPersonBE();
-            person.dni = id;
-            CMPersonBL.delete(person);
+            CMClientBE client = new CMClientBE();
+            client.dni = id;
+            CMCLientBL.delete(client);
         }
 
         public void actionInsert(Form ctx)
@@ -38,17 +38,17 @@ namespace ClinicManagementLite
         {
             FormList form = (FormList)ctx;
 
-            DataTable dtList = CMPersonBL.getAll();
+            DataTable dtList = CMCLientBL.getAll();
 
-            form.Text = "Mantenimiento - Persona";
-            form.lblTitle.Text = $"Personas - ({dtList.Rows.Count})";
+            form.Text = "Mantenimiento - Cliente";
+            form.lblTitle.Text = $"Clientes - ({dtList.Rows.Count})";
 
             form.dgvList.DataSource = dtList;
         }
 
         public void setupFormMaintenance(Form ctx)
         {
-            // TODO - Pending implementation 
+            // TODO - Pending implementation
         }
     }
 }
