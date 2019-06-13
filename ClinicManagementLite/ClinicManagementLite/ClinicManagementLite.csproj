@@ -73,6 +73,12 @@
     </Compile>
     <Compile Include="FormArea.cs" />
     <Compile Include="FormPerson.cs" />
+    <Compile Include="FormClientMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientMaintenance.Designer.cs">
+      <DependentUpon>FormClientMaintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPosition.cs" />
     <Compile Include="FormPermission.cs" />
     <Compile Include="FormControllerFactory.cs" />
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientMaintenance.resx">
+      <DependentUpon>FormClientMaintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -48,7 +48,21 @@ namespace ClinicManagementLite
 
         public void setupFormMaintenance(Form ctx)
         {
-            // TODO - Pending implementation
+            FormClientMaintenance form = (FormClientMaintenance)ctx;
+
+            form.Text = form.isEditing ? "Actualizar Cliente" : "Insertar Cliente";
+            form.btnPersonData.Text = form.isEditing ? "Actualizar" : "Insertar";
+            form.gbxMedHistory.Enabled = form.isEditing;
+
+            if (form.isEditing)
+            {
+                form.fetchClientData();
+                form.setupPersonData();
+            }
+            else
+            {
+
+            }
         }
     }
 }

@@ -18,23 +18,23 @@ namespace BE
         public string person_address        = "";
         public Gender person_gender         = Gender.male;
         public string person_image          = "";
-        public Boolean person_isActive      = false;
+        //public Boolean person_isActive      = false;
         public DateTime person_createdAt    = new DateTime();
 
         public CMPersonBE() { }
 
         public CMPersonBE(SqlDataReader reader)
         {
-            this.person_dni         = int.Parse(reader["person_dni"].ToString());
+            this.person_dni         = int.Parse(reader["person_id"].ToString());
             this.person_name        = reader["person_name"].ToString();
             this.person_lastname    = reader["person_lastname"].ToString();
             this.person_phone       = reader["person_phone"].ToString();
             this.person_birthday    = Convert.ToDateTime(reader["person_birthday"].ToString());
-            this.person_address     = reader["person_address"].ToString();
+            this.person_address     = reader["person_addres"].ToString();
             this.person_gender      = (int.Parse(reader["person_gender"].ToString())  == (int)Gender.male) ? Gender.male : Gender.female;
             this.person_image       = reader["person_image"].ToString();
-            this.person_isActive    = (bool)reader["person_isActive"];
-            this.person_createdAt   = Convert.ToDateTime(reader["person_createdAt"].ToString());
+            //this.person_isActive    = (bool)reader["person_isActive"];
+            this.person_createdAt   = Convert.ToDateTime(reader["person_created_at"].ToString());
         }
 
         public int dni
@@ -85,11 +85,11 @@ namespace BE
             set { person_image = value; }
         }
 
-        public Boolean isActive
+        /*public Boolean isActive
         {
             get { return person_isActive; }
             set { person_isActive = value; }
-        }
+        }*/
 
         public DateTime createdAt
         {

@@ -28,22 +28,22 @@ namespace BE
         public CMClientBE(CMPersonBE person, SqlDataReader reader)
         {
             //Person attributes
-            this.person_dni             = person.person_dni;
-            this.person_name            = person.person_name;
-            this.person_lastname        = person.person_lastname;
-            this.person_phone           = person.person_phone;
-            this.person_birthday        = person.person_birthday;
-            this.person_address         = person.person_address;
-            this.person_gender          = person.person_gender;
-            this.person_image           = person.person_image;
-            this.person_isActive        = person.isActive;
-            this.person_createdAt       = person.person_createdAt;
+            this.person_dni             = person.dni;
+            this.person_name            = person.name;
+            this.person_lastname        = person.lastname;
+            this.person_phone           = person.phone;
+            this.person_birthday        = person.birthday;
+            this.person_address         = person.address;
+            this.person_gender          = person.gender;
+            this.person_image           = person.image;
+            //this.person_isActive        = person.isActive;
+            this.person_createdAt       = person.createdAt;
 
             //Client attributes
-            this.client_wheight          = reader["client_weight"].ToString();
+            this.client_wheight         = reader["client_wheight"].ToString();
             this.client_height          = reader["client_height"].ToString();
-            this.client_bloodType       = reader["client_bloodType"].ToString();
-            this.client_bloodPressure   = reader["client_bloodPressure"].ToString();
+            this.client_bloodType       = reader["client_blood_type"].ToString();
+            this.client_bloodPressure   = reader["client_blood_pressure"].ToString();
             this.client_allergies       = reader["client_allergies"].ToString();
             this.client_pathologies     = reader["client_pathologies"].ToString();
             this.client_medicines       = reader["client_medicines"].ToString();

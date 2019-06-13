@@ -126,7 +126,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand(CMProcedure.usp_clientGet, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", client.person_dni);
+                cmd.Parameters.AddWithValue("@idVal", client.dni);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 

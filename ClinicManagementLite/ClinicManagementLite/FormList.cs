@@ -34,7 +34,6 @@ namespace ClinicManagementLite
             switch (this.objFormController.GetType().ToString())
             {
                 case CMForms.formPerson:
-                case CMForms.formClient:
                     gbxMaintenance.Enabled = false;
                     break;
                 default:
@@ -90,12 +89,23 @@ namespace ClinicManagementLite
                 case CMForms.formArea:
                 case CMForms.formPosition:
 
-                    FormMaintenance01 form = new FormMaintenance01();
+                    FormMaintenance01 formMaintenance = new FormMaintenance01();
 
-                    form.objFormController = this.objFormController;
-                    form.instanceID = int.Parse(dgvList.CurrentRow.Cells[0].Value.ToString());
-                    form.isEditing = true;
-                    form.ShowDialog(this);
+                    formMaintenance.objFormController = this.objFormController;
+                    formMaintenance.instanceID = int.Parse(dgvList.CurrentRow.Cells[0].Value.ToString());
+                    formMaintenance.isEditing = true;
+                    formMaintenance.ShowDialog(this);
+
+                    this.objFormController.setupFormList(this);
+                    break;
+
+                case CMForms.formClient:
+                    FormClientMaintenance formClient = new FormClientMaintenance();
+
+                    formClient.objFormController = this.objFormController;
+                    formClient.instanceID = int.Parse(dgvList.CurrentRow.Cells[0].Value.ToString());
+                    formClient.isEditing = true;
+                    formClient.ShowDialog(this);
 
                     this.objFormController.setupFormList(this);
                     break;
