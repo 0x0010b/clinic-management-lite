@@ -48,7 +48,19 @@ namespace ClinicManagementLite
 
         public void setupFormMaintenance(Form ctx)
         {
-            // TODO - Pending implementation 
+            FormPersonMaintenance form = (FormPersonMaintenance)ctx;
+
+            form.Text = form.isEditing ? "Actualizar Persona" : "Insertar Persona";
+            form.btnPersonData.Text = form.isEditing ? "Actualizar" : "Insertar";
+
+            if (form.isEditing)
+            {
+                form.setupPersonData();
+            }
+            else
+            {
+
+            }
         }
     }
 }

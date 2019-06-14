@@ -21,6 +21,8 @@ namespace ClinicManagementLite
         public FormController   objFormController;
         private CMClientBE      client;
 
+        private FormControllerFactory formFactory = new FormControllerFactory();
+
         public FormClientMaintenance()
         {
             InitializeComponent();
@@ -35,11 +37,27 @@ namespace ClinicManagementLite
         {
             if (this.isEditing)
             {
-                // TODO - open formPerson for update
+                FormPersonMaintenance formPerson = new FormPersonMaintenance();
+
+                formPerson.objFormController = this.formFactory.getInstance(FormControllerKey.person);
+                formPerson.isEditing = true;
+                formPerson.client = this.client;
+                formPerson.ShowDialog(this);
+
+                this.fetchClientData();
+                this.setupPersonData();
             }
             else
             {
-                // TODO - open formPerson for insert
+                FormPersonMaintenance formPerson = new FormPersonMaintenance();
+
+                formPerson.objFormController = this.formFactory.getInstance(FormControllerKey.person);
+                formPerson.isEditing = false;
+                formPerson.ShowDialog(this);
+
+                //this.fetchClientData();
+                //this.setupPersonData();
+                //gbxMedHistory.Enabled = true;
             }
         }
 

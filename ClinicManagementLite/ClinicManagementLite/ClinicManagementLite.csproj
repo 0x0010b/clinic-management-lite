@@ -79,6 +79,12 @@
     <Compile Include="FormClientMaintenance.Designer.cs">
       <DependentUpon>FormClientMaintenance.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPersonMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPersonMaintenance.Designer.cs">
+      <DependentUpon>FormPersonMaintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPosition.cs" />
     <Compile Include="FormPermission.cs" />
     <Compile Include="FormControllerFactory.cs" />
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClientMaintenance.resx">
       <DependentUpon>FormClientMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPersonMaintenance.resx">
+      <DependentUpon>FormPersonMaintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

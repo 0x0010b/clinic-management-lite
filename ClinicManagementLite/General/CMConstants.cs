@@ -52,6 +52,13 @@ namespace General
         public const string formPosition           = "ClinicManagementLite.FormPosition";
     }
 
+    public struct CMPersonType
+    {
+        public const string client      = "client";
+        public const string employee    = "employee";
+        public const string person      = "person";
+    }
+
     public struct CMMessage
     {
         public struct Alert

@@ -34,7 +34,7 @@ namespace ClinicManagementLite
             switch (this.objFormController.GetType().ToString())
             {
                 case CMForms.formPerson:
-                    gbxMaintenance.Enabled = false;
+                    gbxMaintenance.Enabled = true;
                     break;
                 default:
                     gbxMaintenance.Enabled = true;
@@ -76,6 +76,25 @@ namespace ClinicManagementLite
                     this.objFormController.setupFormList(this);
                     break;
 
+                case CMForms.formClient:
+                    FormClientMaintenance formClient = new FormClientMaintenance();
+
+                    formClient.objFormController = this.objFormController;
+                    formClient.isEditing = false;
+                    formClient.ShowDialog(this);
+
+                    this.objFormController.setupFormList(this);
+                    break;
+                case CMForms.formPerson:
+                    FormPersonMaintenance formPerson = new FormPersonMaintenance();
+
+                    formPerson.objFormController = this.objFormController;
+                    formPerson.isEditing = false;
+                    formPerson.ShowDialog(this);
+
+                    this.objFormController.setupFormList(this);
+                    break;
+
                 default:
                     break;
             }
@@ -106,6 +125,17 @@ namespace ClinicManagementLite
                     formClient.instanceID = int.Parse(dgvList.CurrentRow.Cells[0].Value.ToString());
                     formClient.isEditing = true;
                     formClient.ShowDialog(this);
+
+                    this.objFormController.setupFormList(this);
+                    break;
+
+                case CMForms.formPerson:
+                    FormPersonMaintenance formPerson = new FormPersonMaintenance();
+
+                    formPerson.objFormController = this.objFormController;
+                    formPerson.isEditing = true;
+                    formPerson.fetchPersonData(int.Parse(dgvList.CurrentRow.Cells[0].Value.ToString()));
+                    formPerson.ShowDialog(this);
 
                     this.objFormController.setupFormList(this);
                     break;

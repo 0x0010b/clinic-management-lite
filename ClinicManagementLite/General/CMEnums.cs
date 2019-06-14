@@ -29,4 +29,11 @@ namespace General
         employee,
         client
     }
+
+    public enum PersonType
+    {
+        person = 0,
+        client,
+        employee
+    }
 }
