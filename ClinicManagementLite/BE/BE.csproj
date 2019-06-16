@@ -56,6 +56,7 @@
     <Compile Include="CMClientBE.cs" />
     <Compile Include="CMPermissionBE.cs" />
     <Compile Include="CMPersonBE.cs" />
+    <Compile Include="CMScheduleBE.cs" />
     <Compile Include="CMTurnBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

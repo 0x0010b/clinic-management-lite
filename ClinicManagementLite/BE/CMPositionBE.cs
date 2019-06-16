@@ -11,6 +11,7 @@ namespace BE
     {
         public int position_id              = 0;
         public string position_description  = "";
+        public CMAreaBE position_area       = new CMAreaBE();
         public DateTime position_createdAt  = new DateTime();
 
         public CMPositionBE() { }
@@ -33,9 +34,10 @@ namespace BE
 
         public CMPositionBE(SqlDataReader reader)
         {
-            this.position_id = int.Parse(reader["position_id"].ToString());
-            this.position_description = reader["position_description"].ToString();
-            this.position_createdAt = Convert.ToDateTime(reader["position_created_at"].ToString());
+            this.position_id            = Convert.ToInt16(reader["position_id"].ToString());
+            this.position_description   = reader["position_description"].ToString();
+            this.position_area          = new CMAreaBE(reader);
+            this.position_createdAt     = Convert.ToDateTime(reader["position_created_at"].ToString());
         }
     }
 }

@@ -11,6 +11,8 @@ namespace BE
     {
         public int permission_id                = 0;
         public string permission_description    = "";
+        public bool permission_isRead           = false;
+        public bool permission_isWrite          = false;
         public DateTime permission_createdAt    = new DateTime();
 
         public CMPermissionBE() { }
@@ -33,8 +35,10 @@ namespace BE
 
         public CMPermissionBE(SqlDataReader reader)
         {
-            this.permission_id          = int.Parse(reader["permission_id"].ToString());
+            this.permission_id          = Convert.ToInt16(reader["permission_id"].ToString());
             this.permission_description = reader["permission_description"].ToString();
+            this.permission_isRead      = Convert.ToBoolean(reader["permission_is_read"]);
+            this.permission_isWrite     = Convert.ToBoolean(reader["permission_is_write"]);
             this.permission_createdAt   = Convert.ToDateTime(reader["permission_created_at"].ToString());
         }
     }

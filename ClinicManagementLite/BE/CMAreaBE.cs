@@ -33,7 +33,7 @@ namespace BE
 
         public CMAreaBE(SqlDataReader reader)
         {
-            this.area_id             = int.Parse(reader["area_id"].ToString());
+            this.area_id             = Convert.ToInt16(reader["area_id"].ToString());
             this.area_description    = reader["area_description"].ToString();
             this.area_createdAt      = Convert.ToDateTime(reader["area_created_at"].ToString());
         }

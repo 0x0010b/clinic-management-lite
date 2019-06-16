@@ -12,7 +12,7 @@ namespace BE
         public int account_id                       = 0;
         public string account_username              = "";
         public string account_password              = "";
-        public string account_employeeID            = "";
+        public string account_employeeId            = "";
         public CMPermissionBE account_permission    = new CMPermissionBE();
         public DateTime account_createdAt           = new DateTime();
 
@@ -26,11 +26,11 @@ namespace BE
 
         public CMAccountBE(SqlDataReader reader)
         {
-            this.account_id         = int.Parse(reader["account_id"].ToString());
+            this.account_id         = Convert.ToInt16(reader["account_id"].ToString());
             this.account_username   = reader["account_username"].ToString();
             this.account_password   = reader["account_password"].ToString();
             this.account_createdAt  = Convert.ToDateTime(reader["account_created_at"].ToString());
-            this.account_employeeID = reader["employee_id"].ToString();
+            this.account_employeeId = reader["employee_id"].ToString();
             this.account_permission = new CMPermissionBE(reader);
         }
     }
