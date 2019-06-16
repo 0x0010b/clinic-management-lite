@@ -8,34 +8,75 @@ namespace General
 {
     public struct CMProcedure
     {
-        public static string usp_accountCreate      = "usp_accountCreate";
-        public static string usp_accountDelete      = "usp_accountDelete";
-        public static string usp_accountGetAll      = "usp_accountGetAll";
-        public static string usp_accountLogin       = "usp_accountLogin";
-        public static string usp_accountUpdate      = "usp_accountUpdate";
-        public static string usp_areaCreate         = "usp_areaCreate";
-        public static string usp_areaDelete         = "usp_areaDelete";
-        public static string usp_areaGet            = "usp_areaGet";
-        public static string usp_areaGetAll         = "usp_areaGetAll";
-        public static string usp_areaUpdate         = "usp_areaUpdate";
-        public static string usp_employeeCreate     = "usp_employeeCreate";
-        public static string usp_employeeGetAll     = "usp_employeeGetAll";
-        public static string usp_employeeUpdate     = "usp_employeeUpdate";
-        public static string usp_permissionCreate   = "usp_permissionCreate";
-        public static string usp_permissionDelete   = "usp_permissionDelete";
-        public static string usp_permissionGet      = "usp_permissionGet";
-        public static string usp_permissionGetAll   = "usp_permissionGetAll";
-        public static string usp_permissionUpdate   = "usp_permissionUpdate";
-        public static string usp_personGet          = "usp_personGet";
-        public static string usp_personGetAll       = "usp_personGetAll";
-        public static string usp_personCreate       = "usp_personCreate";
-        public static string usp_personDelete       = "usp_personDelete";
-        public static string usp_personUpdate       = "usp_personUpdate";
-        public static string usp_positionCreate     = "usp_positionCreate";
-        public static string usp_positionDelete     = "usp_positionDelete";
-        public static string usp_positionGet        = "usp_positionGet";
-        public static string usp_positionGetAll     = "usp_positionGetAll";
-        public static string usp_positionUpdate     = "usp_positionUpdate";
+        public struct Account
+        {
+            public static string create  = "usp_accountCreate";
+            public static string delete  = "usp_accountDelete";
+            public static string get     = "usp_accountGet";
+            public static string getAll  = "usp_accountGetAll";
+            public static string login   = "usp_accountLogin";
+            public static string update  = "usp_accountUpdate";
+        }
+        public struct Area
+        {
+            public static string create = "usp_areaCreate";
+            public static string delete = "usp_areaDelete";
+            public static string get    = "usp_areaGet";
+            public static string getAll = "usp_areaGetAll";
+            public static string update = "usp_areaUpdate";
+        }
+        public struct Client
+        {
+            public static string create = "usp_clientCreate";
+            public static string delete = "usp_clientDelete";
+            public static string get    = "usp_clientGet";
+            public static string getAll = "usp_clientGetAll";
+            public static string update = "usp_clientUpdate";
+        }
+        public struct Employee
+        {
+            public static string create = "usp_employeeCreate";
+            public static string delete = "usp_employeeDelete";
+            public static string get    = "usp_employeeGet";
+            public static string getAll = "usp_employeeGetAll";
+            public static string update = "usp_employeeUpdate";
+        }
+        public struct Permission
+        {
+            public static string create = "usp_permissionCreate";
+            public static string delete = "usp_permissionDelete";
+            public static string get    = "usp_permissionGet";
+            public static string getAll = "usp_permissionGetAll";
+            public static string update = "usp_permissionUpdate";
+        }
+        public struct Person
+        {
+            public static string create = "usp_personCreate";
+            public static string update = "usp_personUpdate";
+        }
+        public struct Position
+        {
+            public static string create         = "usp_positionCreate";
+            public static string delete         = "usp_positionDelete";
+            public static string get            = "usp_positionGet";
+            public static string getAll         = "usp_positionGetAll";
+            public static string getAllByArea   = "usp_positionGetAllByArea";
+            public static string update         = "usp_positionUpdate";
+        }
+        public struct Schedule
+        {
+            public static string create = "usp_scheduleCreate";
+            public static string delete = "usp_scheduleDelete";
+            public static string getAll = "usp_scheduleGetAll";
+        }
+        public struct Turn
+        {
+            public static string create = "usp_turnCreate";
+            public static string delete = "usp_turnDelete";
+            public static string get    = "usp_turnGet";
+            public static string getAll = "usp_turnGetAll";
+            public static string update = "usp_turnUpdate";
+        }
     }
 
     public struct CMMessage
