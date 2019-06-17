@@ -18,7 +18,7 @@ namespace DAL
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_areaCreate, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Area.create, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@descVal", area.area_description);
@@ -39,18 +39,25 @@ namespace DAL
             }
         }
 
-        static public void delete(CMAreaBE area)
+        static public List<CMAreaBE> getAll()
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_areaDelete, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Area.getAll, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", area.area_id);
+                SqlDataReader dr = cmd.ExecuteReader();
 
-                cmd.ExecuteNonQuery();
+                List<CMAreaBE> areas = new List<CMAreaBE>();
+
+                if (dr.Read())
+                {
+                    areas.Add(new CMAreaBE(dr));
+                }
+
+                return areas;
             }
             catch (SqlException ex)
             {
@@ -66,16 +73,16 @@ namespace DAL
             }
         }
 
-        static public CMAreaBE get(CMAreaBE area)
+        static public CMAreaBE get(int area_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_areaGet, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Area.get, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", area.area_id);
+                cmd.Parameters.AddWithValue("@idVal", area_id);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -102,23 +109,19 @@ namespace DAL
             }
         }
 
-        static public DataTable getAll(Sort sort)
+        static public void update(CMAreaBE area)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_areaGetAll, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Area.update, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@sort", (int)sort);
+                cmd.Parameters.AddWithValue("@idVal", area.area_id);
+                cmd.Parameters.AddWithValue("@descVal", area.area_description);
 
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                da.Fill(ds, "Area");
-
-                return ds.Tables["Area"];
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -134,17 +137,16 @@ namespace DAL
             }
         }
 
-        static public void update(CMAreaBE area)
+        static public void delete(CMAreaBE area)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_areaUpdate, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Area.delete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@idVal", area.area_id);
-                cmd.Parameters.AddWithValue("@descVal", area.area_description);
 
                 cmd.ExecuteNonQuery();
             }

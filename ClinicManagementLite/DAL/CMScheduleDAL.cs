@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class CMPositionDAL
+    class CMScheduleDAL
     {
-        static public void create(CMPositionBE position)
+        static public void create(CMScheduleBE schedule)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.create, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Schedule.create, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@descVal", position.position_description);
-                cmd.Parameters.AddWithValue("@areaId", position.position_area.area_id);
+                cmd.Parameters.AddWithValue("@dniVal", schedule.schedule_employee.person_dni);
+                cmd.Parameters.AddWithValue("@idVal", schedule.schedule_turn.turn_id);
 
                 cmd.ExecuteNonQuery();
             }
@@ -40,27 +40,25 @@ namespace DAL
             }
         }
 
-        static public List<CMPositionBE> getAll(int area_id)
+        static public List<CMScheduleBE> getAll()
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.getAll, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Schedule.getAll, con);
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@areaId", area_id);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                List<CMPositionBE> positions = new List<CMPositionBE>();
+                List<CMScheduleBE> schedules = new List<CMScheduleBE>();
 
                 if (dr.Read())
                 {
-                    positions.Add(new CMPositionBE(dr));
+                    schedules.Add(new CMScheduleBE(dr));
                 }
 
-                return positions;
+                return schedules;
             }
             catch (SqlException ex)
             {
@@ -76,27 +74,91 @@ namespace DAL
             }
         }
 
-        static public CMPositionBE get(int position_id)
+        static public void delete(string person_dni, int turn_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.get, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Schedule.delete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", position_id);
+                cmd.Parameters.AddWithValue("@dniVal", person_dni);
+                cmd.Parameters.AddWithValue("@idVal", turn_id);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) { con.Close(); }
+            }
+        }
+
+        static public List<CMScheduleBE> filterByTurn(int turn_id)
+        {
+            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(CMProcedure.Schedule.filterByTurn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@turnId", turn_id);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
+                List<CMScheduleBE> schedules = new List<CMScheduleBE>();
+
                 if (dr.Read())
                 {
-                    return new CMPositionBE(dr);
+                    schedules.Add(new CMScheduleBE(dr));
                 }
-                else
+
+                return schedules;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) { con.Close(); }
+            }
+        }
+
+        static public List<CMScheduleBE> filterByEmployee(string person_dni)
+        {
+            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(CMProcedure.Schedule.filterByEmployee, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@dniVal", person_dni);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                List<CMScheduleBE> schedules = new List<CMScheduleBE>();
+
+                if (dr.Read())
                 {
-                    throw new Exception(CMMessage.Maintenance.notFoundInstance);
+                    schedules.Add(new CMScheduleBE(dr));
                 }
+
+                return schedules;
             }
             catch (SqlException ex)
             {
@@ -112,47 +174,27 @@ namespace DAL
             }
         }
 
-        static public void update(CMPositionBE position)
+        static public List<CMScheduleBE> filterByDay(int day)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.update, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Schedule.filterByDay, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", position.position_id);
-                cmd.Parameters.AddWithValue("@descVal", position.position_description);
-                cmd.Parameters.AddWithValue("@areaId", position.position_area.area_id);
+                cmd.Parameters.AddWithValue("@day", day);
 
-                cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open) { con.Close(); }
-            }
-        }
+                SqlDataReader dr = cmd.ExecuteReader();
 
-        static public void delete(CMPositionBE position)
-        {
-            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.delete, con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                List<CMScheduleBE> schedules = new List<CMScheduleBE>();
 
-                cmd.Parameters.AddWithValue("@idVal", position.position_id);
+                if (dr.Read())
+                {
+                    schedules.Add(new CMScheduleBE(dr));
+                }
 
-                cmd.ExecuteNonQuery();
+                return schedules;
             }
             catch (SqlException ex)
             {

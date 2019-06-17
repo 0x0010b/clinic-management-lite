@@ -12,7 +12,7 @@ namespace BE
         public int account_id                       = 0;
         public string account_username              = "";
         public string account_password              = "";
-        public string account_employeeId            = "";
+        public CMEmployeeBE account_employee        = new CMEmployeeBE();
         public CMPermissionBE account_permission    = new CMPermissionBE();
         public DateTime account_createdAt           = new DateTime();
 
@@ -30,7 +30,7 @@ namespace BE
             this.account_username   = reader["account_username"].ToString();
             this.account_password   = reader["account_password"].ToString();
             this.account_createdAt  = Convert.ToDateTime(reader["account_created_at"].ToString());
-            this.account_employeeId = reader["employee_id"].ToString();
+            this.account_employee   = new CMEmployeeBE(reader);
             this.account_permission = new CMPermissionBE(reader);
         }
     }

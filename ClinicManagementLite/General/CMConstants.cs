@@ -52,22 +52,25 @@ namespace General
         public struct Person
         {
             public static string create = "usp_personCreate";
+            public static string getAll = "usp_personGetAll";
             public static string update = "usp_personUpdate";
         }
         public struct Position
         {
-            public static string create         = "usp_positionCreate";
-            public static string delete         = "usp_positionDelete";
-            public static string get            = "usp_positionGet";
-            public static string getAll         = "usp_positionGetAll";
-            public static string getAllByArea   = "usp_positionGetAllByArea";
-            public static string update         = "usp_positionUpdate";
+            public static string create  = "usp_positionCreate";
+            public static string delete  = "usp_positionDelete";
+            public static string get     = "usp_positionGet";
+            public static string getAll  = "usp_positionGetAll";
+            public static string update  = "usp_positionUpdate";
         }
         public struct Schedule
         {
-            public static string create = "usp_scheduleCreate";
-            public static string delete = "usp_scheduleDelete";
-            public static string getAll = "usp_scheduleGetAll";
+            public static string create             = "usp_scheduleCreate";
+            public static string delete             = "usp_scheduleDelete";
+            public static string filterByDay        = "usp_scheduleFilterByDay";
+            public static string filterByEmployee   = "usp_scheduleFilterByEmployee";
+            public static string filterByTurn       = "usp_scheduleFilterByTurn";
+            public static string getAll             = "usp_scheduleGetAll";
         }
         public struct Turn
         {

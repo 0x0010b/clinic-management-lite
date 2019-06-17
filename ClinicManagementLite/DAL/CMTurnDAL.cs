@@ -10,19 +10,21 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class CMPositionDAL
+    class CMTurnDAL
     {
-        static public void create(CMPositionBE position)
+        static public void create(CMTurnBE turn)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.create, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Turn.create, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@descVal", position.position_description);
-                cmd.Parameters.AddWithValue("@areaId", position.position_area.area_id);
+                cmd.Parameters.AddWithValue("@day", turn.turn_day);
+                cmd.Parameters.AddWithValue("@desc", turn.turn_description);
+                cmd.Parameters.AddWithValue("@entryHour", turn.turn_entryHour);
+                cmd.Parameters.AddWithValue("@departureHour", turn.turn_departureHour);
 
                 cmd.ExecuteNonQuery();
             }
@@ -40,27 +42,25 @@ namespace DAL
             }
         }
 
-        static public List<CMPositionBE> getAll(int area_id)
+        static public List<CMTurnBE> getAll()
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.getAll, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Turn.getAll, con);
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@areaId", area_id);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                List<CMPositionBE> positions = new List<CMPositionBE>();
+                List<CMTurnBE> turns = new List<CMTurnBE>();
 
                 if (dr.Read())
                 {
-                    positions.Add(new CMPositionBE(dr));
+                    turns.Add(new CMTurnBE(dr));
                 }
 
-                return positions;
+                return turns;
             }
             catch (SqlException ex)
             {
@@ -76,22 +76,22 @@ namespace DAL
             }
         }
 
-        static public CMPositionBE get(int position_id)
+        static public CMTurnBE get(int turn_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.get, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Turn.get, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", position_id);
+                cmd.Parameters.AddWithValue("@idVal", turn_id);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.Read())
                 {
-                    return new CMPositionBE(dr);
+                    return new CMTurnBE(dr);
                 }
                 else
                 {
@@ -112,18 +112,20 @@ namespace DAL
             }
         }
 
-        static public void update(CMPositionBE position)
+        static public void update(CMTurnBE turn)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.update, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Turn.update, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", position.position_id);
-                cmd.Parameters.AddWithValue("@descVal", position.position_description);
-                cmd.Parameters.AddWithValue("@areaId", position.position_area.area_id);
+                cmd.Parameters.AddWithValue("@idVal", turn.turn_id);
+                cmd.Parameters.AddWithValue("@day", turn.turn_day);
+                cmd.Parameters.AddWithValue("@desc", turn.turn_description);
+                cmd.Parameters.AddWithValue("@entryHour", turn.turn_entryHour);
+                cmd.Parameters.AddWithValue("@departureHour", turn.turn_departureHour);
 
                 cmd.ExecuteNonQuery();
             }
@@ -141,16 +143,16 @@ namespace DAL
             }
         }
 
-        static public void delete(CMPositionBE position)
+        static public void delete(CMTurnBE turn)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.delete, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Turn.delete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", position.position_id);
+                cmd.Parameters.AddWithValue("@idVal", turn.turn_id);
 
                 cmd.ExecuteNonQuery();
             }

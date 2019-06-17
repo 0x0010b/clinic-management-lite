@@ -18,10 +18,12 @@ namespace DAL
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionCreate, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Permission.create, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@descVal", permission.permission_description);
+                cmd.Parameters.AddWithValue("@isRead", permission.permission_isRead);
+                cmd.Parameters.AddWithValue("@isWrite", permission.permission_isWrite);
 
                 cmd.ExecuteNonQuery();
             }
@@ -39,18 +41,25 @@ namespace DAL
             }
         }
 
-        static public void delete(CMPermissionBE permission)
+        static public List<CMPermissionBE> getAll()
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionDelete, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Permission.getAll, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", permission.permission_id);
+                SqlDataReader dr = cmd.ExecuteReader();
 
-                cmd.ExecuteNonQuery();
+                List<CMPermissionBE> permissions = new List<CMPermissionBE>();
+
+                if (dr.Read())
+                {
+                    permissions.Add(new CMPermissionBE(dr));
+                }
+
+                return permissions;
             }
             catch (SqlException ex)
             {
@@ -66,16 +75,16 @@ namespace DAL
             }
         }
 
-        static public CMPermissionBE get(CMPermissionBE permission)
+        static public CMPermissionBE get(int permission_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionGet, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Permission.get, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", permission.permission_id);
+                cmd.Parameters.AddWithValue("@idVal", permission_id);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -102,23 +111,21 @@ namespace DAL
             }
         }
 
-        static public DataTable getAll(Sort sort)
+        static public void update(CMPermissionBE permission)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionGetAll, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Permission.update, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@sort", (int)sort);
+                cmd.Parameters.AddWithValue("@idVal", permission.permission_id);
+                cmd.Parameters.AddWithValue("@descVal", permission.permission_description);
+                cmd.Parameters.AddWithValue("@isRead", permission.permission_isRead);
+                cmd.Parameters.AddWithValue("@isWrite", permission.permission_isWrite);
 
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                da.Fill(ds, "Permission");
-
-                return ds.Tables["Permission"];
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -134,17 +141,16 @@ namespace DAL
             }
         }
 
-        static public void update(CMPermissionBE permission)
+        static public void delete(int permission_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.usp_permissionUpdate, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Permission.delete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", permission.permission_id);
-                cmd.Parameters.AddWithValue("@descVal", permission.permission_description);
+                cmd.Parameters.AddWithValue("@idVal", permission_id);
 
                 cmd.ExecuteNonQuery();
             }

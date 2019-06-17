@@ -10,19 +10,30 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class CMPositionDAL
+    class CMClientDAL
     {
-        static public void create(CMPositionBE position)
+        static public void create(CMClientBE client)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.create, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Client.create, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@descVal", position.position_description);
-                cmd.Parameters.AddWithValue("@areaId", position.position_area.area_id);
+                cmd.Parameters.AddWithValue("@dniVal", client.person_dni);
+                cmd.Parameters.AddWithValue("@wheight", client.client_weight);
+                cmd.Parameters.AddWithValue("@height", client.client_height);
+                cmd.Parameters.AddWithValue("@blood_type", client.client_bloodType);
+                cmd.Parameters.AddWithValue("@blood_pressure", client.client_bloodPressure);
+                cmd.Parameters.AddWithValue("@allergies", client.client_allergies);
+                cmd.Parameters.AddWithValue("@pathologies", client.client_pathologies);
+                cmd.Parameters.AddWithValue("@medicines", client.client_medicines);
+                cmd.Parameters.AddWithValue("@seizures", client.client_seizures);
+                cmd.Parameters.AddWithValue("@diabetes", client.client_diabetes);
+                cmd.Parameters.AddWithValue("@cholesterol", client.client_cholesterol);
+                cmd.Parameters.AddWithValue("@cancer", client.client_cancer);
+                cmd.Parameters.AddWithValue("@aids", client.client_aids);
 
                 cmd.ExecuteNonQuery();
             }
@@ -40,27 +51,25 @@ namespace DAL
             }
         }
 
-        static public List<CMPositionBE> getAll(int area_id)
+        static public List<CMClientBE> getAll()
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.getAll, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Client.getAll, con);
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@areaId", area_id);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                List<CMPositionBE> positions = new List<CMPositionBE>();
+                List<CMClientBE> clients = new List<CMClientBE>();
 
                 if (dr.Read())
                 {
-                    positions.Add(new CMPositionBE(dr));
+                    clients.Add(new CMClientBE(dr));
                 }
 
-                return positions;
+                return clients;
             }
             catch (SqlException ex)
             {
@@ -76,22 +85,22 @@ namespace DAL
             }
         }
 
-        static public CMPositionBE get(int position_id)
+        static public CMClientBE get(string person_dni)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.get, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Client.get, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", position_id);
+                cmd.Parameters.AddWithValue("@dniVal", person_dni);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.Read())
                 {
-                    return new CMPositionBE(dr);
+                    return new CMClientBE(dr);
                 }
                 else
                 {
@@ -112,18 +121,28 @@ namespace DAL
             }
         }
 
-        static public void update(CMPositionBE position)
+        static public void update(CMClientBE client)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.update, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Client.update, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", position.position_id);
-                cmd.Parameters.AddWithValue("@descVal", position.position_description);
-                cmd.Parameters.AddWithValue("@areaId", position.position_area.area_id);
+                cmd.Parameters.AddWithValue("@dniVal", client.person_dni);
+                cmd.Parameters.AddWithValue("@wheight", client.client_weight);
+                cmd.Parameters.AddWithValue("@height", client.client_height);
+                cmd.Parameters.AddWithValue("@blood_type", client.client_bloodType);
+                cmd.Parameters.AddWithValue("@blood_pressure", client.client_bloodPressure);
+                cmd.Parameters.AddWithValue("@allergies", client.client_allergies);
+                cmd.Parameters.AddWithValue("@pathologies", client.client_pathologies);
+                cmd.Parameters.AddWithValue("@medicines", client.client_medicines);
+                cmd.Parameters.AddWithValue("@seizures", client.client_seizures);
+                cmd.Parameters.AddWithValue("@diabetes", client.client_diabetes);
+                cmd.Parameters.AddWithValue("@cholesterol", client.client_cholesterol);
+                cmd.Parameters.AddWithValue("@cancer", client.client_cancer);
+                cmd.Parameters.AddWithValue("@aids", client.client_aids);
 
                 cmd.ExecuteNonQuery();
             }
@@ -141,16 +160,16 @@ namespace DAL
             }
         }
 
-        static public void delete(CMPositionBE position)
+        static public void delete(string person_dni)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Position.delete, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Client.delete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", position.position_id);
+                cmd.Parameters.AddWithValue("@dniVal", person_dni);
 
                 cmd.ExecuteNonQuery();
             }
