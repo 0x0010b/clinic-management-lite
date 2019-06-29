@@ -28,10 +28,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -63,10 +59,6 @@ namespace DAL
                 }
 
                 return accounts;
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {
@@ -100,10 +92,6 @@ namespace DAL
                     throw new Exception(CMMessage.Maintenance.notFoundInstance);
                 }
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -131,10 +119,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -157,10 +141,6 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@idVal", account_id);
 
                 cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {
@@ -194,10 +174,6 @@ namespace DAL
                 {
                     throw new Exception(CMMessage.Login.accountNotFound);
                 }
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {

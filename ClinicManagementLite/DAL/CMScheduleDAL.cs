@@ -26,10 +26,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -60,10 +56,6 @@ namespace DAL
 
                 return schedules;
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -87,10 +79,6 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@idVal", turn_id);
 
                 cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {
@@ -124,10 +112,6 @@ namespace DAL
 
                 return schedules;
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -160,10 +144,6 @@ namespace DAL
 
                 return schedules;
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -195,10 +175,6 @@ namespace DAL
                 }
 
                 return schedules;
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {

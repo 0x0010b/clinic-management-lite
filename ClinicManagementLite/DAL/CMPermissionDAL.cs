@@ -27,10 +27,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -60,10 +56,6 @@ namespace DAL
                 }
 
                 return permissions;
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {
@@ -97,10 +89,6 @@ namespace DAL
                     throw new Exception(CMMessage.Maintenance.notFoundInstance);
                 }
             }
-            catch(SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -127,10 +115,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -153,10 +137,6 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@idVal", permission_id);
 
                 cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {

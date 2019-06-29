@@ -26,10 +26,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -61,10 +57,6 @@ namespace DAL
                 }
 
                 return positions;
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {
@@ -98,10 +90,6 @@ namespace DAL
                     throw new Exception(CMMessage.Maintenance.notFoundInstance);
                 }
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -127,10 +115,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -141,7 +125,7 @@ namespace DAL
             }
         }
 
-        static public void delete(CMPositionBE position)
+        static public void delete(int position_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -150,13 +134,9 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand(CMProcedure.Position.delete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", position.position_id);
+                cmd.Parameters.AddWithValue("@idVal", position_id);
 
                 cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {

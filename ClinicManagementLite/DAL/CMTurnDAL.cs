@@ -28,10 +28,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -61,10 +57,6 @@ namespace DAL
                 }
 
                 return turns;
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {
@@ -98,10 +90,6 @@ namespace DAL
                     throw new Exception(CMMessage.Maintenance.notFoundInstance);
                 }
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -129,10 +117,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -143,7 +127,7 @@ namespace DAL
             }
         }
 
-        static public void delete(CMTurnBE turn)
+        static public void delete(int turn_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -152,13 +136,9 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand(CMProcedure.Turn.delete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", turn.turn_id);
+                cmd.Parameters.AddWithValue("@idVal", turn_id);
 
                 cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {

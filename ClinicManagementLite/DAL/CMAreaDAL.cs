@@ -25,10 +25,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -58,10 +54,6 @@ namespace DAL
                 }
 
                 return areas;
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {
@@ -95,10 +87,6 @@ namespace DAL
                     throw new Exception(CMMessage.Maintenance.notFoundInstance);
                 }
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -123,10 +111,6 @@ namespace DAL
 
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
@@ -137,7 +121,7 @@ namespace DAL
             }
         }
 
-        static public void delete(CMAreaBE area)
+        static public void delete(int area_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -146,13 +130,9 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand(CMProcedure.Area.delete, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idVal", area.area_id);
+                cmd.Parameters.AddWithValue("@idVal", area_id);
 
                 cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {

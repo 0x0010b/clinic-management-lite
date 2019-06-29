@@ -19,9 +19,17 @@ namespace BL
             {
                 CMPermissionDAL.create(permission);
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        static public List<CMPermissionBE> getAll()
+        {
+            try
+            {
+                return CMPermissionDAL.getAll();
             }
             catch (Exception ex)
             {
@@ -29,15 +37,11 @@ namespace BL
             }
         }
 
-        static public void delete(CMPermissionBE permission)
+        static public CMPermissionBE get(int permission_id)
         {
             try
             {
-                CMPermissionDAL.delete(permission);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
+                return CMPermissionDAL.get(permission_id);
             }
             catch (Exception ex)
             {
@@ -45,47 +49,11 @@ namespace BL
             }
         }
 
-        static public CMPermissionBE get(CMPermissionBE permission)
+        static public void delete(int permission_id)
         {
             try
             {
-                return CMPermissionDAL.get(permission);
-            }
-            catch(SqlException ex)
-            {
-                throw ex;
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        static public DataTable getAll(Sort sort = Sort.name)
-        {
-            try
-            {
-                return CMPermissionDAL.getAll(sort);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        static public void update(CMPermissionBE permission)
-        {
-            try
-            {
-                CMPermissionDAL.update(permission);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
+                CMPermissionDAL.delete(permission_id);
             }
             catch (Exception ex)
             {

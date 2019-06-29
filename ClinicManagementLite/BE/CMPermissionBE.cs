@@ -17,22 +17,6 @@ namespace BE
 
         public CMPermissionBE() { }
 
-        public CMPermissionBE(int id, string description)
-        {
-            this.permission_id = id;
-            this.permission_description = description;
-        }
-
-        public CMPermissionBE(string description)
-        {
-            this.permission_description = description;
-        }
-
-        public CMPermissionBE(int id)
-        {
-            this.permission_id = id;
-        }
-
         public CMPermissionBE(SqlDataReader reader)
         {
             this.permission_id          = Convert.ToInt16(reader["permission_id"].ToString());

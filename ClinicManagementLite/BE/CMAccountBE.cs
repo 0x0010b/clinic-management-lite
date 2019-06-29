@@ -17,21 +17,15 @@ namespace BE
         public DateTime account_createdAt           = new DateTime();
 
         public CMAccountBE() { }
-
-        public CMAccountBE(String username, String password)
-        {
-            this.account_username = username;
-            this.account_password = password;
-        }
-
+        
         public CMAccountBE(SqlDataReader reader)
         {
             this.account_id         = Convert.ToInt16(reader["account_id"].ToString());
             this.account_username   = reader["account_username"].ToString();
             this.account_password   = reader["account_password"].ToString();
-            this.account_createdAt  = Convert.ToDateTime(reader["account_created_at"].ToString());
             this.account_employee   = new CMEmployeeBE(reader);
             this.account_permission = new CMPermissionBE(reader);
+            this.account_createdAt = Convert.ToDateTime(reader["account_created_at"].ToString());
         }
     }
 }
