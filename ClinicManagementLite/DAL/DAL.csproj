@@ -52,11 +52,14 @@
   <ItemGroup>
     <Compile Include="CMAccountDAL.cs" />
     <Compile Include="CMAreaDAL.cs" />
+    <Compile Include="CMClientDAL.cs" />
     <Compile Include="CMDatabase.cs" />
     <Compile Include="CMEmployeeDAL.cs" />
     <Compile Include="CMPermissionDAL.cs" />
     <Compile Include="CMPersonDAL.cs" />
     <Compile Include="CMPositionDAL.cs" />
+    <Compile Include="CMScheduleDAL.cs" />
+    <Compile Include="CMTurnDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
