@@ -23,11 +23,11 @@ namespace BL
             }
         }
 
-        static public DataTable getDataTable()
+        static public DataTable getDataTable(int area_id = 0, int position_id = 0)
         {
             try
             {
-                List<CMEmployeeBE> arrayEmployees = CMEmployeeDAL.getAll();
+                List<CMEmployeeBE> arrayEmployees = CMEmployeeDAL.getAll(area_id, position_id);
                 DataTable dataTable = new DataTable();
 
                 dataTable.Columns.Add("DNI");
@@ -64,7 +64,7 @@ namespace BL
             }
         }
 
-        static public List<CMEmployeeBE> getAll(int area_id, int position_id)
+        static public List<CMEmployeeBE> getAll(int area_id = 0, int position_id = 0)
         {
             try
             {

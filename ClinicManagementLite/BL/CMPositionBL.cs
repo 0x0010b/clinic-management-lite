@@ -32,11 +32,11 @@ namespace BL
             }
         }
 
-        static public DataTable getDataTable()
+        static public DataTable getDataTable(int area_id = 0)
         {
             try
             {
-                List<CMPositionBE> arrayPositions = CMPositionDAL.getAll();
+                List<CMPositionBE> arrayPositions = CMPositionDAL.getAll(area_id);
                 DataTable dataTable = new DataTable();
 
                 dataTable.Columns.Add("Id");

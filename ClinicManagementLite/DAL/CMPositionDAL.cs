@@ -36,7 +36,7 @@ namespace DAL
             }
         }
 
-        static public List<CMPositionBE> getAll(int area_id = 0)
+        static public List<CMPositionBE> getAll(int area_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try

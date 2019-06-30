@@ -84,11 +84,11 @@ namespace BL
             }
         }
 
-        static public DataTable getDataTable()
+        static public DataTable getDataTable(int permission_id = 0)
         {
             try
             {
-                List<CMAccountBE> arrayAccounts = CMAccountDAL.getAll();
+                List<CMAccountBE> arrayAccounts = CMAccountDAL.getAll(permission_id);
                 DataTable dataTable = new DataTable();
 
                 dataTable.Columns.Add("Id");
