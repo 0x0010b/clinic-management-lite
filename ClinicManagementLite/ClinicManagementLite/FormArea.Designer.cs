@@ -67,6 +67,7 @@
             this.Controls.Add(this.btnAction);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
+            this.MaximizeBox = false;
             this.Name = "FormArea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento";

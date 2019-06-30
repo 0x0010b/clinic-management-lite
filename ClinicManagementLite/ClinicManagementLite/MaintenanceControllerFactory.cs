@@ -23,6 +23,9 @@ namespace ClinicManagementLite
                 case MaintenanceControllerKey.position:
                     return new MaintenanceControllerPosition();
 
+                case MaintenanceControllerKey.employee:
+                    return new MaintenanceControllerEmployee();
+
                 default:
                     return null;
             }

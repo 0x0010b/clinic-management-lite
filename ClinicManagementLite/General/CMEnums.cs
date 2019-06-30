@@ -6,18 +6,12 @@ using System.Threading.Tasks;
 
 namespace General
 {
-    public enum Gender
-    {
-        male = 0,
-        female
-    }
-
     public enum MaintenanceControllerKey
     {
         account = 0,
         permission,
-        employee,
         client,
+        employee,
         area,
         position,
         turn,

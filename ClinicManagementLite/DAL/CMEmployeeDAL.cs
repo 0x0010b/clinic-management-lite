@@ -52,7 +52,7 @@ namespace DAL
 
                 List<CMEmployeeBE> employees = new List<CMEmployeeBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     employees.Add(new CMEmployeeBE(dr));
                 }
