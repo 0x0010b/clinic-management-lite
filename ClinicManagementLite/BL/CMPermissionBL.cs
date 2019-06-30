@@ -25,6 +25,53 @@ namespace BL
             }
         }
 
+        static public void update(CMPermissionBE permission)
+        {
+            try
+            {
+                CMPermissionDAL.update(permission);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        static public DataTable getDataTable()
+        {
+            try
+            {
+                List<CMPermissionBE> arrayPermissions = CMPermissionDAL.getAll();
+                DataTable dataTable = new DataTable();
+
+                dataTable.Columns.Add("Id");
+                dataTable.Columns.Add("Permiso");
+                dataTable.Columns.Add("Lectura");
+                dataTable.Columns.Add("Escritura");
+                dataTable.Columns.Add("Fecha de creacion");
+
+                foreach (CMPermissionBE permission in arrayPermissions)
+                {
+
+                    DataRow row = dataTable.NewRow();
+
+                    row[0] = permission.permission_id;
+                    row[1] = permission.permission_description;
+                    row[2] = permission.permission_isRead ? "Si" : "No";
+                    row[3] = permission.permission_isWrite ? "Si" : "No";
+                    row[4] = permission.permission_createdAt.ToString("dd / MM / yyyy");
+
+                    dataTable.Rows.Add(row);
+                }
+
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         static public List<CMPermissionBE> getAll()
         {
             try

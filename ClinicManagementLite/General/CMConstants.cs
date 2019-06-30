@@ -104,8 +104,8 @@ namespace General
         public struct Login
         {
             public static string accountNotFound    = "La cuenta ingresada no esta registrada en nuestra base de datos.";
-            public static string usernameMinString  = "El usuario debe tener 8 digitos.";
-            public static string passwordMinString  = "La contrasena debe tener 6 digitos.";
+            public static string usernameMinString  = "El usuario debe tener como minimo 5 digitos.";
+            public static string passwordMinString  = "La contrasena debe tener como minimo 6 digitos.";
         }
     }
 }

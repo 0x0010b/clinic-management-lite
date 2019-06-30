@@ -10,15 +10,15 @@ namespace BE
 {
     public class CMPersonBE
     {
-        public string person_dni            = "";
-        public string person_name           = "";
-        public string person_lastname       = "";
-        public string person_phone          = "";
-        public DateTime person_birthday     = new DateTime();
-        public string person_address        = "";
-        public int person_gender            = 0;
-        public string person_image          = "";
-        public DateTime person_createdAt    = new DateTime();
+        public string person_dni { get; set; } = "";
+        public string person_name { get; set; } = "";
+        public string person_lastname { get; set; } = "";
+        public string person_phone { get; set; } = "";
+        public DateTime person_birthday { get; set; } = new DateTime();
+        public string person_address { get; set; } = "";
+        public int person_gender { get; set; } = 0;
+        public string person_image { get; set; } = "";
+        public DateTime person_createdAt { get; set; } = new DateTime();
 
         public CMPersonBE() { }
 

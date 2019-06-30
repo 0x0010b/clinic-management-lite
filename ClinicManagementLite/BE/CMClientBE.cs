@@ -10,19 +10,19 @@ namespace BE
 {
     public class CMClientBE : CMPersonBE
     {
-        public string client_weight         = "";
-        public string client_height         = "";
-        public string client_bloodType      = "";
-        public string client_bloodPressure  = "";
-        public string client_allergies      = "";
-        public string client_pathologies    = "";
-        public string client_medicines      = "";
-        public string client_seizures       = "";
-        public string client_diabetes       = "";
-        public string client_cholesterol    = "";
-        public string client_cancer         = "";
-        public string client_aids           = "";
-        public DateTime client_createdAt    = new DateTime();
+        public string client_weight { get; set; } = "";
+        public string client_height { get; set; } = "";
+        public string client_bloodType { get; set; } = "";
+        public string client_bloodPressure { get; set; } = "";
+        public string client_allergies { get; set; } = "";
+        public string client_pathologies { get; set; } = "";
+        public string client_medicines { get; set; } = "";
+        public string client_seizures { get; set; } = "";
+        public string client_diabetes { get; set; } = "";
+        public string client_cholesterol { get; set; } = "";
+        public string client_cancer { get; set; } = "";
+        public string client_aids { get; set; } = "";
+        public DateTime client_createdAt { get; set; } = new DateTime();
 
         public CMClientBE(SqlDataReader reader)
         {

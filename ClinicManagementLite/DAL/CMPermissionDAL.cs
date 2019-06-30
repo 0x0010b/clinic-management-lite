@@ -50,7 +50,7 @@ namespace DAL
 
                 List<CMPermissionBE> permissions = new List<CMPermissionBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     permissions.Add(new CMPermissionBE(dr));
                 }

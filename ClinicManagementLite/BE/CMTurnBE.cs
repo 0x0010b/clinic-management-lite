@@ -9,12 +9,12 @@ namespace BE
 {
     public class CMTurnBE
     {
-        public int turn_id                  = 0;
-        public string turn_description      = "";
-        public int turn_day                 = 0;
-        public DateTime turn_entryHour      = new DateTime();
-        public DateTime turn_departureHour  = new DateTime();
-        public DateTime turn_createdAt      = new DateTime();
+        public int turn_id { get; set; } = 0;
+        public string turn_description { get; set; } = "";
+        public int turn_day { get; set; } = 0;
+        public DateTime turn_entryHour { get; set; } = new DateTime();
+        public DateTime turn_departureHour { get; set; } = new DateTime();
+        public DateTime turn_createdAt { get; set; } = new DateTime();
 
         public CMTurnBE() { }
 

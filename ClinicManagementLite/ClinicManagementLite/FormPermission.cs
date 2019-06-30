@@ -1,72 +1,70 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BL;
-using BE;
-using System.Data;
-using System.Data.SqlClient;
 using General;
+using BE;
+using BL;
 
 namespace ClinicManagementLite
 {
-    class FormPermission : FormController
+    public partial class FormPermission : Form
     {
-        public void actionDelete(Form ctx)
+        private bool            isEditing;
+        private int             permission_id;
+        private CMPermissionBE  objPermission = new CMPermissionBE();
+        
+        public FormPermission(bool isEditing, int permission_id)
         {
-            FormList form = (FormList)ctx;
+            InitializeComponent();
 
-            int id = int.Parse(form.dgvList.CurrentRow.Cells[0].Value.ToString());
-            CMPermissionBL.delete(new CMPermissionBE(id));
+            this.isEditing      = isEditing;
+            this.permission_id  = permission_id;
         }
 
-        public void actionInsert(Form ctx)
+        private void FormMaintenance01_Load(object sender, EventArgs e)
         {
-            FormMaintenance01 form = (FormMaintenance01)ctx;
-            CMPermissionBL.create(new CMPermissionBE(form.txtDescription.Text));
-        }
+            this.Text           = this.isEditing ? "Actualizar Permiso" : "Insertar Permiso";
+            this.btnAction.Text = this.isEditing ? "Actualizar" : "Insertar";
 
-        public void actionUpdate(Form ctx)
-        {
-            FormMaintenance01 form = (FormMaintenance01)ctx;
-            CMPermissionBL.update(new CMPermissionBE(form.instanceID, form.txtDescription.Text));
-        }
-
-        public void setupFormList(Form ctx)
-        {
-            FormList form = (FormList)ctx;
-
-            DataTable dtList = CMPermissionBL.getAll();
-
-            form.Text = "Mantenimiento - Permiso";
-            form.lblTitle.Text = $"Permisos - ({dtList.Rows.Count})";
-
-            form.dgvList.DataSource = dtList;
-        }
-
-        public void setupFormMaintenance(Form ctx)
-        {
-            FormMaintenance01 form = (FormMaintenance01)ctx;
-
-            form.Text = form.isEditing ? "Actualizar Permiso" : "Insertar Permiso";
-            form.btnAction.Text = form.isEditing ? "Actualizar" : "Insertar";
-            form.gbPermission.Enabled = true;
-
-            if (form.isEditing)
+            if (this.isEditing)
             {
-                try
-                {
-                    CMPermissionBE permission = CMPermissionBL.get(new CMPermissionBE(form.instanceID));
-                    form.txtDescription.Text = permission.permission_description;
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message); // TODO: - Fix
-                }
+                this.objPermission          = CMPermissionBL.get(this.permission_id);
+                this.txtDescription.Text    = objPermission.permission_description;
+                this.cbxRead.Checked        = objPermission.permission_isRead;
+                this.cbxWrite.Checked       = objPermission.permission_isWrite;
             }
         }
 
+        private void BtnAction_Click(object sender, EventArgs e)
+        {
+            this.objPermission.permission_description    = this.txtDescription.Text;
+            this.objPermission.permission_isRead         = this.cbxRead.Checked;
+            this.objPermission.permission_isWrite        = this.cbxWrite.Checked;
+
+            try
+            {
+                if (this.isEditing)
+                {
+                    CMPermissionBL.update(objPermission);
+                }
+                else
+                {
+                    CMPermissionBL.create(objPermission);
+                }
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

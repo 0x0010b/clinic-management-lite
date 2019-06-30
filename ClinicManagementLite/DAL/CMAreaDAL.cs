@@ -48,7 +48,7 @@ namespace DAL
 
                 List<CMAreaBE> areas = new List<CMAreaBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     areas.Add(new CMAreaBE(dr));
                 }

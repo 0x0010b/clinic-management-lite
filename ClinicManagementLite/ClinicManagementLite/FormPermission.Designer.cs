@@ -1,6 +1,6 @@
 ﻿namespace ClinicManagementLite
 {
-    partial class FormMaintenance01
+    partial class FormPermission
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(31, 72);
+            this.txtDescription.Location = new System.Drawing.Point(31, 58);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(202, 20);
             this.txtDescription.TabIndex = 1;
@@ -67,8 +67,7 @@
             // 
             this.gbPermission.Controls.Add(this.cbxWrite);
             this.gbPermission.Controls.Add(this.cbxRead);
-            this.gbPermission.Enabled = false;
-            this.gbPermission.Location = new System.Drawing.Point(31, 123);
+            this.gbPermission.Location = new System.Drawing.Point(31, 112);
             this.gbPermission.Name = "gbPermission";
             this.gbPermission.Size = new System.Drawing.Size(202, 100);
             this.gbPermission.TabIndex = 3;
@@ -95,7 +94,7 @@
             this.cbxRead.Text = "Lectura";
             this.cbxRead.UseVisualStyleBackColor = true;
             // 
-            // FormMaintenance01
+            // FormPermission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,7 +104,7 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FormMaintenance01";
+            this.Name = "FormPermission";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento";
             this.Load += new System.EventHandler(this.FormMaintenance01_Load);

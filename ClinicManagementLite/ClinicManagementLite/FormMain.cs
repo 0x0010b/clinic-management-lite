@@ -15,7 +15,7 @@ namespace ClinicManagementLite
 {
     public partial class FormMain : Form
     {
-        private FormControllerFactory formFactory = new FormControllerFactory();
+        private MaintenanceControllerFactory objMaintenanceFactory = new MaintenanceControllerFactory();
 
         public FormMain()
         {
@@ -24,10 +24,15 @@ namespace ClinicManagementLite
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            if (CMUserSession.shared.getUserInformation() == null)
+            FormLogin login = new FormLogin();
+            login.ShowDialog(this);
+
+            if (CMUserSession.shared.getUserInformation() != null)
             {
-                FormLogin login = new FormLogin();
-                login.ShowDialog(this);
+                CMAccountBE account = CMUserSession.shared.getUserInformation();
+
+                this.mantenimientoToolStripMenuItem1.Enabled    = account.account_permission.permission_isWrite;
+                this.consultasToolStripMenuItem.Enabled         = account.account_permission.permission_isRead;
             }
         }
 
@@ -53,32 +58,16 @@ namespace ClinicManagementLite
             }
         }
 
-        private void PermisosToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void MenuMaintenanceItem_Click(object sender, EventArgs e)
         {
-            FormList permission = new FormList();
-            permission.objFormController = this.formFactory.getInstance(FormControllerKey.permission);
-            permission.Show(this);
-        }
+            ToolStripMenuItem item = sender as ToolStripMenuItem;
+            int index = Convert.ToInt16(item.Tag.ToString());
 
-        private void CargosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormList position = new FormList();
-            position.objFormController = this.formFactory.getInstance(FormControllerKey.position);
-            position.Show(this);
-        }
-
-        private void AreaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            FormList area = new FormList();
-            area.objFormController = this.formFactory.getInstance(FormControllerKey.area);
-            area.Show(this);
-        }
-
-        private void TodosLosAfiliadosToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            FormList person = new FormList();
-            person.objFormController = this.formFactory.getInstance(FormControllerKey.person);
-            person.Show(this);
+            FormMaintenance formMaintenance = new FormMaintenance();
+            formMaintenance.objMaintenanceController = this.objMaintenanceFactory.getInstance((MaintenanceControllerKey)index);
+            formMaintenance.ShowDialog(this);
         }
     }
+
+    
 }

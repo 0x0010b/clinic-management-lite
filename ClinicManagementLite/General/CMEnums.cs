@@ -12,21 +12,15 @@ namespace General
         female
     }
 
-    public enum Sort
-    {
-        name = 0,
-        oldest,
-        recent
-    }
-
-    public enum FormControllerKey
+    public enum MaintenanceControllerKey
     {
         account = 0,
         permission,
+        employee,
+        client,
         area,
         position,
-        person,
-        employee,
-        client
+        turn,
+        schedule
     }
 }

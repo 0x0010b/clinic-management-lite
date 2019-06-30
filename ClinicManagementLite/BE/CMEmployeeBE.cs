@@ -10,8 +10,8 @@ namespace BE
 {
     public class CMEmployeeBE : CMPersonBE
     {
-        public CMPositionBE employee_position   = new CMPositionBE();
-        public DateTime employee_createdAt      = new DateTime();
+        public CMPositionBE employee_position { get; set; } = new CMPositionBE();
+        public DateTime employee_createdAt { get; set; } = new DateTime();
 
         public CMEmployeeBE() { }
 

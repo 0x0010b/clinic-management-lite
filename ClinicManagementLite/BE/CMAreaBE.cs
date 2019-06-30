@@ -9,9 +9,9 @@ namespace BE
 {
     public class CMAreaBE
     {
-        public int area_id              = 0;
-        public string area_description  = "";
-        public DateTime area_createdAt  = new DateTime();
+        public int area_id { get; set; } = 0;
+        public string area_description { get; set; } = "";
+        public DateTime area_createdAt { get; set; } = new DateTime();
 
         public CMAreaBE() { }
 

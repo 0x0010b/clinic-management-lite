@@ -1,72 +1,71 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BL;
 using BE;
-using System.Data;
-using System.Data.SqlClient;
+using BL;
 using General;
 
 namespace ClinicManagementLite
 {
-    class FormPosition : FormController
+    public partial class FormPosition : Form
     {
-        public void actionDelete(Form ctx)
-        {
-            FormList form = (FormList)ctx;
+        private bool isEditing;
+        private int position_id;
+        private CMPositionBE objPosition = new CMPositionBE();
 
-            int id = int.Parse(form.dgvList.CurrentRow.Cells[0].Value.ToString());
-            CMPositionBL.delete(new CMPositionBE(id));
+        public FormPosition(bool isEditing, int position_id)
+        {
+            InitializeComponent();
+
+            this.isEditing = isEditing;
+            this.position_id = position_id;
         }
 
-        public void actionInsert(Form ctx)
+        private void FormPosition_Load(object sender, EventArgs e)
         {
-            FormMaintenance01 form = (FormMaintenance01)ctx;
-            CMPositionBL.create(new CMPositionBE(form.txtDescription.Text));
-        }
+            this.Text = this.isEditing ? "Actualizar Cargo" : "Insertar Cargo";
+            this.btnAction.Text = this.isEditing ? "Actualizar" : "Insertar";
 
-        public void actionUpdate(Form ctx)
-        {
-            FormMaintenance01 form = (FormMaintenance01)ctx;
-            CMPositionBL.update(new CMPositionBE(form.instanceID, form.txtDescription.Text));
-        }
+            this.cbxArea.DataSource = CMAreaBL.getAll();
+            this.cbxArea.DisplayMember = "area_description";
+            this.cbxArea.ValueMember = "area_id";
 
-        public void setupFormList(Form ctx)
-        {
-            FormList form = (FormList)ctx;
-
-            DataTable dtList = CMPositionBL.getAll();
-
-            form.Text = "Mantenimiento - Cargo";
-            form.lblTitle.Text = $"Cargos - ({dtList.Rows.Count})";
-
-            form.dgvList.DataSource = dtList;
-        }
-
-        public void setupFormMaintenance(Form ctx)
-        {
-            FormMaintenance01 form = (FormMaintenance01)ctx;
-
-            form.Text = form.isEditing ? "Actualizar Cargo" : "Insertar Cargo";
-            form.btnAction.Text = form.isEditing ? "Actualizar" : "Insertar";
-            form.gbPermission.Enabled = false;
-
-            if (form.isEditing)
+            if (this.isEditing)
             {
-                try
-                {
-                    CMPositionBE position = CMPositionBL.get(new CMPositionBE(form.instanceID));
-                    form.txtDescription.Text = position.position_description;
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message); // TODO: - Fix
-                }
+                this.objPosition = CMPositionBL.get(this.position_id);
+                this.txtDescription.Text = this.objPosition.position_description;
+                this.cbxArea.SelectedValue = this.objPosition.position_area.area_id;
             }
         }
 
+        private void BtnAction_Click(object sender, EventArgs e)
+        {
+            this.objPosition.position_description = this.txtDescription.Text;
+            this.objPosition.position_area.area_id = Convert.ToInt16(this.cbxArea.SelectedValue.ToString());
+
+            try
+            {
+                if (this.isEditing)
+                {
+                    CMPositionBL.update(this.objPosition);
+                }
+                else
+                {
+                    CMPositionBL.create(this.objPosition);
+                }
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

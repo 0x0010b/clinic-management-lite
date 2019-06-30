@@ -9,10 +9,10 @@ namespace BE
 {
     public class CMPositionBE
     {
-        public int position_id              = 0;
-        public string position_description  = "";
-        public CMAreaBE position_area       = new CMAreaBE();
-        public DateTime position_createdAt  = new DateTime();
+        public int position_id { get; set; } = 0;
+        public string position_description { get; set; } = "";
+        public CMAreaBE position_area { get; set; } = new CMAreaBE();
+        public DateTime position_createdAt { get; set; } = new DateTime();
 
         public CMPositionBE() { }
 

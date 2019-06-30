@@ -38,7 +38,7 @@ namespace DAL
             }
         }
 
-        static public List<CMAccountBE> getAll(int permission_id)
+        static public List<CMAccountBE> getAll(int permission_id = 0)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -152,7 +152,7 @@ namespace DAL
             }
         }
 
-        static public CMAccountBE login(CMAccountBE account)
+        static public CMAccountBE login(String account_username, String account_password)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -161,8 +161,8 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand(CMProcedure.Account.login, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@nameVal", account.account_username);
-                cmd.Parameters.AddWithValue("@passVal", account.account_password);
+                cmd.Parameters.AddWithValue("@nameVal", account_username);
+                cmd.Parameters.AddWithValue("@passVal", account_password);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 

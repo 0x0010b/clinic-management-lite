@@ -9,12 +9,12 @@ namespace BE
 {
     public class CMAccountBE
     {
-        public int account_id                       = 0;
-        public string account_username              = "";
-        public string account_password              = "";
-        public CMEmployeeBE account_employee        = new CMEmployeeBE();
-        public CMPermissionBE account_permission    = new CMPermissionBE();
-        public DateTime account_createdAt           = new DateTime();
+        public int account_id { get; set; } = 0;
+        public string account_username { get; set; } = "";
+        public string account_password { get; set; } = "";
+        public CMEmployeeBE account_employee { get; set; } = new CMEmployeeBE();
+        public CMPermissionBE account_permission { get; set; } = new CMPermissionBE();
+        public DateTime account_createdAt { get; set; } = new DateTime();
 
         public CMAccountBE() { }
         

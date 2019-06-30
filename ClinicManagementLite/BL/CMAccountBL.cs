@@ -13,26 +13,22 @@ namespace BL
 {
     public class CMAccountBL
     {
-        static public CMAccountBE login(CMAccountBE account)
+        static public CMAccountBE login(String account_username, String account_password)
         {
             try
             {
-                if (account.account_username.Length < 8)
+                if (account_username.Trim().Length < 5)
                 {
                     throw new Exception(CMMessage.Login.usernameMinString);
                 }
-                else if (account.account_password.Length < 6)
+                else if (account_password.Trim().Length < 6)
                 {
                     throw new Exception(CMMessage.Login.passwordMinString);
                 }
                 else
                 {
-                    return CMAccountDAL.login(account);
+                    return CMAccountDAL.login(account_username, account_password);
                 }
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {
@@ -46,41 +42,17 @@ namespace BL
             {
                 CMAccountDAL.create(account);
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
 
-        static public void delete(CMAccountBE account)
+        static public CMAccountBE get(int account_id)
         {
             try
             {
-                CMAccountDAL.delete(account);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        static public DataTable getAll(Sort sort = Sort.name)
-        {
-            try
-            {
-                return CMAccountDAL.getAll(sort);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
+                return CMAccountDAL.get(account_id);
             }
             catch (Exception ex)
             {
@@ -94,9 +66,66 @@ namespace BL
             {
                 CMAccountDAL.update(account);
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        static public void delete(int account_id)
+        {
+            try
+            {
+                CMAccountDAL.delete(account_id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        static public DataTable getDataTable()
+        {
+            try
+            {
+                List<CMAccountBE> arrayAccounts = CMAccountDAL.getAll();
+                DataTable dataTable = new DataTable();
+
+                dataTable.Columns.Add("Id");
+                dataTable.Columns.Add("Usuario");
+                dataTable.Columns.Add("Contrasena");
+                dataTable.Columns.Add("DNI Empleado");
+                dataTable.Columns.Add("Tipo de Permiso");
+                dataTable.Columns.Add("Fecha de creacion");
+
+                foreach (CMAccountBE account in arrayAccounts)
+                {
+
+                    DataRow row = dataTable.NewRow();
+
+                    row[0] = account.account_id;
+                    row[1] = account.account_username;
+                    row[2] = account.account_password;
+                    row[3] = account.account_employee.person_dni;
+                    row[4] = account.account_permission.permission_description;
+                    row[5] = account.account_createdAt;
+
+                    dataTable.Rows.Add(row);
+                }
+
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        static public List<CMAccountBE> getAccountList(int permission_id)
+        {
+            try
+            {
+                return CMAccountDAL.getAll(permission_id);
             }
             catch (Exception ex)
             {

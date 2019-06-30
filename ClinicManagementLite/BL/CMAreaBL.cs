@@ -19,9 +19,36 @@ namespace BL
             {
                 CMAreaDAL.create(area);
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        static public DataTable getDataTable()
+        {
+            try
+            {
+                List<CMAreaBE> arrayAreas = CMAreaDAL.getAll();
+                DataTable dataTable = new DataTable();
+
+                dataTable.Columns.Add("Id");
+                dataTable.Columns.Add("Area");
+                dataTable.Columns.Add("Fecha de creacion");
+
+                foreach (CMAreaBE area in arrayAreas)
+                {
+
+                    DataRow row = dataTable.NewRow();
+
+                    row[0] = area.area_id;
+                    row[1] = area.area_description;
+                    row[2] = area.area_createdAt.ToString("dd / MM / yyyy");
+
+                    dataTable.Rows.Add(row);
+                }
+
+                return dataTable;
             }
             catch (Exception ex)
             {
@@ -29,15 +56,11 @@ namespace BL
             }
         }
 
-        static public void delete(CMAreaBE area)
+        static public List<CMAreaBE> getAll()
         {
             try
             {
-                CMAreaDAL.delete(area);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
+                return CMAreaDAL.getAll();
             }
             catch (Exception ex)
             {
@@ -45,31 +68,11 @@ namespace BL
             }
         }
 
-        static public CMAreaBE get(CMAreaBE area)
+        static public CMAreaBE get(int area_id)
         {
             try
             {
-                return CMAreaDAL.get(area);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        static public DataTable getAll(Sort sort = Sort.name)
-        {
-            try
-            {
-                return CMAreaDAL.getAll(sort);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
+                return CMAreaDAL.get(area_id);
             }
             catch (Exception ex)
             {
@@ -83,9 +86,17 @@ namespace BL
             {
                 CMAreaDAL.update(area);
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        static public void delete(int area_id)
+        {
+            try
+            {
+                CMAreaDAL.delete(area_id);
             }
             catch (Exception ex)
             {

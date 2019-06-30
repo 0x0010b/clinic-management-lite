@@ -9,9 +9,9 @@ namespace BE
 {
     public class CMScheduleBE
     {
-        public CMEmployeeBE schedule_employee   = new CMEmployeeBE();
-        public CMTurnBE schedule_turn           = new CMTurnBE();
-        public DateTime schedule_created_at     = new DateTime();
+        public CMEmployeeBE schedule_employee { get; set; } = new CMEmployeeBE();
+        public CMTurnBE schedule_turn { get; set; } = new CMTurnBE();
+        public DateTime schedule_created_at { get; set; } = new DateTime();
 
         public CMScheduleBE() { }
 

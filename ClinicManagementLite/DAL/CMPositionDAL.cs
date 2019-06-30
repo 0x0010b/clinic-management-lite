@@ -36,7 +36,7 @@ namespace DAL
             }
         }
 
-        static public List<CMPositionBE> getAll(int area_id)
+        static public List<CMPositionBE> getAll(int area_id = 0)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -51,7 +51,7 @@ namespace DAL
 
                 List<CMPositionBE> positions = new List<CMPositionBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     positions.Add(new CMPositionBE(dr));
                 }
