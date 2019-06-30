@@ -60,5 +60,15 @@ namespace ClinicManagementLite
                 Application.Exit();
             }
         }
+
+        private void TextField_OnlyTextNumbers(object sender, KeyPressEventArgs e)
+        {
+            Char keypress = e.KeyChar;
+
+            if (!(Char.IsLetterOrDigit(keypress) || keypress == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

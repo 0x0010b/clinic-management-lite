@@ -17,11 +17,18 @@ namespace BL
         {
             try
             {
-                CMPermissionDAL.create(permission);
+                if (permission.permission_description.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Form.descriptionEmpty);
+                }
+                else
+                {
+                    CMPermissionDAL.create(permission);
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -29,11 +36,18 @@ namespace BL
         {
             try
             {
-                CMPermissionDAL.update(permission);
+                if (permission.permission_description.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Form.descriptionEmpty);
+                }
+                else
+                {
+                    CMPermissionDAL.update(permission);
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -68,7 +82,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -80,7 +94,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -92,7 +106,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -104,7 +118,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
     }

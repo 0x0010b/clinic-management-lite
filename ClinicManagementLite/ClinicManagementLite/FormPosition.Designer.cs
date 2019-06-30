@@ -47,10 +47,14 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescription.Location = new System.Drawing.Point(32, 55);
+            this.txtDescription.MaxLength = 40;
             this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ShortcutsEnabled = false;
             this.txtDescription.Size = new System.Drawing.Size(202, 20);
             this.txtDescription.TabIndex = 6;
+            this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyTextNumber);
             // 
             // lblDescription
             // 
@@ -72,8 +76,9 @@
             // 
             // cbxArea
             // 
-            this.cbxArea.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxArea.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbxArea.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxArea.FormattingEnabled = true;
             this.cbxArea.Location = new System.Drawing.Point(32, 132);
             this.cbxArea.Name = "cbxArea";

@@ -32,7 +32,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 

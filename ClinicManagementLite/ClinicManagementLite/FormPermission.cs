@@ -66,5 +66,15 @@ namespace ClinicManagementLite
                 MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void TextField_OnlyText(object sender, KeyPressEventArgs e)
+        {
+            Char keypress = e.KeyChar;
+
+            if (!(Char.IsLetter(keypress) || keypress == Convert.ToChar(Keys.Space) || keypress == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

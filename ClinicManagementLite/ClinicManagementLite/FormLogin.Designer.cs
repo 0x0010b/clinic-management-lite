@@ -59,22 +59,26 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUsername.Location = new System.Drawing.Point(38, 110);
-            this.txtUsername.MaxLength = 255;
+            this.txtUsername.MaxLength = 40;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.ShortcutsEnabled = false;
             this.txtUsername.Size = new System.Drawing.Size(207, 20);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyTextNumbers);
             // 
             // txtPassword
             // 
+            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPassword.Location = new System.Drawing.Point(38, 178);
-            this.txtPassword.MaxLength = 255;
+            this.txtPassword.MaxLength = 20;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.ShortcutsEnabled = false;
             this.txtPassword.Size = new System.Drawing.Size(207, 20);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyTextNumbers);
             // 
             // label3
             // 

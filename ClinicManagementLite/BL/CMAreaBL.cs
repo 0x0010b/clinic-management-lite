@@ -17,11 +17,18 @@ namespace BL
         {
             try
             {
-                CMAreaDAL.create(area);
+                if (area.area_description.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Form.descriptionEmpty);
+                }
+                 else
+                {
+                    CMAreaDAL.create(area);
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -52,7 +59,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -64,7 +71,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -76,7 +83,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -84,11 +91,18 @@ namespace BL
         {
             try
             {
-                CMAreaDAL.update(area);
+                if (area.area_description.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Form.descriptionEmpty);
+                }
+                else
+                {
+                    CMAreaDAL.update(area);
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -100,7 +114,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
     }
