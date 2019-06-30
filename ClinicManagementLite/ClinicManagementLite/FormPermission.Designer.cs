@@ -48,10 +48,14 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescription.Location = new System.Drawing.Point(31, 58);
+            this.txtDescription.MaxLength = 40;
             this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ShortcutsEnabled = false;
             this.txtDescription.Size = new System.Drawing.Size(202, 20);
             this.txtDescription.TabIndex = 1;
+            this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyText);
             // 
             // btnAction
             // 

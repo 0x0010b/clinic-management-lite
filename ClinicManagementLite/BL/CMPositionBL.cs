@@ -17,19 +17,26 @@ namespace BL
         {
             try
             {
-                CMPositionDAL.create(position);
+                if (position.position_description.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Form.descriptionEmpty);
+                }
+                else
+                {
+                    CMPositionDAL.create(position);
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
-        static public DataTable getDataTable()
+        static public DataTable getDataTable(int area_id = 0)
         {
             try
             {
-                List<CMPositionBE> arrayPositions = CMPositionDAL.getAll();
+                List<CMPositionBE> arrayPositions = CMPositionDAL.getAll(area_id);
                 DataTable dataTable = new DataTable();
 
                 dataTable.Columns.Add("Id");
@@ -54,7 +61,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -66,7 +73,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -78,7 +85,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -86,11 +93,18 @@ namespace BL
         {
             try
             {
-                CMPositionDAL.update(position);
+                if (position.position_description.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Form.descriptionEmpty);
+                }
+                else
+                {
+                    CMPositionDAL.update(position);
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -102,7 +116,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
     }

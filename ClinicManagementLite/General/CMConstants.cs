@@ -107,5 +107,16 @@ namespace General
             public static string usernameMinString  = "El usuario debe tener como minimo 5 digitos.";
             public static string passwordMinString  = "La contrasena debe tener como minimo 6 digitos.";
         }
+
+        public struct Form
+        {
+            public static string descriptionEmpty   = "Hay un campo de texto vacio.";
+        }
+
+        public struct Error
+        {
+            public static string uniqueKey          = "No se pudo completar la operacion. Uno o mas campos ingresados ya existen en nuestra base de datos.";
+            public static string deleteKey          = "No se pudo completar la opereacion. Este registro esta asociado a otro.";
+        }
     }
 }

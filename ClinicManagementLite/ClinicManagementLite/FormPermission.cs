@@ -44,7 +44,7 @@ namespace ClinicManagementLite
 
         private void BtnAction_Click(object sender, EventArgs e)
         {
-            this.objPermission.permission_description    = this.txtDescription.Text;
+            this.objPermission.permission_description    = this.txtDescription.Text.Trim();
             this.objPermission.permission_isRead         = this.cbxRead.Checked;
             this.objPermission.permission_isWrite        = this.cbxWrite.Checked;
 
@@ -64,6 +64,16 @@ namespace ClinicManagementLite
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TextField_OnlyText(object sender, KeyPressEventArgs e)
+        {
+            Char keypress = e.KeyChar;
+
+            if (!(Char.IsLetter(keypress) || keypress == Convert.ToChar(Keys.Space) || keypress == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
             }
         }
     }

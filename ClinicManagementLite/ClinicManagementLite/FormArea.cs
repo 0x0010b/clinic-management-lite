@@ -34,14 +34,14 @@ namespace ClinicManagementLite
 
             if (this.isEditing)
             {
-                this.objArea        = CMAreaBL.get(this.area_id);
+                this.objArea = CMAreaBL.get(this.area_id);
                 this.txtDescription.Text = objArea.area_description;
             }
         }
 
         private void BtnAction_Click(object sender, EventArgs e)
         {
-            this.objArea.area_description = this.txtDescription.Text;
+            this.objArea.area_description = this.txtDescription.Text.Trim();
 
             try
             {
@@ -59,6 +59,16 @@ namespace ClinicManagementLite
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TextField_OnlyTextNumber(object sender, KeyPressEventArgs e)
+        {
+            Char keypress = e.KeyChar;
+
+            if (!(Char.IsLetterOrDigit(keypress) || keypress == Convert.ToChar(Keys.Space) || keypress == Convert.ToChar(Keys.Back) ))
+            {
+                e.Handled = true;
             }
         }
     }

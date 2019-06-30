@@ -38,7 +38,7 @@ namespace DAL
             }
         }
 
-        static public List<CMAccountBE> getAll(int permission_id = 0)
+        static public List<CMAccountBE> getAll(int permission_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
