@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pickerDatetime = new System.Windows.Forms.DateTimePicker();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.pickerDateTime = new System.Windows.Forms.DateTimePicker();
             this.btnUploadImage = new System.Windows.Forms.Button();
             this.imgPerson = new System.Windows.Forms.PictureBox();
             this.cbxGender = new System.Windows.Forms.ComboBox();
@@ -40,7 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +58,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pickerDatetime);
+            this.groupBox1.Controls.Add(this.txtLastName);
+            this.groupBox1.Controls.Add(this.pickerDateTime);
             this.groupBox1.Controls.Add(this.btnUploadImage);
             this.groupBox1.Controls.Add(this.imgPerson);
             this.groupBox1.Controls.Add(this.cbxGender);
@@ -69,7 +70,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtPhone);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtLastName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label1);
@@ -81,21 +81,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion personal:";
             // 
-            // pickerDatetime
+            // txtLastName
             // 
-            this.pickerDatetime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.pickerDatetime.Location = new System.Drawing.Point(354, 221);
-            this.pickerDatetime.Name = "pickerDatetime";
-            this.pickerDatetime.Size = new System.Drawing.Size(115, 20);
-            this.pickerDatetime.TabIndex = 17;
-            this.pickerDatetime.Value = new System.DateTime(2019, 6, 30, 4, 46, 34, 0);
+            this.txtLastName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLastName.Location = new System.Drawing.Point(222, 166);
+            this.txtLastName.MaxLength = 40;
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ShortcutsEnabled = false;
+            this.txtLastName.Size = new System.Drawing.Size(247, 20);
+            this.txtLastName.TabIndex = 3;
+            this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyText);
+            // 
+            // pickerDateTime
+            // 
+            this.pickerDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.pickerDateTime.Location = new System.Drawing.Point(354, 221);
+            this.pickerDateTime.Name = "pickerDateTime";
+            this.pickerDateTime.Size = new System.Drawing.Size(115, 20);
+            this.pickerDateTime.TabIndex = 5;
+            this.pickerDateTime.Value = new System.DateTime(2019, 6, 30, 4, 46, 34, 0);
             // 
             // btnUploadImage
             // 
+            this.btnUploadImage.Enabled = false;
             this.btnUploadImage.Location = new System.Drawing.Point(20, 218);
             this.btnUploadImage.Name = "btnUploadImage";
             this.btnUploadImage.Size = new System.Drawing.Size(178, 23);
-            this.btnUploadImage.TabIndex = 16;
+            this.btnUploadImage.TabIndex = 10;
             this.btnUploadImage.Text = "Cargar imagen";
             this.btnUploadImage.UseVisualStyleBackColor = true;
             // 
@@ -110,11 +122,15 @@
             // 
             // cbxGender
             // 
+            this.cbxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxGender.FormattingEnabled = true;
+            this.cbxGender.Items.AddRange(new object[] {
+            "MASCULINO",
+            "FEMENINO"});
             this.cbxGender.Location = new System.Drawing.Point(354, 50);
             this.cbxGender.Name = "cbxGender";
             this.cbxGender.Size = new System.Drawing.Size(115, 21);
-            this.cbxGender.TabIndex = 14;
+            this.cbxGender.TabIndex = 1;
             // 
             // label7
             // 
@@ -136,10 +152,13 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAddress.Location = new System.Drawing.Point(222, 277);
+            this.txtAddress.MaxLength = 80;
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ShortcutsEnabled = false;
             this.txtAddress.Size = new System.Drawing.Size(247, 20);
-            this.txtAddress.TabIndex = 10;
+            this.txtAddress.TabIndex = 6;
             // 
             // label5
             // 
@@ -161,10 +180,14 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPhone.Location = new System.Drawing.Point(222, 221);
+            this.txtPhone.MaxLength = 9;
             this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ShortcutsEnabled = false;
             this.txtPhone.Size = new System.Drawing.Size(111, 20);
-            this.txtPhone.TabIndex = 6;
+            this.txtPhone.TabIndex = 4;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyNumber);
             // 
             // label3
             // 
@@ -174,13 +197,6 @@
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Apellidos:";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(222, 164);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(247, 20);
-            this.txtLastName.TabIndex = 4;
             // 
             // label2
             // 
@@ -193,10 +209,14 @@
             // 
             // txtName
             // 
+            this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtName.Location = new System.Drawing.Point(222, 107);
+            this.txtName.MaxLength = 40;
             this.txtName.Name = "txtName";
+            this.txtName.ShortcutsEnabled = false;
             this.txtName.Size = new System.Drawing.Size(247, 20);
             this.txtName.TabIndex = 2;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyText);
             // 
             // label1
             // 
@@ -209,10 +229,14 @@
             // 
             // txtDni
             // 
+            this.txtDni.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDni.Location = new System.Drawing.Point(222, 50);
+            this.txtDni.MaxLength = 8;
             this.txtDni.Name = "txtDni";
+            this.txtDni.ShortcutsEnabled = false;
             this.txtDni.Size = new System.Drawing.Size(111, 20);
             this.txtDni.TabIndex = 0;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyNumber);
             // 
             // groupBox2
             // 
@@ -229,11 +253,12 @@
             // 
             // cbxPosition
             // 
+            this.cbxPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPosition.FormattingEnabled = true;
             this.cbxPosition.Location = new System.Drawing.Point(19, 107);
             this.cbxPosition.Name = "cbxPosition";
             this.cbxPosition.Size = new System.Drawing.Size(157, 21);
-            this.cbxPosition.TabIndex = 18;
+            this.cbxPosition.TabIndex = 8;
             // 
             // label9
             // 
@@ -246,11 +271,13 @@
             // 
             // cbxArea
             // 
+            this.cbxArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxArea.FormattingEnabled = true;
             this.cbxArea.Location = new System.Drawing.Point(19, 50);
             this.cbxArea.Name = "cbxArea";
             this.cbxArea.Size = new System.Drawing.Size(157, 21);
-            this.cbxArea.TabIndex = 16;
+            this.cbxArea.TabIndex = 7;
+            this.cbxArea.SelectedValueChanged += new System.EventHandler(this.CbxArea_SelectedValueChanged);
             // 
             // label8
             // 
@@ -266,9 +293,10 @@
             this.btnAction.Location = new System.Drawing.Point(519, 311);
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(200, 23);
-            this.btnAction.TabIndex = 17;
+            this.btnAction.TabIndex = 9;
             this.btnAction.Text = "Accion";
             this.btnAction.UseVisualStyleBackColor = true;
+            this.btnAction.Click += new System.EventHandler(this.BtnAction_Click);
             // 
             // FormEmployee
             // 
@@ -282,6 +310,7 @@
             this.Name = "FormEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento";
+            this.Load += new System.EventHandler(this.FormEmployee_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPerson)).EndInit();
@@ -300,7 +329,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
@@ -315,6 +343,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbxArea;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker pickerDatetime;
+        private System.Windows.Forms.DateTimePicker pickerDateTime;
+        private System.Windows.Forms.TextBox txtLastName;
     }
 }

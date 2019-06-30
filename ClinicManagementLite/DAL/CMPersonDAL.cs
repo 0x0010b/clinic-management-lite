@@ -12,13 +12,13 @@ namespace DAL
 {
     public class CMPersonDAL
     {
-        static public void update(CMPersonBE person)
+        static public void create(CMPersonBE person)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Person.update, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Person.create, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@dniVal", person.person_dni);
@@ -42,13 +42,13 @@ namespace DAL
             }
         }
 
-        static public void create(CMPersonBE person)
+        static public void update(CMPersonBE person)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand(CMProcedure.Person.create, con);
+                SqlCommand cmd = new SqlCommand(CMProcedure.Person.update, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@dniVal", person.person_dni);
@@ -85,7 +85,7 @@ namespace DAL
 
                 List<CMPersonBE> persons = new List<CMPersonBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     persons.Add(new CMPersonBE(dr));
                 }

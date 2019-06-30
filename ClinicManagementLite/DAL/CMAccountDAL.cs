@@ -172,7 +172,7 @@ namespace DAL
                 }
                 else
                 {
-                    throw new Exception(CMMessage.Login.accountNotFound);
+                    throw new Exception(CMMessage.Account.accountNotFound);
                 }
             }
             catch (Exception ex)

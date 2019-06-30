@@ -101,11 +101,20 @@ namespace General
             public static string notFoundInstance   = "No se encontro registro en nuestra base de datos.";
         }
 
-        public struct Login
+        public struct Account
         {
             public static string accountNotFound    = "La cuenta ingresada no esta registrada en nuestra base de datos.";
             public static string usernameMinString  = "El usuario debe tener como minimo 5 digitos.";
             public static string passwordMinString  = "La contrasena debe tener como minimo 6 digitos.";
+        }
+
+        public struct Person
+        {
+            public static string dniMinString           = "El DNI debe tener 8 digitos.";
+            public static string nameEmptyString        = "Ingrese un nombre valido.";
+            public static string lastNameEmptyString    = "Ingrese un apellido valido.";
+            public static string phoneEmptyString       = "Ingrese un numero de celular valido.";
+            public static string addressEmptyString     = "Ingrese una direccion valida.";
         }
 
         public struct Form
@@ -116,7 +125,7 @@ namespace General
         public struct Error
         {
             public static string uniqueKey          = "No se pudo completar la operacion. Uno o mas campos ingresados ya existen en nuestra base de datos.";
-            public static string deleteKey          = "No se pudo completar la opereacion. Este registro esta asociado a otro.";
+            public static string deleteKey          = "No se pudo completar la operacion. Este registro esta asociado a otro.";
         }
     }
 }

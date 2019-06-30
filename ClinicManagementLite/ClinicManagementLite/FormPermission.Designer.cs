@@ -62,7 +62,7 @@
             this.btnAction.Location = new System.Drawing.Point(97, 255);
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(75, 23);
-            this.btnAction.TabIndex = 2;
+            this.btnAction.TabIndex = 3;
             this.btnAction.Text = "Accion";
             this.btnAction.UseVisualStyleBackColor = true;
             this.btnAction.Click += new System.EventHandler(this.BtnAction_Click);
@@ -74,7 +74,7 @@
             this.gbPermission.Location = new System.Drawing.Point(31, 112);
             this.gbPermission.Name = "gbPermission";
             this.gbPermission.Size = new System.Drawing.Size(202, 100);
-            this.gbPermission.TabIndex = 3;
+            this.gbPermission.TabIndex = 2;
             this.gbPermission.TabStop = false;
             this.gbPermission.Text = "Permisos:";
             // 

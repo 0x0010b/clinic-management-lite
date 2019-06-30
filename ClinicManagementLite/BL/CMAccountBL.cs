@@ -19,11 +19,11 @@ namespace BL
             {
                 if (account_username.Trim().Length < 5)
                 {
-                    throw new Exception(CMMessage.Login.usernameMinString);
+                    throw new Exception(CMMessage.Account.usernameMinString);
                 }
                 else if (account_password.Trim().Length < 6)
                 {
-                    throw new Exception(CMMessage.Login.passwordMinString);
+                    throw new Exception(CMMessage.Account.passwordMinString);
                 }
                 else
                 {
@@ -40,11 +40,22 @@ namespace BL
         {
             try
             {
-                CMAccountDAL.create(account);
+                if (account.account_username.Trim().Length < 5)
+                {
+                    throw new Exception(CMMessage.Account.usernameMinString);
+                }
+                else if (account.account_password.Trim().Length < 6)
+                {
+                    throw new Exception(CMMessage.Account.passwordMinString);
+                }
+                else
+                {
+                    CMAccountDAL.create(account);
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -56,7 +67,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -64,11 +75,22 @@ namespace BL
         {
             try
             {
-                CMAccountDAL.update(account);
+                if (account.account_username.Trim().Length < 5)
+                {
+                    throw new Exception(CMMessage.Account.usernameMinString);
+                }
+                else if (account.account_password.Trim().Length < 6)
+                {
+                    throw new Exception(CMMessage.Account.passwordMinString);
+                }
+                else
+                {
+                    CMAccountDAL.update(account);
+                }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -80,7 +102,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
 
@@ -94,7 +116,7 @@ namespace BL
                 dataTable.Columns.Add("Id");
                 dataTable.Columns.Add("Usuario");
                 dataTable.Columns.Add("Contrasena");
-                dataTable.Columns.Add("DNI Empleado");
+                dataTable.Columns.Add("Empleado");
                 dataTable.Columns.Add("Tipo de Permiso");
                 dataTable.Columns.Add("Fecha de creacion");
 
@@ -106,7 +128,7 @@ namespace BL
                     row[0] = account.account_id;
                     row[1] = account.account_username;
                     row[2] = account.account_password;
-                    row[3] = account.account_employee.person_dni;
+                    row[3] = $"{account.account_employee.person_dni} - {account.account_employee.person_name} {account.account_employee.person_lastname}";
                     row[4] = account.account_permission.permission_description;
                     row[5] = account.account_createdAt;
 
@@ -114,18 +136,6 @@ namespace BL
                 }
 
                 return dataTable;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        static public List<CMAccountBE> getAccountList(int permission_id)
-        {
-            try
-            {
-                return CMAccountDAL.getAll(permission_id);
             }
             catch (Exception ex)
             {

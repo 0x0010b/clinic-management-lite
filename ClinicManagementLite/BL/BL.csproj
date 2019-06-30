@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="CMAccountBL.cs" />
     <Compile Include="CMPermissionBL.cs" />
+    <Compile Include="CMPersonBL.cs" />
     <Compile Include="CMPositionBL.cs" />
     <Compile Include="CMAreaBL.cs" />
     <Compile Include="CMEmployeeBL.cs" />
