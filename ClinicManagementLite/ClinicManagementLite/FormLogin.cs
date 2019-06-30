@@ -39,7 +39,7 @@ namespace ClinicManagementLite
         {
             try
             {
-                CMAccountBE account = CMAccountBL.login(this.txtUsername.Text, this.txtPassword.Text);
+                CMAccountBE account = CMAccountBL.login(this.txtUsername.Text.Trim(), this.txtPassword.Text.Trim());
 
                 CMUserSession.shared.saveSession(account);
                 CMUserSession.shared.setRememberUser(this.cbxRememberUser.Checked ? account.account_username : String.Empty);

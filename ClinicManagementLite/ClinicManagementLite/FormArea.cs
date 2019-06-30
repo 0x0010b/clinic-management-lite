@@ -34,14 +34,14 @@ namespace ClinicManagementLite
 
             if (this.isEditing)
             {
-                this.objArea        = CMAreaBL.get(this.area_id);
+                this.objArea = CMAreaBL.get(this.area_id);
                 this.txtDescription.Text = objArea.area_description;
             }
         }
 
         private void BtnAction_Click(object sender, EventArgs e)
         {
-            this.objArea.area_description = this.txtDescription.Text;
+            this.objArea.area_description = this.txtDescription.Text.Trim();
 
             try
             {

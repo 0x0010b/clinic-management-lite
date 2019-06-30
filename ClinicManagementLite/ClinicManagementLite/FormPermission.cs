@@ -44,7 +44,7 @@ namespace ClinicManagementLite
 
         private void BtnAction_Click(object sender, EventArgs e)
         {
-            this.objPermission.permission_description    = this.txtDescription.Text;
+            this.objPermission.permission_description    = this.txtDescription.Text.Trim();
             this.objPermission.permission_isRead         = this.cbxRead.Checked;
             this.objPermission.permission_isWrite        = this.cbxWrite.Checked;
 

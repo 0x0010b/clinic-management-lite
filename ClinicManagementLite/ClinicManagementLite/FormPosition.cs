@@ -46,7 +46,7 @@ namespace ClinicManagementLite
 
         private void BtnAction_Click(object sender, EventArgs e)
         {
-            this.objPosition.position_description = this.txtDescription.Text;
+            this.objPosition.position_description = this.txtDescription.Text.Trim();
             this.objPosition.position_area.area_id = Convert.ToInt16(this.cbxArea.SelectedValue.ToString());
 
             try
