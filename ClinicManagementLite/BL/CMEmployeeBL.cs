@@ -16,7 +16,31 @@ namespace BL
         {
             try
             {
-                CMEmployeeDAL.create(employee);
+                if (employee.person_dni.Trim().Length < 8)
+                {
+                    throw new Exception(CMMessage.Person.dniMinString);
+                }
+                else if (employee.person_name.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Person.nameEmptyString);
+                }
+                else if (employee.person_lastname.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Person.lastNameEmptyString);
+                }
+                else if (employee.person_phone.Trim().Length < 9)
+                {
+                    throw new Exception(CMMessage.Person.phoneEmptyString);
+                }
+                else if (employee.person_address.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Person.addressEmptyString);
+                }
+                else
+                {
+                    CMPersonBL.create(employee);
+                    CMEmployeeDAL.create(employee);
+                }
             }
             catch (Exception ex)
             {
@@ -34,6 +58,7 @@ namespace BL
                 dataTable.Columns.Add("DNI");
                 dataTable.Columns.Add("Nombre completo");
                 dataTable.Columns.Add("Celular");
+                dataTable.Columns.Add("Fecha de nacimiento");
                 dataTable.Columns.Add("Direccion");
                 dataTable.Columns.Add("Genero");
                 dataTable.Columns.Add("Cargo");
@@ -48,11 +73,12 @@ namespace BL
                     row[0] = employee.person_dni;
                     row[1] = $"{employee.person_name} {employee.person_lastname}";
                     row[2] = employee.person_phone;
-                    row[3] = employee.person_address;
-                    row[4] = employee.person_gender == 0 ? "Masculino" : "Femenino";
-                    row[5] = employee.employee_position.position_description;
-                    row[6] = employee.employee_position.position_area.area_description;
-                    row[7] = employee.employee_createdAt.ToString("dd / MM / yyyy");
+                    row[3] = employee.person_birthday.ToShortDateString();
+                    row[4] = employee.person_address;
+                    row[5] = employee.person_gender == 0 ? "Masculino" : "Femenino";
+                    row[6] = employee.employee_position.position_description;
+                    row[7] = employee.employee_position.position_area.area_description;
+                    row[8] = employee.employee_createdAt.ToShortDateString();
 
                     dataTable.Rows.Add(row);
                 }
@@ -93,7 +119,31 @@ namespace BL
         {
             try
             {
-                CMEmployeeBL.update(employee);
+                if (employee.person_dni.Trim().Length < 8)
+                {
+                    throw new Exception(CMMessage.Person.dniMinString);
+                }
+                else if (employee.person_name.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Person.nameEmptyString);
+                }
+                else if (employee.person_lastname.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Person.lastNameEmptyString);
+                }
+                else if (employee.person_phone.Trim().Length < 9)
+                {
+                    throw new Exception(CMMessage.Person.phoneEmptyString);
+                }
+                else if (employee.person_address.Trim().Length < 1)
+                {
+                    throw new Exception(CMMessage.Person.addressEmptyString);
+                }
+                else
+                {
+                    CMPersonBL.update(employee);
+                    CMEmployeeDAL.update(employee);
+                }
             }
             catch (Exception ex)
             {

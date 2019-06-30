@@ -47,7 +47,7 @@ namespace ClinicManagementLite
             }
             else if (this.objMaintenanceController is MaintenanceControllerEmployee)
             {
-                new FormEmployee().ShowDialog();
+                new FormEmployee(isEditing, selected_id.ToString()).ShowDialog();
             }
 
             this.objMaintenanceController.setupFormMaintenance(this);

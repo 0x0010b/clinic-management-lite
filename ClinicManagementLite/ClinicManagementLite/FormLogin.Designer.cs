@@ -94,7 +94,7 @@
             this.btnLogin.Location = new System.Drawing.Point(103, 277);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(89, 23);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
@@ -105,7 +105,7 @@
             this.cbxRememberUser.Location = new System.Drawing.Point(38, 227);
             this.cbxRememberUser.Name = "cbxRememberUser";
             this.cbxRememberUser.Size = new System.Drawing.Size(113, 17);
-            this.cbxRememberUser.TabIndex = 6;
+            this.cbxRememberUser.TabIndex = 5;
             this.cbxRememberUser.Text = "Recordar usuario?";
             this.cbxRememberUser.UseVisualStyleBackColor = true;
             // 

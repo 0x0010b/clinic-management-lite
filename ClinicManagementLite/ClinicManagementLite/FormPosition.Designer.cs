@@ -40,7 +40,7 @@
             this.btnAction.Location = new System.Drawing.Point(95, 187);
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(75, 23);
-            this.btnAction.TabIndex = 7;
+            this.btnAction.TabIndex = 4;
             this.btnAction.Text = "Accion";
             this.btnAction.UseVisualStyleBackColor = true;
             this.btnAction.Click += new System.EventHandler(this.BtnAction_Click);
@@ -53,7 +53,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ShortcutsEnabled = false;
             this.txtDescription.Size = new System.Drawing.Size(202, 20);
-            this.txtDescription.TabIndex = 6;
+            this.txtDescription.TabIndex = 1;
             this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyTextNumber);
             // 
             // lblDescription
@@ -61,7 +61,7 @@
             this.lblDescription.Location = new System.Drawing.Point(29, 29);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(100, 23);
-            this.lblDescription.TabIndex = 5;
+            this.lblDescription.TabIndex = 0;
             this.lblDescription.Text = "Descripcion:";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -70,7 +70,7 @@
             this.label1.Location = new System.Drawing.Point(29, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 8;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Area:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -83,7 +83,7 @@
             this.cbxArea.Location = new System.Drawing.Point(32, 132);
             this.cbxArea.Name = "cbxArea";
             this.cbxArea.Size = new System.Drawing.Size(202, 21);
-            this.cbxArea.TabIndex = 9;
+            this.cbxArea.TabIndex = 3;
             // 
             // FormPosition
             // 

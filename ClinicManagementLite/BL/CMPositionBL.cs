@@ -52,7 +52,7 @@ namespace BL
                     row[0] = position.position_id;
                     row[1] = position.position_description;
                     row[2] = position.position_area.area_description;
-                    row[3] = position.position_createdAt.ToString("dd / MM / yyyy");
+                    row[3] = position.position_createdAt.ToShortDateString();
 
                     dataTable.Rows.Add(row);
                 }

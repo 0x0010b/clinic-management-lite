@@ -50,7 +50,7 @@ namespace BL
 
                     row[0] = area.area_id;
                     row[1] = area.area_description;
-                    row[2] = area.area_createdAt.ToString("dd / MM / yyyy");
+                    row[2] = area.area_createdAt.ToShortDateString();
 
                     dataTable.Rows.Add(row);
                 }

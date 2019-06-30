@@ -41,7 +41,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ShortcutsEnabled = false;
             this.txtDescription.Size = new System.Drawing.Size(202, 20);
-            this.txtDescription.TabIndex = 3;
+            this.txtDescription.TabIndex = 0;
             this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyTextNumber);
             // 
             // lblDescription
@@ -58,7 +58,7 @@
             this.btnAction.Location = new System.Drawing.Point(97, 120);
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(75, 23);
-            this.btnAction.TabIndex = 4;
+            this.btnAction.TabIndex = 1;
             this.btnAction.Text = "Accion";
             this.btnAction.UseVisualStyleBackColor = true;
             this.btnAction.Click += new System.EventHandler(this.BtnAction_Click);

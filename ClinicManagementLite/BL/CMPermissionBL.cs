@@ -73,7 +73,7 @@ namespace BL
                     row[1] = permission.permission_description;
                     row[2] = permission.permission_isRead ? "Si" : "No";
                     row[3] = permission.permission_isWrite ? "Si" : "No";
-                    row[4] = permission.permission_createdAt.ToString("dd / MM / yyyy");
+                    row[4] = permission.permission_createdAt.ToShortDateString();
 
                     dataTable.Rows.Add(row);
                 }
