@@ -13,6 +13,14 @@ namespace BE
         public CMPositionBE employee_position { get; set; } = new CMPositionBE();
         public DateTime employee_createdAt { get; set; } = new DateTime();
 
+        public string employee_nameAndDni
+        {
+            get
+            {
+                return $"{person_dni} - {person_lastname}";
+            }
+        }
+
         public CMEmployeeBE() { }
 
         public CMEmployeeBE(SqlDataReader reader)

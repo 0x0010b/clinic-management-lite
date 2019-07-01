@@ -32,15 +32,24 @@ namespace ClinicManagementLite
             this.Text = this.isEditing ? "Actualizar Cargo" : "Insertar Cargo";
             this.btnAction.Text = this.isEditing ? "Actualizar" : "Insertar";
 
-            this.cbxArea.DataSource = CMAreaBL.getAll();
             this.cbxArea.DisplayMember = "area_description";
             this.cbxArea.ValueMember = "area_id";
 
-            if (this.isEditing)
+            try
             {
-                this.objPosition = CMPositionBL.get(this.position_id);
-                this.txtDescription.Text = this.objPosition.position_description;
-                this.cbxArea.SelectedValue = this.objPosition.position_area.area_id;
+                this.cbxArea.DataSource = CMAreaBL.getAll();
+
+                if (this.isEditing)
+                {
+                    this.objPosition = CMPositionBL.get(this.position_id);
+
+                    this.txtDescription.Text = this.objPosition.position_description;
+                    this.cbxArea.SelectedValue = this.objPosition.position_area.area_id;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

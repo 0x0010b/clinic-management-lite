@@ -116,7 +116,8 @@ namespace BL
                 dataTable.Columns.Add("Id");
                 dataTable.Columns.Add("Usuario");
                 dataTable.Columns.Add("Contrasena");
-                dataTable.Columns.Add("Empleado");
+                dataTable.Columns.Add("DNI");
+                dataTable.Columns.Add("Nombre completo");
                 dataTable.Columns.Add("Tipo de Permiso");
                 dataTable.Columns.Add("Fecha de creacion");
 
@@ -128,9 +129,10 @@ namespace BL
                     row[0] = account.account_id;
                     row[1] = account.account_username;
                     row[2] = account.account_password;
-                    row[3] = $"{account.account_employee.person_dni} - {account.account_employee.person_name} {account.account_employee.person_lastname}";
-                    row[4] = account.account_permission.permission_description;
-                    row[5] = account.account_createdAt;
+                    row[3] = account.account_employee.person_dni;
+                    row[4] = $"{account.account_employee.person_name} {account.account_employee.person_lastname}";
+                    row[5] = account.account_permission.permission_description;
+                    row[6] = account.account_createdAt.ToShortDateString();
 
                     dataTable.Rows.Add(row);
                 }
@@ -139,7 +141,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
     }

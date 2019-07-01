@@ -60,7 +60,7 @@ namespace DAL
 
                 List<CMClientBE> clients = new List<CMClientBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     clients.Add(new CMClientBE(dr));
                 }

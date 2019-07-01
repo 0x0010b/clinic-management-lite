@@ -49,7 +49,7 @@ namespace DAL
 
                 List<CMScheduleBE> schedules = new List<CMScheduleBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     schedules.Add(new CMScheduleBE(dr));
                 }
@@ -105,7 +105,7 @@ namespace DAL
 
                 List<CMScheduleBE> schedules = new List<CMScheduleBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     schedules.Add(new CMScheduleBE(dr));
                 }
@@ -137,7 +137,7 @@ namespace DAL
 
                 List<CMScheduleBE> schedules = new List<CMScheduleBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     schedules.Add(new CMScheduleBE(dr));
                 }
@@ -169,7 +169,7 @@ namespace DAL
 
                 List<CMScheduleBE> schedules = new List<CMScheduleBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     schedules.Add(new CMScheduleBE(dr));
                 }
