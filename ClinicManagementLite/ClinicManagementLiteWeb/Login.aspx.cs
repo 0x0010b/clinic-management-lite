@@ -18,13 +18,9 @@ public partial class Views_Login : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            try
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                //Do something
-            }
-            catch (Exception ex)
-            {
-
+                Response.Redirect("Index.aspx");
             }
         }
     }

@@ -5,27 +5,31 @@
 <html>
 <head runat="server">
     <title>Clinic Management Lite</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css"/>
-        <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
-        <link rel="stylesheet" href="CSS/Main.css" type="text/css">
-        <link href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" rel="stylesheet">
-        
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
+    <link rel="stylesheet" href="CSS/Main.css" type="text/css">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" rel="stylesheet">
     <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-        
-    
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true"></asp:ScriptManager>
-        <div>
-            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-            
-            </asp:ContentPlaceHolder>
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;">
+                <div class="container-fluid flex-header">
+                    <asp:LinkButton ID="btnInicio" runat="server" PostBackUrl="~/Index.aspx"><h4>Inicio</h4></asp:LinkButton>
+                    <asp:LinkButton ID="btnClients" runat="server" PostBackUrl="~/Client.aspx"><h4>Clients</h4></asp:LinkButton>
+                    <asp:LinkButton ID="btnEmployees" runat="server"><h4>Employees</h4></asp:LinkButton>
+                    <asp:LinkButton ID="btnAreas" runat="server"><h4>Areas</h4></asp:LinkButton>
+                    <asp:LinkButton ID="btnPermission" runat="server"><h4>Permission</h4></asp:LinkButton>
+                    <asp:LinkButton ID="btnPosition" runat="server"><h4>Position</h4></asp:LinkButton>
+                    <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click"><h4><i class="fa fa-sign-out fa-fw"></i> Logout</h4></asp:LinkButton>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

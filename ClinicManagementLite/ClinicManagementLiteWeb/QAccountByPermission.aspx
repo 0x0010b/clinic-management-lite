@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Views_Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="QAccountByPermission.aspx.cs" Inherits="QAccountByPermission" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -6,9 +6,18 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h2><asp:Label ID="lblMessageUser" runat="server" Text="Label"></asp:Label></h2>
+            <!--Rplc label--><h1>Account by permission</h1>
             </div>
-            <!-- /.col-lg-12 -->
+        <!-- /.col-lg-12 -->
+        </div>
+        <div class="row" style="margin-top: 16px;">
+            <div class="col-sm-1 col-md-1 col-lg-2"></div>
+            <div class="col-sm-10 col-md-10 col-lg-8 buttons-container">
+                <div class="form-group" style="margin: 6px 6px 0px 6px">
+                    <asp:DropDownList ID="dropPermission" CssClass="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dropPermission_SelectedIndexChanged" >
+                    </asp:DropDownList>
+                </div>
+            </div>
         </div>
         <div class="row" style="margin-top: 16px;">
             <div class="col-sm-1 col-md-1 col-lg-2"></div>
@@ -26,15 +35,11 @@
             <div class="col-sm-10 col-md-10 col-lg-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Consultas
+                    Query
                     </div>
                     <div class="panel-body">
-                        <div class="btn-group" role="group" aria-label="...">
-                            <asp:Button ID="btnEmployeByAreaPos" CssClass="btn btn-default" style="margin: 6px 4px 6px 4px" runat="server" Text="Consultar empleado por area y cargo" OnClick="btnEmployeByAreaPos_Click" />
-                            <asp:Button ID="btnTotalPerson" CssClass="btn btn-default" style="margin: 6px 4px 6px 4px" runat="server" Text="Consultar total de personas registradas" OnClick="btnTotalPerson_Click" />
-                            <asp:Button ID="btnAccountByType" CssClass="btn btn-default" style="margin: 6px 4px 6px 4px" runat="server" Text="Consultar cuentas por tipo de permiso" OnClick="btnAccountByType_Click" />
-                            <asp:Button ID="btnPosByArea" CssClass="btn btn-default" style="margin: 6px 4px 6px 4px" runat="server" Text="Consultar cargos por area" OnClick="btnPosByArea_Click" />
-                        </div>
+                        <asp:GridView ID="gdvAccounts" width="100%" CssClass="table table-striped table-bordered table-hover" runat="server">
+                        </asp:GridView>
                     </div>
                 </div>
             </div>

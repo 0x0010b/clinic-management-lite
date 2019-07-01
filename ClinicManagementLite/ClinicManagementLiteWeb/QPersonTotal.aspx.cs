@@ -27,13 +27,4 @@ public partial class QPersonTotal : System.Web.UI.Page
             }
         }
     }
-
-    protected void btnLogout_Click(object sender, EventArgs e)
-    {
-        //se borra la cookie de autenticacion
-        FormsAuthentication.SignOut();
-
-        //se redirecciona al usuario a la pagina de login
-        Response.Redirect(Request.UrlReferrer.ToString());
-    }
 }
