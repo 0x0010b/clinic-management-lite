@@ -86,26 +86,26 @@ namespace General
     {
         public struct Alert
         {
-            public static string title              = "Clinic Management Lite";
-            public static string titleError         = "Clinic Management Lite";
+            public static string title                  = "Clinic Management Lite";
+            public static string titleError             = "Clinic Management Lite";
         }
 
         public struct Session
         {
-            public static string logout             = "Seguro que desea cerrar sesion?";
+            public static string logout                 = "Seguro que desea cerrar sesion?";
         }
 
         public struct Maintenance
         {
-            public static string deleteInstance     = "Seguro que desea eliminar este registro?";
-            public static string notFoundInstance   = "No se encontro registro en nuestra base de datos.";
+            public static string deleteInstance         = "Seguro que desea eliminar este registro?";
+            public static string notFoundInstance       = "No se encontro registro en nuestra base de datos.";
         }
 
         public struct Account
         {
-            public static string accountNotFound    = "La cuenta ingresada no esta registrada en nuestra base de datos.";
-            public static string usernameMinString  = "El usuario debe tener como minimo 5 digitos.";
-            public static string passwordMinString  = "La contrasena debe tener como minimo 6 digitos.";
+            public static string accountNotFound        = "La cuenta ingresada no esta registrada en nuestra base de datos.";
+            public static string usernameMinString      = "El usuario debe tener como minimo 5 digitos.";
+            public static string passwordMinString      = "La contrasena debe tener como minimo 6 digitos.";
         }
 
         public struct Person
@@ -119,13 +119,13 @@ namespace General
 
         public struct Form
         {
-            public static string descriptionEmpty   = "Hay un campo de texto vacio.";
+            public static string descriptionEmpty       = "Ingrese una descripcion valida.";
         }
 
         public struct Error
         {
-            public static string uniqueKey          = "No se pudo completar la operacion. Uno o mas campos ingresados ya existen en nuestra base de datos.";
-            public static string deleteKey          = "No se pudo completar la operacion. Este registro esta asociado a otro.";
+            public static string uniqueKey              = "No se pudo completar la operacion. Uno o mas campos ingresados ya existen en nuestra base de datos.";
+            public static string deleteKey              = "No se pudo completar la operacion. Este registro esta asociado a otro.";
         }
     }
 }

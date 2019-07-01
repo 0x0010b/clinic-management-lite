@@ -51,7 +51,7 @@ namespace DAL
 
                 List<CMTurnBE> turns = new List<CMTurnBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     turns.Add(new CMTurnBE(dr));
                 }

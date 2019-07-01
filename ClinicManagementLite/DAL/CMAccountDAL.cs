@@ -53,7 +53,7 @@ namespace DAL
 
                 List<CMAccountBE> accounts = new List<CMAccountBE>();
 
-                if (dr.Read())
+                while (dr.Read())
                 {
                     accounts.Add(new CMAccountBE(dr));
                 }

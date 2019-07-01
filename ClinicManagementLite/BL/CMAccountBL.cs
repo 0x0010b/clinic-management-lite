@@ -130,7 +130,7 @@ namespace BL
                     row[2] = account.account_password;
                     row[3] = $"{account.account_employee.person_dni} - {account.account_employee.person_name} {account.account_employee.person_lastname}";
                     row[4] = account.account_permission.permission_description;
-                    row[5] = account.account_createdAt;
+                    row[5] = account.account_createdAt.ToShortDateString();
 
                     dataTable.Rows.Add(row);
                 }
@@ -139,7 +139,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw CMException.errorHandler(ex);
             }
         }
     }
