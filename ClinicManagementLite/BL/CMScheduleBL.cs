@@ -24,9 +24,42 @@ namespace BL
             }
         }
 
-        static public void getDataTable()
+        static public DataTable getDataTable()
         {
-            
+            try
+            {
+                List<CMScheduleBE> arraySchedules = CMScheduleDAL.getAll();
+                DataTable dataTable = new DataTable();
+
+                dataTable.Columns.Add("DNI");
+                dataTable.Columns.Add("Empleado");
+                dataTable.Columns.Add("Turno");
+                dataTable.Columns.Add("Dia");
+                dataTable.Columns.Add("Fecha de entrada");
+                dataTable.Columns.Add("Fecha de salida");
+                dataTable.Columns.Add("Fecha de creacion");
+
+                foreach (CMScheduleBE schedule in arraySchedules)
+                {
+
+                    DataRow row = dataTable.NewRow();
+
+                    row[0] = schedule.schedule_employee.person_dni;
+                    row[1] = $"{schedule.schedule_employee.person_name} {schedule.schedule_employee.person_lastname}";
+                    row[2] = schedule.schedule_turn.turn_description;
+                    row[3] = CMParser.getDayString(schedule.schedule_turn.turn_day);
+                    row[4] = schedule.schedule_turn.turn_entryHour.ToShortTimeString();
+                    row[5] = schedule.schedule_turn.turn_departureHour.ToShortTimeString();
+
+                    dataTable.Rows.Add(row);
+                }
+
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw CMException.errorHandler(ex);
+            }
         }
 
         static public List<CMScheduleBE> getAll()

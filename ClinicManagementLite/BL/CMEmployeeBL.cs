@@ -75,7 +75,7 @@ namespace BL
                     row[2] = employee.person_phone;
                     row[3] = employee.person_birthday.ToShortDateString();
                     row[4] = employee.person_address;
-                    row[5] = employee.person_gender == 0 ? "Masculino" : "Femenino";
+                    row[5] = CMParser.getGenderString(employee.person_gender);
                     row[6] = employee.employee_position.position_description;
                     row[7] = employee.employee_position.position_area.area_description;
                     row[8] = employee.employee_createdAt.ToShortDateString();

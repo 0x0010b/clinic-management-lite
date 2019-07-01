@@ -52,7 +52,7 @@ namespace BL
 
                     row[0] = turn.turn_id;
                     row[1] = turn.turn_description;
-                    row[2] = ((DayOfWeek)turn.turn_day).ToString();
+                    row[2] = CMParser.getDayString(turn.turn_day);
                     row[3] = turn.turn_entryHour.ToShortTimeString();
                     row[4] = turn.turn_departureHour.ToShortTimeString();
                     row[5] = turn.turn_createdAt.ToShortDateString();
