@@ -53,6 +53,10 @@ namespace ClinicManagementLite
             {
                 new FormAccount(isEditing, selected_id).ShowDialog();
             }
+            else if (this.objMaintenanceController is MaintenanceControllerTurn)
+            {
+                new FormTurn(isEditing, selected_id).ShowDialog();
+            }
 
             this.objMaintenanceController.setupFormMaintenance(this);
         }

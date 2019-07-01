@@ -24,7 +24,7 @@ namespace BE
             this.turn_description   = reader["turn_description"].ToString();
             this.turn_day           = Convert.ToInt16(reader["turn_day"].ToString());
             this.turn_entryHour     = Convert.ToDateTime(reader["turn_entry_hour"].ToString());
-            this.turn_departureHour = Convert.ToDateTime(reader["turn_departuree_hour"].ToString());
+            this.turn_departureHour = Convert.ToDateTime(reader["turn_departure_hour"].ToString());
             this.turn_createdAt     = Convert.ToDateTime(reader["turn_created_at"].ToString());
         }
     }

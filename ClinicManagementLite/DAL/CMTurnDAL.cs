@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class CMTurnDAL
+    public class CMTurnDAL
     {
         static public void create(CMTurnBE turn)
         {

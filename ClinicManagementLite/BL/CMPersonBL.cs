@@ -10,7 +10,7 @@ using General;
 
 namespace BL
 {
-    class CMPersonBL
+    public class CMPersonBL
     {
         static public void create(CMPersonBE person)
         {

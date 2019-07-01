@@ -29,6 +29,9 @@ namespace ClinicManagementLite
                 case MaintenanceControllerKey.account:
                     return new MaintenanceControllerAccount();
 
+                case MaintenanceControllerKey.turn:
+                    return new MaintenanceControllerTurn();
+
                 default:
                     return null;
             }
