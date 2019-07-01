@@ -33,12 +33,20 @@ namespace ClinicManagementLite
             this.Text           = this.isEditing ? "Actualizar Permiso" : "Insertar Permiso";
             this.btnAction.Text = this.isEditing ? "Actualizar" : "Insertar";
 
-            if (this.isEditing)
+            try
             {
-                this.objPermission          = CMPermissionBL.get(this.permission_id);
-                this.txtDescription.Text    = objPermission.permission_description;
-                this.cbxRead.Checked        = objPermission.permission_isRead;
-                this.cbxWrite.Checked       = objPermission.permission_isWrite;
+                if (this.isEditing)
+                {
+                    this.objPermission = CMPermissionBL.get(this.permission_id);
+
+                    this.txtDescription.Text = objPermission.permission_description;
+                    this.cbxRead.Checked = objPermission.permission_isRead;
+                    this.cbxWrite.Checked = objPermission.permission_isWrite;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

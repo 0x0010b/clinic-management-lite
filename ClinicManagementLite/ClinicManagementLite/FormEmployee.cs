@@ -42,21 +42,30 @@ namespace ClinicManagementLite
 
             this.cbxArea.DisplayMember = "area_description";
             this.cbxArea.ValueMember = "area_id";
-            this.cbxArea.DataSource = CMAreaBL.getAll();
 
-            if (this.isEditing)
+            try
             {
-                this.txtDni.Enabled = false;
-                this.objEmployee = CMEmployeeBL.get(this.person_dni);
-                this.txtDni.Text = this.objEmployee.person_dni;
-                this.txtName.Text = this.objEmployee.person_name;
-                this.txtLastName.Text = this.objEmployee.person_lastname;
-                this.txtPhone.Text = this.objEmployee.person_phone;
-                this.txtAddress.Text = this.objEmployee.person_address;
-                this.cbxGender.SelectedIndex = this.objEmployee.person_gender;
-                this.cbxArea.SelectedValue = this.objEmployee.employee_position.position_area.area_id;
-                this.cbxPosition.SelectedValue = this.objEmployee.employee_position.position_id;
-                this.pickerDateTime.Value = this.objEmployee.person_birthday;
+                this.cbxArea.DataSource = CMAreaBL.getAll();
+
+                if (this.isEditing)
+                {
+                    this.objEmployee = CMEmployeeBL.get(this.person_dni);
+
+                    this.txtDni.Enabled = false;
+                    this.txtDni.Text = this.objEmployee.person_dni;
+                    this.txtName.Text = this.objEmployee.person_name;
+                    this.txtLastName.Text = this.objEmployee.person_lastname;
+                    this.txtPhone.Text = this.objEmployee.person_phone;
+                    this.txtAddress.Text = this.objEmployee.person_address;
+                    this.cbxGender.SelectedIndex = this.objEmployee.person_gender;
+                    this.cbxArea.SelectedValue = this.objEmployee.employee_position.position_area.area_id;
+                    this.cbxPosition.SelectedValue = this.objEmployee.employee_position.position_id;
+                    this.pickerDateTime.Value = this.objEmployee.person_birthday;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -71,7 +80,7 @@ namespace ClinicManagementLite
             this.objEmployee.person_gender = this.cbxGender.SelectedIndex;
             this.objEmployee.employee_position.position_id = Convert.ToInt16(this.cbxPosition.SelectedValue);
 
-            // TODO: - FALTA IMAGE
+            // TODO: - Upload image
 
             try
             {

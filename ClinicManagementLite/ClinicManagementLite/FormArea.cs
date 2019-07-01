@@ -32,10 +32,18 @@ namespace ClinicManagementLite
             this.Text           = this.isEditing ? "Actualizar Area" : "Insertar Area";
             this.btnAction.Text = this.isEditing ? "Actualizar" : "Insertar";
 
-            if (this.isEditing)
+            try
             {
-                this.objArea = CMAreaBL.get(this.area_id);
-                this.txtDescription.Text = objArea.area_description;
+                if (this.isEditing)
+                {
+                    this.objArea = CMAreaBL.get(this.area_id);
+
+                    this.txtDescription.Text = objArea.area_description;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -34,20 +34,28 @@ namespace ClinicManagementLite
 
             this.cbxPermission.DisplayMember = "permission_description";
             this.cbxPermission.ValueMember = "permission_id";
-            this.cbxPermission.DataSource = CMPermissionBL.getAll();
 
             this.cbxEmployee.DisplayMember = "employee_nameAndDni";
-            this.cbxPermission.DisplayMember += "person_dni";
             this.cbxEmployee.ValueMember = "person_dni";
-            this.cbxEmployee.DataSource = CMEmployeeBL.getAll();
 
-            if (this.isEditing)
+            try
             {
-                this.objAccount = CMAccountBL.get(this.account_id);
-                this.txtUsername.Text = this.objAccount.account_username;
-                this.txtPassword.Text = this.objAccount.account_password;
-                this.cbxPermission.SelectedValue = this.objAccount.account_permission.permission_id;
-                this.cbxEmployee.SelectedValue = this.objAccount.account_employee.person_dni;
+                this.cbxPermission.DataSource = CMPermissionBL.getAll();
+                this.cbxEmployee.DataSource = CMEmployeeBL.getAll();
+
+                if (this.isEditing)
+                {
+                    this.objAccount = CMAccountBL.get(this.account_id);
+
+                    this.txtUsername.Text = this.objAccount.account_username;
+                    this.txtPassword.Text = this.objAccount.account_password;
+                    this.cbxPermission.SelectedValue = this.objAccount.account_permission.permission_id;
+                    this.cbxEmployee.SelectedValue = this.objAccount.account_employee.person_dni;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
