@@ -67,6 +67,11 @@ namespace ClinicManagementLite
             formMaintenance.objMaintenanceController = this.objMaintenanceFactory.getInstance((MaintenanceControllerKey)index);
             formMaintenance.ShowDialog(this);
         }
+
+        private void AcercaDeClinicManagementLiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormAboutUs().ShowDialog();
+        }
     }
 
     

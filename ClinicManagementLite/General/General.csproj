@@ -52,6 +52,7 @@
     <Compile Include="CMConstants.cs" />
     <Compile Include="CMEnums.cs" />
     <Compile Include="CMException.cs" />
+    <Compile Include="CMParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

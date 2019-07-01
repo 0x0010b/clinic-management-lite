@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class CMScheduleDAL
+    public class CMScheduleDAL
     {
         static public void create(CMScheduleBE schedule)
         {

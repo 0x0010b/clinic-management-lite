@@ -55,6 +55,8 @@
     <Compile Include="CMPositionBL.cs" />
     <Compile Include="CMAreaBL.cs" />
     <Compile Include="CMEmployeeBL.cs" />
+    <Compile Include="CMScheduleBL.cs" />
+    <Compile Include="CMTurnBL.cs" />
     <Compile Include="CMUserSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

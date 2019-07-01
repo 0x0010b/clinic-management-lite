@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class CMClientDAL
+    public class CMClientDAL
     {
         static public void create(CMClientBE client)
         {
