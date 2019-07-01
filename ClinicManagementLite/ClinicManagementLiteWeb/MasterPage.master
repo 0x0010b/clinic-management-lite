@@ -11,13 +11,14 @@
         <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css"/>
         <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
         <link rel="stylesheet" href="CSS/Main.css" type="text/css">
-        <link href="datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-        <link href="datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" rel="stylesheet">
         
 
     <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
+        
+    
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true"></asp:ScriptManager>
         <div>
@@ -27,12 +28,9 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script src="datatables/js/jquery.dataTables.js"></script>
-        <script src="datatables-plugins/dataTables.bootstrap.min.js"></script>
-        <script src="datatables-responsive/dataTables.responsive.js"></script>
-        <script src="JS/Main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>    
+    <script src="JS/Main.js"></script>
 </body>
 </html>

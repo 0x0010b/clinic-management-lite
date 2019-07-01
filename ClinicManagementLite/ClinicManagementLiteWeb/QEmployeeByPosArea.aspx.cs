@@ -12,6 +12,7 @@ using General;
 
 public partial class Views_QEmployeeByPosArea : System.Web.UI.Page
 {
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -24,8 +25,8 @@ public partial class Views_QEmployeeByPosArea : System.Web.UI.Page
                 dropArea.DataTextField = "area_description";
                 dropArea.DataBind();
 
-                //gdvClients.DataSource = CMEmployeeBL.getDataTable(1, 1);
-                //gdvClients.DataBind();
+                gdvClients.DataSource = CMEmployeeBL.getDataTable(1, 1);
+                gdvClients.DataBind();
             }
             catch (Exception ex)
             {
@@ -69,8 +70,8 @@ public partial class Views_QEmployeeByPosArea : System.Web.UI.Page
         {
             if (dropPosition.SelectedValue != "-1" && dropArea.SelectedValue != "-1")
             {
-                //gdvClients.DataSource = CMEmployeeBL.getDataTable(int.Parse(dropArea.SelectedValue), int.Parse(dropPosition.SelectedValue));
-                //gdvClients.DataBind();
+                gdvClients.DataSource = CMEmployeeBL.getDataTable(int.Parse(dropArea.SelectedValue), int.Parse(dropPosition.SelectedValue));
+                gdvClients.DataBind();
             }
             else
             {
@@ -83,5 +84,14 @@ public partial class Views_QEmployeeByPosArea : System.Web.UI.Page
             lblMessageDanger.Text = ex.Message;
             lblMessageDanger.Visible = true;
         }
+    }
+
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        //se borra la cookie de autenticacion
+        FormsAuthentication.SignOut();
+
+        //se redirecciona al usuario a la pagina de login
+        Response.Redirect(Request.UrlReferrer.ToString());
     }
 }

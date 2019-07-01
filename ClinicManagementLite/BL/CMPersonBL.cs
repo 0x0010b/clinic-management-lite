@@ -10,9 +10,9 @@ using General;
 
 namespace BL
 {
-    class CMPersonBL
+    public class CMPersonBL
     {
-        static public void create(CMPersonBE person)
+        public static void create(CMPersonBE person)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace BL
             }
         }
 
-        static public void update(CMPersonBE person)
+        public static void update(CMPersonBE person)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace BL
             }
         }
 
-        static public DataTable getDataTable()
+        public static DataTable getDataTable()
         {
             try
             {
@@ -75,7 +75,7 @@ namespace BL
             }
         }
 
-        static public List<CMPersonBE> getAll()
+        public static List<CMPersonBE> getAll()
         {
             try
             {

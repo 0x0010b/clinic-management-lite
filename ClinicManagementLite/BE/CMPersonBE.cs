@@ -29,7 +29,7 @@ namespace BE
             this.person_lastname    = reader["person_lastname"].ToString();
             this.person_phone       = reader["person_phone"].ToString();
             this.person_birthday    = Convert.ToDateTime(reader["person_birthday"].ToString());
-            this.person_address     = reader["person_address"].ToString();
+            this.person_address     = reader["person_addres"].ToString();
             this.person_gender      = Convert.ToInt16(reader["person_gender"].ToString());
             this.person_image       = reader["person_image"].ToString();
             this.person_createdAt   = Convert.ToDateTime(reader["person_created_at"].ToString());
