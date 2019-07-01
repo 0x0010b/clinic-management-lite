@@ -78,6 +78,7 @@
             this.txtUsername.ShortcutsEnabled = false;
             this.txtUsername.Size = new System.Drawing.Size(202, 20);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyTextNumbers);
             // 
             // label0
             // 
@@ -98,6 +99,7 @@
             this.txtPassword.ShortcutsEnabled = false;
             this.txtPassword.Size = new System.Drawing.Size(202, 20);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyTextNumbers);
             // 
             // label1
             // 

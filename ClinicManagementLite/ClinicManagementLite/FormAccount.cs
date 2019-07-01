@@ -36,7 +36,8 @@ namespace ClinicManagementLite
             this.cbxPermission.ValueMember = "permission_id";
             this.cbxPermission.DataSource = CMPermissionBL.getAll();
 
-            this.cbxEmployee.DisplayMember = "person_dni";
+            this.cbxEmployee.DisplayMember = "employee_nameAndDni";
+            this.cbxPermission.DisplayMember += "person_dni";
             this.cbxEmployee.ValueMember = "person_dni";
             this.cbxEmployee.DataSource = CMEmployeeBL.getAll();
 
@@ -73,6 +74,16 @@ namespace ClinicManagementLite
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, CMMessage.Alert.titleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TextField_OnlyTextNumbers(object sender, KeyPressEventArgs e)
+        {
+            Char keypress = e.KeyChar;
+
+            if (!(Char.IsLetterOrDigit(keypress) || keypress == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
             }
         }
     }
