@@ -53,4 +53,9 @@ public partial class Views_Index : System.Web.UI.Page
     {
         //Response.Redirect("QEmployeeByPosArea.aspx");
     }
+
+    protected void btnClientHistory_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("QClientMedHistory.aspx");
+    }
 } 

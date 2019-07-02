@@ -34,6 +34,7 @@
                             <asp:Button ID="btnTotalPerson" CssClass="btn btn-default" style="margin: 6px 4px 6px 4px" runat="server" Text="Consultar total de personas registradas" OnClick="btnTotalPerson_Click" />
                             <asp:Button ID="btnAccountByType" CssClass="btn btn-default" style="margin: 6px 4px 6px 4px" runat="server" Text="Consultar cuentas por tipo de permiso" OnClick="btnAccountByType_Click" />
                             <asp:Button ID="btnPosByArea" CssClass="btn btn-default" style="margin: 6px 4px 6px 4px" runat="server" Text="Consultar cargos por area" OnClick="btnPosByArea_Click" />
+                            <asp:Button ID="btnClientHistory" CssClass="btn btn-default" style="margin: 6px 4px 6px 4px" runat="server" Text="Consultar historial medico por cliente" OnClick="btnClientHistory_Click" />
                         </div>
                     </div>
                 </div>

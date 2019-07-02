@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CMAccountBL.cs" />
+    <Compile Include="CMClientBL.cs" />
     <Compile Include="CMPermissionBL.cs" />
     <Compile Include="CMPersonBL.cs" />
     <Compile Include="CMPositionBL.cs" />
