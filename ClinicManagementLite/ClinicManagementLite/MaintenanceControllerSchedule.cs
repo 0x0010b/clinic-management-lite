@@ -17,12 +17,14 @@ namespace ClinicManagementLite
             context.lblTitle.Text = $"Horarios - ({dataTable.Rows.Count})";
             context.dgvList.DataSource = dataTable;
             context.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            context.btnUpdate.Enabled = false;
         }
 
         public void actionDelete(FormMaintenance context)
         {
             int id = int.Parse(context.dgvList.CurrentRow.Cells[0].Value.ToString());
-            CMAreaBL.delete(id);
+            string dni = context.dgvList.CurrentRow.Cells[1].Value.ToString();
+            CMScheduleBL.delete(dni, id);
         }
     }
 }

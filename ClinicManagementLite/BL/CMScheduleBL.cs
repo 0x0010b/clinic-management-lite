@@ -31,6 +31,7 @@ namespace BL
                 List<CMScheduleBE> arraySchedules = CMScheduleDAL.getAll();
                 DataTable dataTable = new DataTable();
 
+                dataTable.Columns.Add("Id");
                 dataTable.Columns.Add("DNI");
                 dataTable.Columns.Add("Empleado");
                 dataTable.Columns.Add("Turno");
@@ -44,12 +45,14 @@ namespace BL
 
                     DataRow row = dataTable.NewRow();
 
-                    row[0] = schedule.schedule_employee.person_dni;
-                    row[1] = $"{schedule.schedule_employee.person_name} {schedule.schedule_employee.person_lastname}";
-                    row[2] = schedule.schedule_turn.turn_description;
-                    row[3] = CMParser.getDayString(schedule.schedule_turn.turn_day);
-                    row[4] = schedule.schedule_turn.turn_entryHour.ToShortTimeString();
-                    row[5] = schedule.schedule_turn.turn_departureHour.ToShortTimeString();
+                    row[0] = schedule.schedule_turn.turn_id;
+                    row[1] = schedule.schedule_employee.person_dni;
+                    row[2] = $"{schedule.schedule_employee.person_name} {schedule.schedule_employee.person_lastname}";
+                    row[3] = schedule.schedule_turn.turn_description;
+                    row[4] = CMParser.getDayString(schedule.schedule_turn.turn_day);
+                    row[5] = schedule.schedule_turn.turn_entryHour.ToShortTimeString();
+                    row[6] = schedule.schedule_turn.turn_departureHour.ToShortTimeString();
+                    row[7] = schedule.schedule_created_at.ToShortDateString();
 
                     dataTable.Rows.Add(row);
                 }

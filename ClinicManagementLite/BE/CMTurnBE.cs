@@ -16,14 +16,6 @@ namespace BE
         public DateTime turn_departureHour { get; set; } = new DateTime();
         public DateTime turn_createdAt { get; set; } = new DateTime();
 
-        public string turn_descAndHours
-        {
-            get
-            {
-                return $"{turn_description} ({turn_entryHour.ToShortTimeString()} - {turn_departureHour.ToShortTimeString()})";
-            }
-        }
-
         public CMTurnBE() { }
 
         public CMTurnBE(SqlDataReader reader)

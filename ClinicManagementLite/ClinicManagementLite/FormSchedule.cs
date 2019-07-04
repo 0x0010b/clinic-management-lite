@@ -27,7 +27,7 @@ namespace ClinicManagementLite
             this.cbxEmployee.DisplayMember = "employee_nameAndDni";
             this.cbxEmployee.ValueMember = "person_dni";
 
-            this.cbxTurn.DisplayMember = "turn_descAndHours";
+            this.cbxTurn.DisplayMember = "turn_description";
             this.cbxTurn.ValueMember = "turn_id";
 
             try

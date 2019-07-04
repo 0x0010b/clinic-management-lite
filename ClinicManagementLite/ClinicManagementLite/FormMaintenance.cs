@@ -29,13 +29,14 @@ namespace ClinicManagementLite
 
         private void BtnAction_Click(object sender, EventArgs e)
         {
-            if (this.dgvList.Rows.Count == 0) {
-                return;
-            }
-
             Button button   = sender as Button;
             bool isEditing  = Convert.ToBoolean(Convert.ToInt16(button.Tag));
-            int selected_id = int.Parse(this.dgvList.CurrentRow.Cells[0].Value.ToString());
+            int selected_id = 0;
+
+            if (this.dgvList.Rows.Count == 0 && isEditing)
+            {
+                selected_id = int.Parse(this.dgvList.CurrentRow.Cells[0].Value.ToString());
+            }
 
             if (this.objMaintenanceController is MaintenanceControllerPermission)
             {
