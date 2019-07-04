@@ -15,7 +15,7 @@
                             <asp:TextBox ID="txtUsername" placeholder="Usuario" CssClass="form-control" runat="server" MaxLength="40"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtPassword" placeholder="Contraseña" CssClass="form-control" runat="server" MaxLength="20"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" placeholder="Contraseña" CssClass="form-control" runat="server" MaxLength="20" TextMode="Password"></asp:TextBox>
                         </div>
                        
                         <asp:Button ID="btnLogin" CssClass="btn btn-lg btn-success btn-block" runat="server" Text="Entrar" OnClick="btnLogin_Click" />
