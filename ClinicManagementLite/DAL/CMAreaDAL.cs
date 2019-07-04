@@ -35,7 +35,7 @@ namespace DAL
             }
         }
 
-        static public List<CMAreaBE> getAll()
+        public static List<CMAreaBE> getAll()
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -65,7 +65,7 @@ namespace DAL
             }
         }
 
-        static public CMAreaBE get(int area_id)
+        public static CMAreaBE get(int area_id)
         {
             SqlConnection con = new SqlConnection(CMDatabase.getConnection());
             try
@@ -133,6 +133,36 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@idVal", area_id);
 
                 cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) { con.Close(); }
+            }
+        }
+
+        public static List<CMAreaBE> getAreasWithSalary()
+        {
+            SqlConnection con = new SqlConnection(CMDatabase.getConnection());
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(CMProcedure.Area.areaSalary, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                List<CMAreaBE> areas = new List<CMAreaBE>();
+
+                while (dr.Read())
+                {
+                    areas.Add(new CMAreaBE(dr));
+                }
+
+                return areas;
             }
             catch (Exception ex)
             {

@@ -16,6 +16,12 @@ namespace BE
 
         public CMPositionBE() { }
 
+        public CMPositionBE(int id, string description)
+        {
+            this.position_id = id;
+            this.position_description = description;
+        }
+
         public CMPositionBE(SqlDataReader reader)
         {
             this.position_id            = Convert.ToInt16(reader["position_id"].ToString());

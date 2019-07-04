@@ -20,7 +20,6 @@ public partial class Views_Index : System.Web.UI.Page
         }
         if (!IsPostBack)
         {
-            
         }
     }
 
@@ -51,11 +50,16 @@ public partial class Views_Index : System.Web.UI.Page
 
     protected void btnPosByArea_Click(object sender, EventArgs e)
     {
-        //Response.Redirect("QEmployeeByPosArea.aspx");
+        Response.Redirect("QPositionByArea.aspx");
     }
 
     protected void btnClientHistory_Click(object sender, EventArgs e)
     {
         Response.Redirect("QClientMedHistory.aspx");
+    }
+
+    protected void btnSalaryArea_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("QSalaryByArea.aspx");
     }
 } 

@@ -24,6 +24,7 @@ namespace General
             public static string get    = "usp_areaGet";
             public static string getAll = "usp_areaGetAll";
             public static string update = "usp_areaUpdate";
+            public static string areaSalary = "usp_areaWithSalary";
         }
         public struct Client
         {

@@ -17,7 +17,7 @@
                         <div class="form-group">
                             <asp:TextBox ID="txtPassword" placeholder="Password" CssClass="form-control" runat="server" MaxLength="12"></asp:TextBox>
                         </div>
-                        <asp:CheckBox ID="cbxRemember" CssClass="checkbox-inline" runat="server" Text="Remember me" />
+                       
                         <asp:Button ID="btnLogin" CssClass="btn btn-lg btn-success btn-block" runat="server" Text="Login" OnClick="btnLogin_Click" />
                         <div class="form-group" style="margin-top:12px;">
                             <p class="bg-warning">

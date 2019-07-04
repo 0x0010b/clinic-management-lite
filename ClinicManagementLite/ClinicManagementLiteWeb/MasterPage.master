@@ -17,24 +17,25 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true"></asp:ScriptManager>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>    
+        <script src="JS/Main.js"></script>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;">
                 <div class="container-fluid flex-header">
                     <asp:LinkButton ID="btnInicio" runat="server" PostBackUrl="~/Index.aspx"><h4>Inicio</h4></asp:LinkButton>
-                    <asp:LinkButton ID="btnClients" runat="server" PostBackUrl="~/Client.aspx"><h4>Clients</h4></asp:LinkButton>
-                    <asp:LinkButton ID="btnEmployees" runat="server"><h4>Employees</h4></asp:LinkButton>
+                    <!--<asp:LinkButton ID="btnClients" runat="server" PostBackUrl="~/Client.aspx"><h4>Clientes</h4></asp:LinkButton>
+                    <asp:LinkButton ID="btnEmployees" runat="server"><h4>Empleados</h4></asp:LinkButton>
                     <asp:LinkButton ID="btnAreas" runat="server"><h4>Areas</h4></asp:LinkButton>
-                    <asp:LinkButton ID="btnPermission" runat="server"><h4>Permission</h4></asp:LinkButton>
-                    <asp:LinkButton ID="btnPosition" runat="server"><h4>Position</h4></asp:LinkButton>
-                    <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click"><h4><i class="fa fa-sign-out fa-fw"></i> Logout</h4></asp:LinkButton>
+                    <asp:LinkButton ID="btnPermission" runat="server"><h4>Permisos</h4></asp:LinkButton>
+                    <asp:LinkButton ID="btnPosition" runat="server"><h4>Posiciones</h4></asp:LinkButton>-->
+                    <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click"><h4><i class="fa fa-sign-out fa-fw"></i> Cerrar sesion</h4></asp:LinkButton>
                 </div>
             </nav>
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>    
-    <script src="JS/Main.js"></script>
+    
 </body>
 </html>

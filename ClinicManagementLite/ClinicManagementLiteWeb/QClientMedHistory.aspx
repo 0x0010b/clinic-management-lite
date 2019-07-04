@@ -10,13 +10,13 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-            <!--Rplc label--><h1>Clients</h1>
+            <!--Rplc label--><h1>Historial medico por cliente</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <div class="row" style="margin-top: 16px;">
-            <div class="col-sm-1 col-md-1 col-lg-2"></div>
-            <div class="col-sm-10 col-md-10 col-lg-8">
+            <div class="col-sm-1 col-md-1 col-lg-0"></div>
+            <div class="col-sm-10 col-md-10 col-lg-12">
                 <p class="bg-danger" style="border-radius: 12px;">
                     <asp:Label ID="lblMessageDanger" CssClass="login-error-message" runat="server" Visible="false">Danger</asp:Label>
                 </p>
@@ -26,13 +26,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-1 col-md-1 col-lg-2"></div>
-            <div class="col-sm-10 col-md-10 col-lg-8">
+            <div class="col-sm-1 col-md-1 col-lg-0"></div>
+            <div class="col-sm-10 col-md-10 col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Query
+                        Clientes
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body table-responsive">
                         <asp:GridView ID="gdvCLients" width="100%" CssClass="table table-striped table-bordered table-hover" runat="server" OnSelectedIndexChanged="gdvCLients_SelectedIndexChanged">
                             <Columns>
                                 <asp:CommandField SelectText="Ver" ShowSelectButton="True" />
@@ -44,7 +44,7 @@
             </div>
             <div class="col-sm-1 col-md-1 col-lg-2"></div>
         </div>
-        <div class"row">
+        <div class="row">
             <div class="col-sm-1 col-md-1 col-lg-2"></div>
                 <div class="col-sm-10 col-md-10 col-lg-8 ">
                     <asp:LinkButton ID="btnPopup" style="visibility:hidden;" runat="server">.</asp:LinkButton>
@@ -61,9 +61,9 @@
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-md-2 col-sm-4 col-xs-4">
-                                                <asp:Image ID="imgClient" runat="server" ImageUrl="persons/21228271.jpg" style="margin-bottom: 10px;"/>
+                                                <asp:Image ID="imgClient" CssClass="img-rounded" runat="server" ImageUrl="persons/21228271.jpg" style="margin-bottom: 10px;"/>
                                             </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <div class="col-md-4 col-sm-8 col-xs-8">
                                                 <h4><asp:Label ID="lblName" runat="server" Text="Nombre:"></asp:Label></h4>
                                                 <h4><asp:Label ID="lblAge" runat="server" Text="Edad:"></asp:Label></h4>
                                                 <h4><asp:Label ID="lblDni" runat="server" Text="Dni:"></asp:Label></h4>
@@ -72,11 +72,11 @@
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Tipo de
                                                         sangre:</label>
-                                                    <asp:TextBox ID="txtBloodType" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtBloodType" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Estatura:</label>
-                                                    <asp:TextBox ID="txtHeight" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtHeight" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                             </div>
                                         </div>
@@ -84,42 +84,42 @@
                                             <div class="col-md-6 col-sm-6 col-xs-6">
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Alergias:</label>
-                                                    <asp:TextBox ID="txtAllergies" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtAllergies" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Enfermedades
                                                         anteriores:</label>
-                                                    <asp:TextBox ID="txtPathologies" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtPathologies" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Enfermedades
                                                         TS:</label>
-                                                    <asp:TextBox ID="txtAids" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtAids" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Cancer:</label>
-                                                    <asp:TextBox ID="txtCancer" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtCancer" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                                 <asp:Button ID="btnClose" CssClass="btn btn-info" runat="server" Text="Salir" />
                                             </div>
                                             <div class="col-md-6 col-sm-6 col-xs-6">
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Medicinas:</label>
-                                                    <asp:TextBox ID="txtMedicines" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtMedicines" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message-text"
                                                         class="col-form-label">Convulsiones:</label>
-                                                    <asp:TextBox ID="txtSeizures" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtSeizures" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Presion
                                                         arterial:</label>
-                                                    <asp:TextBox ID="txtBloodPressure" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtBloodPressure" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Colesterol:</label>
-                                                    <asp:TextBox ID="txtCholesterol" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="txtCholesterol" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                             </div>
                                         </div>

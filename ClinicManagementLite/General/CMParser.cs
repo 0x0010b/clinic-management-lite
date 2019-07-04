@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +53,36 @@ namespace General
                 default:
                     return String.Empty;
             }
+        }
+
+        public static string stringValue(SqlDataReader reader)
+        {
+            if (reader.ToString() == null)
+            {
+                return "";
+            }
+            else
+            {
+                return reader.ToString();
+            }
+        }
+
+    }
+
+    public class CMRandom
+    {
+        private Random r { get; set; }
+
+        public static CMRandom shared = new CMRandom();
+
+        public string getRandomColor()
+        {
+            r = new Random(Guid.NewGuid().GetHashCode());
+            double red      = r.Next(255) / 2f + 0.5;
+            double green    = r.Next(250) / 2f + 0.5;
+            double blue     = r.Next(245) / 2f + 0.5;
+
+            return ColorTranslator.ToHtml(Color.FromArgb((int)red, (int)green, (int)blue));
         }
     }
 }

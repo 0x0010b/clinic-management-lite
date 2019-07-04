@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,6 +112,49 @@ namespace BL
             try
             {
                 CMAreaDAL.delete(area_id);
+            }
+            catch (Exception ex)
+            {
+                throw CMException.errorHandler(ex);
+            }
+        }
+        
+        public static String getAreasWithSalary()
+        {
+            try
+            {
+                List<CMAreaBE> areas = CMAreaDAL.getAreasWithSalary();
+
+                string htmlString = $"<div class='progress' style='margin-left: 20px; margin-right: 20px;'>";
+                string htmlList = "";
+                string _class = "progress-bar";
+
+                Single totalSalary = 0;
+
+                
+
+                foreach (CMAreaBE area in areas)
+                {
+                    totalSalary += area.total_salary;
+                }
+
+                foreach(CMAreaBE area in areas)
+                {
+                    string color    = CMRandom.shared.getRandomColor();
+                    Single percent  = (area.total_salary / totalSalary) * 100;
+                    string html =
+                        $"<div class='{_class}' data-toggle='tooltip' data-placement='bottom' title='{area.area_description}' role='progressbar' style='background-color: {color}; width: {percent}%'>" +
+                        $"{area.total_salary}" +
+                        $"</div>";
+
+                    string list =
+                        $"<h4 style='margin-left:20px; margin-right: 20px; color: {color}'> {area.area_description}: S/{area.total_salary}</h4>";
+
+                    htmlString += html;
+                    htmlList += list; 
+                }
+                
+                return htmlString + "</div>" + htmlList;
             }
             catch (Exception ex)
             {

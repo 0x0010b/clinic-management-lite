@@ -19,13 +19,15 @@ public partial class Views_QEmployeeByPosArea : System.Web.UI.Page
         {
             try
             {
-                List<CMAreaBE> areas = CMAreaBL.getAll();
+                List<CMAreaBE> areas = new List<CMAreaBE>();
+                areas.Add(new CMAreaBE(0, "-- Ver todos --"));
+                areas.AddRange(CMAreaBL.getAll());
                 dropArea.DataSource = areas;
                 dropArea.DataValueField = "area_id";
                 dropArea.DataTextField = "area_description";
                 dropArea.DataBind();
 
-                gdvClients.DataSource = CMEmployeeBL.getDataTable(1, 1);
+                gdvClients.DataSource = CMEmployeeBL.getDataTable();
                 gdvClients.DataBind();
             }
             catch (Exception ex)
@@ -40,22 +42,10 @@ public partial class Views_QEmployeeByPosArea : System.Web.UI.Page
 
     protected void dropPosition_SelectedIndexChanged1(object sender, EventArgs e)
     {
-        if (dropPosition.SelectedValue == "-1")
-        {
-            lblMessageWarning.Text = "Seleccione un valor correcto.";
-            lblMessageWarning.Visible = true;
-        }
-    }
-
-    protected void dropArea_SelectedIndexChanged(object sender, EventArgs e)
-    {
         try
         {
-            List<CMPositionBE> positions = CMPositionBL.getAll(int.Parse(dropArea.SelectedValue));
-            dropPosition.DataSource = positions;
-            dropPosition.DataValueField = "position_id";
-            dropPosition.DataTextField = "position_description";
-            dropPosition.DataBind();
+            gdvClients.DataSource = CMEmployeeBL.getDataTable(int.Parse(dropArea.SelectedValue), int.Parse(dropPosition.SelectedValue));
+            gdvClients.DataBind();
         }
         catch (Exception ex)
         {
@@ -64,20 +54,19 @@ public partial class Views_QEmployeeByPosArea : System.Web.UI.Page
         }
     }
 
-    protected void btnQuery_Click(object sender, EventArgs e)
+    protected void dropArea_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
-            if (dropPosition.SelectedValue != "-1" && dropArea.SelectedValue != "-1")
-            {
-                gdvClients.DataSource = CMEmployeeBL.getDataTable(int.Parse(dropArea.SelectedValue), int.Parse(dropPosition.SelectedValue));
-                gdvClients.DataBind();
-            }
-            else
-            {
-                lblMessageWarning.Text = "Seleccione un valor correcto.";
-                lblMessageWarning.Visible = true;
-            }
+            List<CMPositionBE> positions = new List<CMPositionBE>();
+            positions.Add(new CMPositionBE(0, "-- Ver todos --"));
+            positions.AddRange(CMPositionBL.getAll(int.Parse(dropArea.SelectedValue)));
+            dropPosition.DataSource = positions;
+            dropPosition.DataValueField = "position_id";
+            dropPosition.DataTextField = "position_description";
+            dropPosition.DataBind();
+
+            this.dropPosition_SelectedIndexChanged1(dropPosition, new EventArgs());
         }
         catch (Exception ex)
         {

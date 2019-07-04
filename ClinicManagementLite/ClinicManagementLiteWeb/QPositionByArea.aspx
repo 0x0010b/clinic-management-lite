@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="QAccountByPermission.aspx.cs" Inherits="QAccountByPermission" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="QPositionByArea.aspx.cs" Inherits="QPositionByArea" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -6,7 +6,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-            <!--Rplc label--><h1>Cuentas por tipo de permiso</h1>
+            <!--Rplc label--><h1>Cargos por area</h1>
             </div>
         <!-- /.col-lg-12 -->
         </div>
@@ -14,7 +14,7 @@
             <div class="col-sm-1 col-md-1 col-lg-0"></div>
             <div class="col-sm-10 col-md-10 col-lg-12 buttons-container">
                 <div class="form-group" style="margin: 6px 6px 0px 6px">
-                    <asp:DropDownList ID="dropPermission" CssClass="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dropPermission_SelectedIndexChanged" >
+                    <asp:DropDownList ID="dropAreas" CssClass="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dropAreas_SelectedIndexChanged" >
                     </asp:DropDownList>
                 </div>
             </div>
@@ -35,10 +35,10 @@
             <div class="col-sm-10 col-md-10 col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                    Cuentas
+                    Cargos
                     </div>
                     <div class="panel-body table-responsive">
-                        <asp:GridView ID="gdvAccounts" width="100%" CssClass="table table-striped table-bordered table-hover" runat="server">
+                        <asp:GridView ID="gdvPositions" width="100%" CssClass="table table-striped table-bordered table-hover" runat="server">
                         </asp:GridView>
                     </div>
                 </div>

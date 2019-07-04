@@ -42,7 +42,7 @@ public partial class Views_Login : System.Web.UI.Page
             else
             {
                 CMAccountBE logAccount = CMAccountBL.login(txtUsername.Text.Trim(), txtPassword.Text.Trim());
-                FormsAuthentication.RedirectFromLoginPage(logAccount.account_username, cbxRemember.Checked);
+                FormsAuthentication.RedirectFromLoginPage(logAccount.account_username, false);
             }
         }
         catch (Exception ex)
