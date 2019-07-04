@@ -12,13 +12,13 @@
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <asp:TextBox ID="txtUsername" placeholder="Username" CssClass="form-control" runat="server" MaxLength="12"></asp:TextBox>
+                            <asp:TextBox ID="txtUsername" placeholder="Usuario" CssClass="form-control" runat="server" MaxLength="40"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtPassword" placeholder="Password" CssClass="form-control" runat="server" MaxLength="12"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" placeholder="Contraseña" CssClass="form-control" runat="server" MaxLength="20"></asp:TextBox>
                         </div>
                        
-                        <asp:Button ID="btnLogin" CssClass="btn btn-lg btn-success btn-block" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                        <asp:Button ID="btnLogin" CssClass="btn btn-lg btn-success btn-block" runat="server" Text="Entrar" OnClick="btnLogin_Click" />
                         <div class="form-group" style="margin-top:12px;">
                             <p class="bg-warning">
                                 <asp:Label ID="lblMessageWarning" CssClass="login-error-message" runat="server" Visible="False">Carajo</asp:Label>

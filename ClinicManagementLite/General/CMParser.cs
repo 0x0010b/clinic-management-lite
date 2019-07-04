@@ -55,18 +55,6 @@ namespace General
             }
         }
 
-        public static string stringValue(SqlDataReader reader)
-        {
-            if (reader.ToString() == null)
-            {
-                return "";
-            }
-            else
-            {
-                return reader.ToString();
-            }
-        }
-
     }
 
     public class CMRandom
