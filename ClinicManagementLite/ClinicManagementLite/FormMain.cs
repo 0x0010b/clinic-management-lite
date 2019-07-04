@@ -26,14 +26,6 @@ namespace ClinicManagementLite
         {
             FormLogin login = new FormLogin();
             login.ShowDialog(this);
-
-            if (CMUserSession.shared.getUserInformation() != null)
-            {
-                CMAccountBE account = CMUserSession.shared.getUserInformation();
-
-                this.mantenimientoToolStripMenuItem1.Enabled    = account.account_permission.permission_isWrite;
-                this.consultasToolStripMenuItem.Enabled         = account.account_permission.permission_isRead;
-            }
         }
 
         private void CerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)

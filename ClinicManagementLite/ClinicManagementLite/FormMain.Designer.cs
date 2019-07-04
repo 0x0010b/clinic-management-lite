@@ -43,10 +43,8 @@
             this.turnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.horariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.soporteTecnicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.acercaDeClinicManagementLiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +53,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cerrarSesionToolStripMenuItem,
             this.mantenimientoToolStripMenuItem1,
-            this.consultasToolStripMenuItem,
             this.ayudaToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -171,18 +168,11 @@
             // ayudaToolStripMenuItem1
             // 
             this.ayudaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.soporteTecnicToolStripMenuItem,
             this.toolStripSeparator1,
             this.acercaDeClinicManagementLiteToolStripMenuItem});
             this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
             this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem1.Text = "Ayuda";
-            // 
-            // soporteTecnicToolStripMenuItem
-            // 
-            this.soporteTecnicToolStripMenuItem.Name = "soporteTecnicToolStripMenuItem";
-            this.soporteTecnicToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
-            this.soporteTecnicToolStripMenuItem.Text = "Soporte Tecnico";
             // 
             // toolStripSeparator1
             // 
@@ -195,12 +185,6 @@
             this.acercaDeClinicManagementLiteToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.acercaDeClinicManagementLiteToolStripMenuItem.Text = "Acerca de Clinic Management Lite";
             this.acercaDeClinicManagementLiteToolStripMenuItem.Click += new System.EventHandler(this.AcercaDeClinicManagementLiteToolStripMenuItem_Click);
-            // 
-            // consultasToolStripMenuItem
-            // 
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // FormMain
             // 
@@ -227,7 +211,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem soporteTecnicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeClinicManagementLiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
@@ -243,6 +226,5 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
     }
 }

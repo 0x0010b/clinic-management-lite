@@ -1,4 +1,6 @@
-﻿using ClinicManagementLite;
+﻿using BE;
+using BL;
+using ClinicManagementLite;
 using General;
 using System;
 using System.Collections.Generic;
@@ -25,6 +27,14 @@ namespace ClinicManagementLite
         private void FormList_Load(object sender, EventArgs e)
         {
             this.objMaintenanceController.setupFormMaintenance(this);
+
+            if (CMUserSession.shared.getUserInformation() != null)
+            {
+                CMAccountBE account = CMUserSession.shared.getUserInformation();
+                this.btnUpdate.Enabled = account.account_permission.permission_isWrite;
+                this.btnInsert.Enabled = account.account_permission.permission_isWrite;
+                this.btnDelete.Enabled = account.account_permission.permission_isWrite;
+            }
         }
 
         private void BtnAction_Click(object sender, EventArgs e)
