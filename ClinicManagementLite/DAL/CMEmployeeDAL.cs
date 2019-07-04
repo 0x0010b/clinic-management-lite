@@ -23,6 +23,7 @@ namespace DAL
 
                 cmd.Parameters.AddWithValue("@dniVal", employee.person_dni);
                 cmd.Parameters.AddWithValue("@positionVal", employee.employee_position.position_id);
+                cmd.Parameters.AddWithValue("@salary", employee.employee_salary);
 
                 cmd.ExecuteNonQuery();
             }
@@ -112,6 +113,7 @@ namespace DAL
 
                 cmd.Parameters.AddWithValue("@dniVal", employee.person_dni);
                 cmd.Parameters.AddWithValue("@positionVal", employee.employee_position.position_id);
+                cmd.Parameters.AddWithValue("@salary", employee.employee_salary);
 
                 cmd.ExecuteNonQuery();
             }

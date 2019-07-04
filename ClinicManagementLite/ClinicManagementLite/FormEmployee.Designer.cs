@@ -51,6 +51,8 @@
             this.cbxArea = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAction = new System.Windows.Forms.Button();
+            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPerson)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -144,7 +146,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(222, 258);
+            this.label6.Location = new System.Drawing.Point(219, 256);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 11;
@@ -153,7 +155,7 @@
             // txtAddress
             // 
             this.txtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAddress.Location = new System.Drawing.Point(222, 277);
+            this.txtAddress.Location = new System.Drawing.Point(222, 272);
             this.txtAddress.MaxLength = 80;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ShortcutsEnabled = false;
@@ -244,9 +246,11 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.cbxArea);
             this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtSalary);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(519, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 158);
+            this.groupBox2.Size = new System.Drawing.Size(200, 215);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Empleado:";
@@ -298,6 +302,26 @@
             this.btnAction.UseVisualStyleBackColor = true;
             this.btnAction.Click += new System.EventHandler(this.BtnAction_Click);
             // 
+            // txtSalary
+            // 
+            this.txtSalary.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSalary.Location = new System.Drawing.Point(19, 166);
+            this.txtSalary.MaxLength = 20;
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.ShortcutsEnabled = false;
+            this.txtSalary.Size = new System.Drawing.Size(157, 20);
+            this.txtSalary.TabIndex = 0;
+            this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextField_OnlyNumber);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 145);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Salario:";
+            // 
             // FormEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,5 +370,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker pickerDateTime;
         private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.Label label10;
     }
 }

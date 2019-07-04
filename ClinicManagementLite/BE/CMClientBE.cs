@@ -19,7 +19,6 @@ namespace BE
         public string client_medicines { get; set; } = "";
         public string client_seizures { get; set; } = "";
         public string client_diabetes { get; set; } = "";
-        public string client_cholesterol { get; set; } = "";
         public string client_cancer { get; set; } = "";
         public string client_aids { get; set; } = "";
         public DateTime client_createdAt { get; set; } = new DateTime();
@@ -46,7 +45,6 @@ namespace BE
             this.client_medicines       = reader["client_medicines"].ToString();
             this.client_seizures        = reader["client_seizures"].ToString();
             this.client_diabetes        = reader["client_diabetes"].ToString();
-            this.client_cholesterol     = reader["client_cholesterol"].ToString();
             this.client_cancer          = reader["client_cancer"].ToString();
             this.client_aids            = reader["client_aids"].ToString();
             this.client_createdAt       = Convert.ToDateTime(reader["client_created_at"].ToString());

@@ -116,6 +116,7 @@ namespace General
             public static string lastNameEmptyString    = "Ingrese un apellido valido.";
             public static string phoneEmptyString       = "Ingrese un numero de celular valido.";
             public static string addressEmptyString     = "Ingrese una direccion valida.";
+            public static string salaryMinimun          = "Ingrese un sueldo mayor a 850.";
         }
 
         public struct Form

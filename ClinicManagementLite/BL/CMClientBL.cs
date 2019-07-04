@@ -91,7 +91,7 @@ namespace BL
         {
             try
             {
-                return CMClientBL.getAll();
+                return CMClientDAL.getAll();
             }
             catch (Exception ex)
             {
@@ -137,7 +137,7 @@ namespace BL
                 }
                 else
                 {
-                    CMClientBL.update(client);
+                    CMPersonBL.update(client);
                     CMClientDAL.update(client);
                 }
             }
@@ -151,7 +151,7 @@ namespace BL
         {
             try
             {
-                CMClientBL.delete(person_dni);
+                CMClientDAL.delete(person_dni);
             }
             catch (Exception ex)
             {

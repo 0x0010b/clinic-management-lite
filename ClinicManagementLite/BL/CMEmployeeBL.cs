@@ -36,6 +36,10 @@ namespace BL
                 {
                     throw new Exception(CMMessage.Person.addressEmptyString);
                 }
+                else if (employee.employee_salary < 850)
+                {
+                    throw new Exception(CMMessage.Person.salaryMinimun);
+                }
                 else
                 {
                     CMPersonBL.create(employee);
@@ -61,6 +65,7 @@ namespace BL
                 dataTable.Columns.Add("Fecha de nacimiento");
                 dataTable.Columns.Add("Direccion");
                 dataTable.Columns.Add("Genero");
+                dataTable.Columns.Add("Salario S/.");
                 dataTable.Columns.Add("Cargo");
                 dataTable.Columns.Add("Area");
                 dataTable.Columns.Add("Fecha de creacion");
@@ -76,9 +81,10 @@ namespace BL
                     row[3] = employee.person_birthday.ToShortDateString();
                     row[4] = employee.person_address;
                     row[5] = CMParser.getGenderString(employee.person_gender);
-                    row[6] = employee.employee_position.position_description;
-                    row[7] = employee.employee_position.position_area.area_description;
-                    row[8] = employee.employee_createdAt.ToShortDateString();
+                    row[6] = employee.employee_salary;
+                    row[7] = employee.employee_position.position_description;
+                    row[8] = employee.employee_position.position_area.area_description;
+                    row[9] = employee.employee_createdAt.ToShortDateString();
 
                     dataTable.Rows.Add(row);
                 }
@@ -138,6 +144,10 @@ namespace BL
                 else if (employee.person_address.Trim().Length < 1)
                 {
                     throw new Exception(CMMessage.Person.addressEmptyString);
+                }
+                else if (employee.employee_salary < 850)
+                {
+                    throw new Exception(CMMessage.Person.salaryMinimun);
                 }
                 else
                 {

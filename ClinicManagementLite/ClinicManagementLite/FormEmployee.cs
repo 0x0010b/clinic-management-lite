@@ -58,6 +58,7 @@ namespace ClinicManagementLite
                     this.txtPhone.Text = this.objEmployee.person_phone;
                     this.txtAddress.Text = this.objEmployee.person_address;
                     this.cbxGender.SelectedIndex = this.objEmployee.person_gender;
+                    this.txtSalary.Text = this.objEmployee.employee_salary.ToString();
                     this.cbxArea.SelectedValue = this.objEmployee.employee_position.position_area.area_id;
                     this.cbxPosition.SelectedValue = this.objEmployee.employee_position.position_id;
                     this.pickerDateTime.Value = this.objEmployee.person_birthday;
@@ -71,11 +72,18 @@ namespace ClinicManagementLite
 
         private void BtnAction_Click(object sender, EventArgs e)
         {
+            Single salary = 0;
+            if ( txtSalary.Text.Trim() != String.Empty)
+            {
+                salary = Convert.ToSingle(this.txtSalary.Text.Trim());
+            }
+
             this.objEmployee.person_dni = this.txtDni.Text.Trim();
             this.objEmployee.person_name = this.txtName.Text.Trim();
             this.objEmployee.person_lastname = this.txtLastName.Text.Trim();
             this.objEmployee.person_phone = this.txtPhone.Text.Trim();
             this.objEmployee.person_birthday = this.pickerDateTime.Value;
+            this.objEmployee.employee_salary = salary;
             this.objEmployee.person_address = this.txtAddress.Text.Trim();
             this.objEmployee.person_gender = this.cbxGender.SelectedIndex;
             this.objEmployee.employee_position.position_id = Convert.ToInt16(this.cbxPosition.SelectedValue);

@@ -118,7 +118,7 @@
                                                     <asp:TextBox ID="txtBloodPressure" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="message-text" class="col-form-label">Colesterol:</label>
+                                                    <label for="message-text" class="col-form-label">Peso:</label>
                                                     <asp:TextBox ID="txtCholesterol" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
                                                 </div>
                                             </div>

@@ -17,7 +17,7 @@ namespace ClinicManagementLite
             context.lblTitle.Text = $"Horarios - ({dataTable.Rows.Count})";
             context.dgvList.DataSource = dataTable;
             context.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            context.btnUpdate.Enabled = false;
+            context.btnUpdate.Enabled = true;
         }
 
         public void actionDelete(FormMaintenance context)

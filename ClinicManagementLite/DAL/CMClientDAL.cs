@@ -31,7 +31,6 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@medicines", client.client_medicines);
                 cmd.Parameters.AddWithValue("@seizures", client.client_seizures);
                 cmd.Parameters.AddWithValue("@diabetes", client.client_diabetes);
-                cmd.Parameters.AddWithValue("@cholesterol", client.client_cholesterol);
                 cmd.Parameters.AddWithValue("@cancer", client.client_cancer);
                 cmd.Parameters.AddWithValue("@aids", client.client_aids);
 
@@ -128,7 +127,6 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@medicines", client.client_medicines);
                 cmd.Parameters.AddWithValue("@seizures", client.client_seizures);
                 cmd.Parameters.AddWithValue("@diabetes", client.client_diabetes);
-                cmd.Parameters.AddWithValue("@cholesterol", client.client_cholesterol);
                 cmd.Parameters.AddWithValue("@cancer", client.client_cancer);
                 cmd.Parameters.AddWithValue("@aids", client.client_aids);
 

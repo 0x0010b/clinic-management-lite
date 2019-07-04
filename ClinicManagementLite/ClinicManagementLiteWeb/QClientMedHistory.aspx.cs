@@ -47,7 +47,7 @@ public partial class QPersonMedHistory : System.Web.UI.Page
         lblDni.Text = "Dni: " + client.person_dni;
 
         txtBloodType.Text = client.client_bloodType;
-        txtHeight.Text = client.client_height;
+        txtHeight.Text = client.client_height + "cm";
         txtAllergies.Text = client.client_allergies;
         txtMedicines.Text = client.client_medicines;
         txtPathologies.Text = client.client_pathologies;
@@ -55,7 +55,7 @@ public partial class QPersonMedHistory : System.Web.UI.Page
         txtAids.Text = client.client_aids;
         txtBloodPressure.Text = client.client_bloodPressure;
         txtCancer.Text = client.client_cancer;
-        txtCholesterol.Text = client.client_cholesterol;
+        txtCholesterol.Text = client.client_weight + "kg";
     } 
 
     private int calculateAge()
