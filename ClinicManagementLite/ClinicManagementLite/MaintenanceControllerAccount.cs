@@ -17,6 +17,7 @@ namespace ClinicManagementLite
             context.Text = "Mantenimiento - Cuenta";
             context.lblTitle.Text = $"Cuentas - ({dataTable.Rows.Count})";
             context.dgvList.DataSource = dataTable;
+            context.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         public void actionDelete(FormMaintenance context)

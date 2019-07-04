@@ -144,6 +144,7 @@
             this.Controls.Add(this.btnAction);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label0);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

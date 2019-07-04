@@ -161,6 +161,7 @@
             this.Controls.Add(this.btnAction);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label0);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormTurn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

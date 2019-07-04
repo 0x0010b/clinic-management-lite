@@ -16,6 +16,7 @@ namespace ClinicManagementLite
             context.Text = "Mantenimiento - Turno";
             context.lblTitle.Text = $"Turnos - ({dataTable.Rows.Count})";
             context.dgvList.DataSource = dataTable;
+            context.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         public void actionDelete(FormMaintenance context)
